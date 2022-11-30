@@ -1,4 +1,11 @@
 {
+    "admin":[
+        {
+            "email":"emre@gmail.com",
+            "password":"12345"
+        }
+    ],
+    
     "applicant":[
         {
             "id":1,
