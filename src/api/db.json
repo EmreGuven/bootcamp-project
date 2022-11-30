@@ -29,6 +29,26 @@
             "nationalIdentity":"39832578547",
             "dateOfBirth":"17/10/22",
             "position":"müdür"
+        },
+        {
+            "id":2,
+            "firstName":"ali",
+            "lastName":"deniz",
+            "email":"ali@hotmail.com",
+            "password":"2312323",
+            "nationalIdentity":"39832511547",
+            "dateOfBirth":"18/10/22",
+            "position":"müdür yardımcısı"
+        },
+        {
+            "id":1,
+            "firstName":"hasvelian",
+            "lastName":"kıran",
+            "email":"veli@hotmail.com",
+            "password":"55444445",
+            "nationalIdentity":"39832111547",
+            "dateOfBirth":"10/10/22",
+            "position":"temizlikçi"
         }
     ],
 
