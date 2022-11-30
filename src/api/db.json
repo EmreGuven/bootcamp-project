@@ -28,11 +28,11 @@
             "password":"2312323",
             "nationalIdentity":"39832578547",
             "dateOfBirth":"17/10/22",
-            "positon":"müdür"
+            "position":"müdür"
         }
     ],
 
-    "instructer":[
+    "instructor":[
         {
             "id":1,
             "firstName":"engin",
@@ -47,6 +47,7 @@
 
     "application":[
         {
+            "id":1,
             "userId":1,
             "bootcampId":1,
             "state":1
