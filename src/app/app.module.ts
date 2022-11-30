@@ -22,6 +22,7 @@ import { EmployeeUpdateComponent } from './components/employee/employee-update/e
 import { InstructorAddComponent } from './components/instructor/instructor-add/instructor-add.component';
 import { InstructorUpdateComponent } from './components/instructor/instructor-update/instructor-update.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

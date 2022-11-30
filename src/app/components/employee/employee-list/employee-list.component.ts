@@ -1,4 +1,6 @@
+import { EmployeeService } from './../../../services/employee.service';
 import { Component, OnInit } from '@angular/core';
+import { EmployeeModelRequest } from 'src/app/models/request/employee-model';
 
 @Component({
   selector: 'app-employee-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeListComponent implements OnInit {
 
-  constructor() { }
+  employees:EmployeeModelRequest[]=[]
+
+  constructor(private employeeService:EmployeeService) { }
 
   ngOnInit(): void {
+    this.getEmployees();
+  }
+
+  getEmployees(){
+    this.employeeService.getEmployees().subscribe((data)=>{
+      this.employees = data
+    })
   }
 
 }
