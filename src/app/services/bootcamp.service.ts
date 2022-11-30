@@ -17,15 +17,15 @@ export class BootcampService {
     return this.httpClient.get<IBootcampGetAllModel[]>(this.apiUrl);
   }
 
-  addToBootcamps(bootcamp: IBootcampAddModel) {
+  addToBootcamp(bootcamp: IBootcampAddModel) {
     return this.httpClient.post(this.apiUrl, bootcamp);
   }
 
-  updateToBootcamps(id: number, bootcamp: IBootcampUpdateModel) {
+  updateToBootcamp(id: number, bootcamp: IBootcampUpdateModel) {
     return this.httpClient.put(this.apiUrl + '/' + id, bootcamp);
   }
 
-  deleteToBootcamps(id: number) {
+  deleteToBootcamp(id: number) {
     return this.httpClient.delete(this.apiUrl + '/' + id);
   }
 }
