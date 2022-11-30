@@ -1,4 +1,4 @@
-export interface IBootcampModelRequest{
+export interface IBootcampGetModel{
     id:number;
     instructerId:number;
     name:string;

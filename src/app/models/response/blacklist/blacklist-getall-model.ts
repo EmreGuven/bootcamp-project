@@ -1,4 +1,4 @@
-export interface IBlacklistModelResponse{
+export interface IBlacklistGetAllModel{
     id:number;
     applicantId:number;
     date:Date;

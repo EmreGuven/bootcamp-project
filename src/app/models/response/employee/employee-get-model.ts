@@ -1,4 +1,4 @@
-export interface IInstructorModelRequest{
+export interface IEmployeeGetModel{
     id:number;
     firstName:string;
     lastName:string;
@@ -6,5 +6,5 @@ export interface IInstructorModelRequest{
     password:string;
     nationalIdentity:string;
     dateOfBirth:Date;
-    companyName:string;
+    position:string;
 }
