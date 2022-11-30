@@ -1,4 +1,4 @@
-export interface ApplicantModelRequest{
+export interface IApplicantModelRequest{
     id:number;
     firstName:string;
     lastName:string;

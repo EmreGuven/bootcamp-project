@@ -1,4 +1,4 @@
-export interface ApplicantModelResponse{
+export interface IApplicantModelResponse{
     id:number;
     firstName:string;
     lastName:string;
