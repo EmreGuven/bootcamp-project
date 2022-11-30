@@ -1,4 +1,4 @@
-export interface IApplicationModelRequest{
+export interface IApplicationGetModel{
     id:number;
     userId:number;
     bootcampId:number;

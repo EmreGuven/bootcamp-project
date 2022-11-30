@@ -1,10 +1,9 @@
-export interface IEmployeeModelResponse{
-    id:number;
+export interface IApplicantAddModel{
     firstName:string;
     lastName:string;
     email:string;
     password:string;
     nationalIdentity:string;
-    dateOfBirth:Date;
-    position:string;
+    dateOfBirth:string;
+    about:string;
 }

@@ -1,6 +1,6 @@
-export interface IBlacklistModelRequest{
+export interface IBlacklistUpdateModel{
     id:number;
     applicantId:number;
-    date:Date;
+    date:string;
     reason:string;
 }
