@@ -23,6 +23,9 @@ import { InstructorAddComponent } from './components/instructor/instructor-add/i
 import { InstructorUpdateComponent } from './components/instructor/instructor-update/instructor-update.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +52,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
