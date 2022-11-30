@@ -1,4 +1,4 @@
-export interface ApplicationModelResponse{
+export interface IApplicationModelResponse{
     id:number;
     userId:number;
     bootcampId:number;

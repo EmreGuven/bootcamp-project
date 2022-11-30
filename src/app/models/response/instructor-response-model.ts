@@ -1,4 +1,4 @@
-export interface InstructorModelResponse{
+export interface IInstructorModelResponse{
     id:number;
     firstName:string;
     lastName:string;

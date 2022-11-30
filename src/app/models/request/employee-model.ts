@@ -1,4 +1,4 @@
-export interface EmployeeModelRequest{
+export interface IEmployeeModelRequest{
     id:number;
     firstName:string;
     lastName:string;
