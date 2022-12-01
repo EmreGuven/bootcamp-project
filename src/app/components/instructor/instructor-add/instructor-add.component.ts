@@ -21,8 +21,8 @@ export class InstructorAddComponent implements OnInit {
 
   addToInstructor(){
     if (this.instructorAddForm.valid) {
-      let carModel = Object.assign({}, this.instructorAddForm.value);
-      this.instructorService.addToInstructor(carModel).subscribe((data) => {
+      let instructor = Object.assign({}, this.instructorAddForm.value);
+      this.instructorService.addToInstructor(instructor).subscribe((data) => {
         this.clearForm();
         
         this.toastrService.success('Yeni Eğitmen Eklendi', 'Tebrikler (:');

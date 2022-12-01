@@ -50,7 +50,7 @@ export class InstructorUpdateComponent implements OnInit {
   }
 
   getInstructorDataForm(){
-    this.instructorService.getInstructorsById(this.activatedRoute.snapshot.params["id"]).subscribe((result)=>{
+    this.instructorService.getInstructorById(this.activatedRoute.snapshot.params["id"]).subscribe((result)=>{
       this.instructorUpdateForm = new FormGroup({
         firstName: new FormControl(result['adi']),
         lastName: new FormControl(result['branssoyadioyadidId']),

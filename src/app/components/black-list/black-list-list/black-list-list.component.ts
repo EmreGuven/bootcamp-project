@@ -1,3 +1,5 @@
+import { BlacklistService } from './../../../services/blacklist.service';
+import { IBlacklistGetAllModel } from './../../../models/response/blacklist/blacklist-getall-model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlackListListComponent implements OnInit {
 
-  constructor() { }
+  blacklists:IBlacklistGetAllModel[]=[];
+
+  constructor(private blacklistService:BlacklistService ) { }
 
   ngOnInit(): void {
+    this.getBlacklists();
   }
 
+  getBlacklists() {
+    this.blacklistService.getBlacklists().subscribe((data) => {
+      this.blacklists = data;
+    });
+  }
 }

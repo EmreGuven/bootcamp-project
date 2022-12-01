@@ -17,8 +17,8 @@ export class InstructorService {
   getInstructors(): Observable<IInstructorGetAllModel[]> {
     return this.httpClient.get<IInstructorGetAllModel[]>(this.apiUrl);
   }
-  getInstructorsById(id:number): Observable<IInstructorGetModel[]> {
-    return this.httpClient.get<IInstructorGetModel[]>(this.apiUrl+"/"+id);
+  getInstructorById(id:number): Observable<IInstructorGetModel[]> {
+    return this.httpClient.get<IInstructorGetModel[]>(this.apiUrl+"/"+ id);
   }
 
   addToInstructor(instructor: IInstructorAddModel) {
