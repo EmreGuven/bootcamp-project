@@ -17,12 +17,12 @@ export class EmployeeAddComponent implements OnInit {
   ) {}
 
   employeeAddForm: FormGroup;
-  
+
   ngOnInit(): void {
-    this.createEmployeeForm();
+    this.createEmployeeAddForm();
   }
 
-  createEmployeeForm() {
+  createEmployeeAddForm() {
     this.employeeAddForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],

@@ -4,6 +4,7 @@ import { IInstructorGetAllModel } from './../models/response/instructor/instruct
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IInstructorGetModel } from '../models/response/instructor/instructor-get-model';
 
 @Injectable({
   providedIn: 'root',
@@ -16,8 +17,8 @@ export class InstructorService {
   getInstructors(): Observable<IInstructorGetAllModel[]> {
     return this.httpClient.get<IInstructorGetAllModel[]>(this.apiUrl);
   }
-  getInstructorsById(id:number): Observable<IInstructorGetAllModel[]> {
-    return this.httpClient.get<IInstructorGetAllModel[]>(this.apiUrl+"/"+id);
+  getInstructorsById(id:number): Observable<IInstructorGetModel[]> {
+    return this.httpClient.get<IInstructorGetModel[]>(this.apiUrl+"/"+id);
   }
 
   addToInstructor(instructor: IInstructorAddModel) {
