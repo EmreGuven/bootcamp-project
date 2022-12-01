@@ -29,7 +29,7 @@ export class BootcampAddComponent implements OnInit {
       dateStart:['', Validators.required],
       dateEnd:['', Validators.required],
       state:['', Validators.required]
-    })
+    });
   }
   addToBootcamp() {
     if(this.bootcampAddForm.valid) {

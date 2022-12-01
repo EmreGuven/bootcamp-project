@@ -66,10 +66,4 @@ export class BootcampUpdateComponent implements OnInit {
       this.toastrService.success('Silme İşlemi Gerçekleşti', 'Tebrikler (:');
     });
   }
-
-
-
-
-
-
 }

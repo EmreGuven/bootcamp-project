@@ -1,3 +1,5 @@
+import { ApplicationService } from './../../../services/application.service';
+import { IApplicationGetAllModel } from './../../../models/response/application/application-getall-model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplicationListComponent implements OnInit {
 
-  constructor() { }
+  applications:IApplicationGetAllModel[]=[]
+
+  constructor(private applicationService:ApplicationService) {}
 
   ngOnInit(): void {
+    this.getApplications();
   }
-
+  getApplications() {
+    this.applicationService.getApplications().subscribe((data) => {
+      this.applications = data;
+    })
+  }
 }
