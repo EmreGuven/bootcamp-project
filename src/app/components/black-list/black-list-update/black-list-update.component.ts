@@ -20,7 +20,7 @@ export class BlackListUpdateComponent implements OnInit {
     private formBuilder:FormBuilder,
     private toastrService:ToastrService,
     private activatedRoute:ActivatedRoute,
-    private location:Location ) { }
+   ) { }
 
   ngOnInit(): void {
     this.getBlacklistById();
@@ -29,7 +29,6 @@ export class BlackListUpdateComponent implements OnInit {
   getBlacklistById() {
     this.activatedRoute.params.subscribe((params) => {
       this.getBlacklists(params['id']);
-      this.deleteToBlacklist(params['id']);
     });
   }
 
@@ -53,13 +52,6 @@ export class BlackListUpdateComponent implements OnInit {
     .subscribe(()=>{
       this.toastrService.success("Kara Liste Bilgileri Güncellendi", "Tebrikler (:")
     })
-  }
-
-  deleteToBlacklist(id: number) {
-    this.blacklistService.deleteToBlacklist(id).subscribe(() => {
-      this.ngOnInit();
-      this.toastrService.success('Silme İşlemi Gerçekleşti', 'Tebrikler (:');
-    });
   }
 
 }

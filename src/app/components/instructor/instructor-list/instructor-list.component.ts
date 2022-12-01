@@ -1,7 +1,8 @@
+import { ToastrService } from 'ngx-toastr';
 import { IInstructorGetAllModel } from './../../../models/response/instructor/instructor-getall-model';
-import { InstructorService } from './../../../services/instructor.service';
 import { Component,OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
+import { InstructorService } from 'src/app/services/instructor.service';
 
 @Component({
   selector: 'app-instructor-list',
@@ -17,16 +18,24 @@ export class InstructorListComponent implements OnInit {
 
   dataSource:any
 
-  constructor(private ınstructorService:InstructorService) { }
+  constructor(private instructorService:InstructorService,
+    private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.getInstructors();
   }
 
   getInstructors() {
-    this.ınstructorService.getInstructors().subscribe((data) => {
+    this.instructorService.getInstructors().subscribe((data) => {
       this.instructors = data;
       this.dataSource = new MatTableDataSource(this.instructors)
+    });
+  }
+
+  deleteToInstructor(id: number) {
+    this.instructorService.deleteToInstructor(id).subscribe(() => {
+      this.toastrService.success('Silme İşlemi Gerçekleşti', 'Tebrikler (:');
+      window.location.reload();
     });
   }
 }

@@ -1,1 +1,40 @@
-<p>black-list-add works!</p>
+<div class="content">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header"><h5 class="title">Kara Lİste Ekle</h5></div>
+        <div class="card-body">
+          <form [formGroup]="blacklistAddForm">
+
+            <label for="applicantId">Aday Adı</label>
+            <div class="form-group">
+                <select id="applicantId" formControlName="applicantId" class="form-select rounded-0">
+                    <option [value]="null" disabled hidden>Aday Seçiniz</option>
+                    <option *ngFor="let applicant of applicants" [value]="applicant.id">
+                        {{ applicant.firstName }}
+                    </option>
+                </select>
+            </div>
+
+              <label for="carName">Tarih</label>
+              <div class="form-group">
+                  <input type="text"formControlName="date">
+                  <small *ngIf="blacklistAddForm.get('date').hasError('required') && blacklistAddForm.get('date').touched" class="form-text text-muted">
+                    Tarih alanı zorunludur.
+                </small>
+              </div>
+
+              <label for="carName">Sebep</label>
+              <div class="form-group">
+                  <input type="text"formControlName="reason">
+                  <small *ngIf="blacklistAddForm.get('reason').hasError('required') && blacklistAddForm.get('reason').touched" class="form-text text-muted">
+                    Sebep alanı zorunludur.
+                </small>
+              </div>
+          </form>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-outline-success" (click)="addToBlacklist()">Ekle</button>
+        </div>
+      </div>
+    </div>
+  </div>

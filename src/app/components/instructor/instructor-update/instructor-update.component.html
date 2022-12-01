@@ -1,1 +1,39 @@
-<p>instructor-update works!</p>
+<div class="content">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header"><h5 class="title">Eğitmen Güncelle</h5></div>
+        <div class="card-body">
+          <form [formGroup]="instructorUpdateForm" *ngIf="instructorUpdateForm">
+
+              <label for="carName">Adı</label>
+              <div class="form-group">
+                  <input type="text"formControlName="firstName">
+              </div>
+
+              <label for="carName">Soyadı</label>
+              <div class="form-group">
+                  <input type="text"formControlName="lastName">
+              </div>
+
+              <label for="carName">Email</label>
+              <div class="form-group">
+                  <input type="text"formControlName="email">
+              </div>
+
+              <label for="carName">Şifre</label>
+              <div class="form-group">
+                  <input type="text"formControlName="password">
+              </div>
+
+              <label for="carName">Firma Adı</label>
+              <div class="form-group">
+                  <input type="text"formControlName="companyName">
+              </div>
+          </form>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-outline-success" (click)="updateToInstructor()">Kaydet</button>
+        </div>
+      </div>
+    </div>
+  </div>

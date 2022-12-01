@@ -18,7 +18,7 @@ export class InstructorUpdateComponent implements OnInit {
     private formBuilder:FormBuilder,
     private toastrService:ToastrService,
     private activatedRoute:ActivatedRoute,
-    private location:Location ) { }
+     ) { }
 
     instructorUpdateForm:FormGroup;
     instructor:IInstructorGetModel
@@ -29,7 +29,6 @@ export class InstructorUpdateComponent implements OnInit {
   getInstructorById() {
     this.activatedRoute.params.subscribe((params) => {
       this.getInstructors(params['id']);
-      this.deleteToInstructor(params['id']);
     });
   }
   getInstructors(id:number){
@@ -57,10 +56,4 @@ export class InstructorUpdateComponent implements OnInit {
     });
   }
 
-  deleteToInstructor(id: any) {
-    this.instructorService.deleteToInstructor(id).subscribe(() => {
-      this.ngOnInit();
-      this.toastrService.success('Silme İşlemi Gerçekleşti', 'Tebrikler (:');
-    });
-  }
 }

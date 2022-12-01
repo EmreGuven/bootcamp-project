@@ -1,1 +1,29 @@
-<p>black-list-update works!</p>
+<div class="content">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header"><h5 class="title">Kara Lİste Güncelle</h5></div>
+        <div class="card-body">
+          <form [formGroup]="blacklistUpdateForm" *ngIf="blacklistUpdateForm">
+
+              <label for="carName">Başvuranın Kimliği</label>
+              <div class="form-group">
+                  <input type="text"formControlName="applicantId">
+              </div>
+
+              <label for="carName">Tarih</label>
+              <div class="form-group">
+                  <input type="text"formControlName="date">
+              </div>
+
+              <label for="carName">Sebep</label>
+              <div class="form-group">
+                  <input type="text"formControlName="reason">
+              </div>
+          </form>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-outline-success" (click)="updateToBlacklist()">Kaydet</button>
+        </div>
+      </div>
+    </div>
+  </div>

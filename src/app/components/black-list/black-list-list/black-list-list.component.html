@@ -1,1 +1,23 @@
-<p>black-list-list works!</p>
+<div class="container-fluid row-cols-md-5">
+    <div class="">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Başvuran Kimliği</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">Sebep</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let blacklist of blacklists">
+            <td>{{ blacklist.applicantId }}</td>
+            <td>{{ blacklist.date }}</td>
+            <td>{{ blacklist.reason }}</td>
+            <td><button routerLink="update/{{blacklist.id}}" class="btn btn-warning">Güncelle</button></td>
+            <td><button (click)="deleteToBlacklist(blacklist.id)" class="btn btn-danger">Sil</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

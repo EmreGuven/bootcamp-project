@@ -6,7 +6,8 @@
           <th scope="col">Ad</th>
           <th scope="col">Soyad</th>
           <th scope="col">Email</th>
-          <th scope="col">Firma</th>
+          <th scope="col">Şifre</th>
+          <th scope="col">Firma Adı</th>
         </tr>
       </thead>
       <tbody>
@@ -14,12 +15,13 @@
           <td>{{ instructor.firstName }}</td>
           <td>{{ instructor.lastName }}</td>
           <td>{{ instructor.email }}</td>
+          <td>{{ instructor.password }}</td>
           <td>{{ instructor.companyName }}</td>
-          <td><button class="btn btn-success">Ekle</button></td>
-          <td><button class="btn btn-warning">Güncelle</button></td>
-          <td><button class="btn btn-danger">Sil</button></td>
+          <td><button routerLink="update/{{instructor.id}}" class="btn btn-warning">Güncelle</button></td>
+          <td><button (click)="deleteToInstructor(instructor.id)" class="btn btn-danger">Sil</button></td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
+
