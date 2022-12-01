@@ -46,7 +46,7 @@ export class EmployeeUpdateComponent implements OnInit {
   createEmployeeUpdateForm() {
     this.employeeUpdateForm = this.formBuilder.group({
       firstName: [this.employee.firstName, Validators.required],
-      lastName: [this.employee.firstName, Validators.required],
+      lastName: [this.employee.lastName, Validators.required],
       email: [this.employee.email, Validators.required],
       password: [this.employee.password, Validators.required],
       nationalIdentity: [this.employee.nationalIdentity, Validators.required],

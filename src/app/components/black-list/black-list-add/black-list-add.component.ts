@@ -14,6 +14,7 @@ export class BlackListAddComponent implements OnInit {
 
   blacklistAddForm: FormGroup;
   applicants:IApplicantGetAllModel[];
+  
   constructor(
     private formBuilder: FormBuilder,
     private blacklistService: BlacklistService,
@@ -23,6 +24,7 @@ export class BlackListAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.createBlacklistAddForm();
+    this.getApplicants();
   }
 
   createBlacklistAddForm() {

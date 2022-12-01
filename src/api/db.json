@@ -57,10 +57,10 @@
   ],
   "application": [
     {
-      "id": 1,
       "userId": 1,
       "bootcampId": 1,
-      "state": 1
+      "state": "2",
+      "id": 1
     }
   ],
   "blackList": [
@@ -69,6 +69,12 @@
       "applicantId": 1,
       "date": "14/04/21",
       "reason": "evlilik"
+    },
+    {
+      "applicantId": "1",
+      "date": "14/11/22",
+      "reason": "sdfasdfasdf",
+      "id": 2
     }
   ],
   "bootcamp": [
@@ -79,6 +85,14 @@
       "dateStart": "10/10/22",
       "dateEnd": "10/11/22",
       "state": 1
+    },
+    {
+      "instructerId": "1",
+      "name": "Backend",
+      "dateStart": "2022",
+      "dateEnd": "2023",
+      "state": "1",
+      "id": 2
     }
   ],
   "users": [

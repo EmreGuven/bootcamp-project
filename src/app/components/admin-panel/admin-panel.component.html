@@ -34,7 +34,9 @@
                 >Çalışan Listesi</a
               >
             </li>
-            <li><a routerLink="employees/add" class="dropdown-item">Ekle</a></li>
+            <li>
+              <a routerLink="employees/add" class="dropdown-item">Ekle</a>
+            </li>
           </ul>
         </li>
 
@@ -55,7 +57,7 @@
                 >Eğitmen Listesi</a
               >
             </li>
-            <li><a class="dropdown-item">Eğitmen Ekle</a></li>
+            <li><a routerLink="instructors/add" class="dropdown-item">Eğitmen Ekle</a></li>
           </ul>
         </li>
 
@@ -74,7 +76,7 @@
             <li>
               <a routerLink="applicants" class="dropdown-item">Aday Listesi</a>
             </li>
-            <li><a class="dropdown-item">Aday Ekle</a></li>
+            <li><a routerLink="applicants/add" class="dropdown-item">Aday Ekle</a></li>
           </ul>
         </li>
 
@@ -94,7 +96,47 @@
                 >Bootcamp Listesi</a
               >
             </li>
-            <li><a class="dropdown-item">Bootcamp Ekle</a></li>
+            <li><a routerLink="bootcamps/add" class="dropdown-item">Bootcamp Ekle</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Başvurular
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a routerLink="applications" class="dropdown-item"
+                >Başvuru Listesi</a
+              >
+            </li>
+            <li><a routerLink="applications/add" class="dropdown-item">Başvuru Ekle</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Black-List
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a routerLink="blacklists" class="dropdown-item"
+                >Black-List Listesi</a
+              >
+            </li>
+            <li><a routerLink="blacklists/add" class="dropdown-item">Black-List Ekle</a></li>
           </ul>
         </li>
       </ul>

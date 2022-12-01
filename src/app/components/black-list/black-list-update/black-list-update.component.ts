@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
+import { ApplicantService } from 'src/app/services/applicant.service';
+import { IApplicantGetAllModel } from 'src/app/models/response/applicant/applicant-getall-model';
 
 @Component({
   selector: 'app-black-list-update',
@@ -15,15 +17,19 @@ export class BlackListUpdateComponent implements OnInit {
 
   blacklistUpdateForm:FormGroup;
   blacklist:IBlacklistGetModel;
+  applicants:IApplicantGetAllModel[];
+  
 
   constructor(private blacklistService:BlacklistService,
     private formBuilder:FormBuilder,
     private toastrService:ToastrService,
     private activatedRoute:ActivatedRoute,
+    private applicantService:ApplicantService
    ) { }
 
   ngOnInit(): void {
     this.getBlacklistById();
+    this.getApplicants();
   }
 
   getBlacklistById() {
@@ -51,6 +57,12 @@ export class BlackListUpdateComponent implements OnInit {
     this.blacklistService.updateToBlacklist(this.activatedRoute.snapshot.params["id"],this.blacklistUpdateForm.value)
     .subscribe(()=>{
       this.toastrService.success("Kara Liste Bilgileri Güncellendi", "Tebrikler (:")
+    })
+  }
+
+  getApplicants(){
+    this.applicantService.getApplicants().subscribe((data)=>{
+      this.applicants = data
     })
   }
 

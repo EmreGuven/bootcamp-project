@@ -5,10 +5,15 @@
         <div class="card-body">
           <form [formGroup]="blacklistUpdateForm" *ngIf="blacklistUpdateForm">
 
-              <label for="carName">Başvuranın Kimliği</label>
-              <div class="form-group">
-                  <input type="text"formControlName="applicantId">
-              </div>
+            <label for="applicantId">Aday Adı</label>
+            <div class="form-group">
+                <select id="applicantId" formControlName="applicantId" class="form-select rounded-0">
+                    <option [value]="null" disabled hidden>Aday Seçiniz</option>
+                    <option *ngFor="let applicant of applicants" [value]="applicant.id">
+                        {{ applicant.firstName }}
+                    </option>
+                </select>
+            </div>
 
               <label for="carName">Tarih</label>
               <div class="form-group">

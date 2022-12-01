@@ -7,10 +7,10 @@
 
               <label for="applicant">Aday</label>
               <div class="form-group">
-                <select id="applicantId" formControlName="applicantId" class="form-select rounded-0">
+                <select id="userId" formControlName="userId" class="form-select rounded-0">
                     <option [value]="null" disabled hidden>Aday Seçiniz</option>
                     <option *ngFor="let applicant of applicants" [value]="applicant.id">
-                        {{ applicant.firstName + applicant.lastName }}
+                        {{ applicant.firstName + " " + applicant.lastName }}
                     </option>
                 </select>
               </div> 
