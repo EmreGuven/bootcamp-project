@@ -1,3 +1,4 @@
+import { IBlacklistGetModel } from './../../../models/response/blacklist/blacklist-get-model';
 import { BlacklistService } from './../../../services/blacklist.service';
 import { IBlacklistUpdateModel } from './../../../models/request/blacklist/blacklist-update-model';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 export class BlackListUpdateComponent implements OnInit {
 
   blacklistUpdateForm:FormGroup;
-  blacklist:IBlacklistUpdateModel;
+  blacklist:IBlacklistGetModel;
 
   constructor(private blacklistService:BlacklistService,
     private formBuilder:FormBuilder,
@@ -22,39 +23,39 @@ export class BlackListUpdateComponent implements OnInit {
     private location:Location ) { }
 
   ngOnInit(): void {
-    this.getBlacklistDataForm();
-    this.updateToBlacklist();
-    this.createBlacklistUpdateForm();
+    this.getBlacklistById();
+  }
 
+  getBlacklistById() {
+    this.activatedRoute.params.subscribe((params) => {
+      this.getBlacklists(params['id']);
+      this.deleteToBlacklist(params['id']);
+    });
+  }
+
+  getBlacklists(id: number) {
+    this.blacklistService.getBlacklistById(id).subscribe((data) => {
+      this.blacklist = data;
+      this.createBlacklistUpdateForm();
+    });
+  }
+
+  createBlacklistUpdateForm() {
+    this.blacklistUpdateForm = this.formBuilder.group({
+      applicantId: [this.blacklist.applicantId, Validators.required],
+      date: [this.blacklist.date, Validators.required],
+      reason: [this.blacklist.reason, Validators.required],
+    });
   }
 
   updateToBlacklist(){
     this.blacklistService.updateToBlacklist(this.activatedRoute.snapshot.params["id"],this.blacklistUpdateForm.value)
     .subscribe(()=>{
       this.toastrService.success("Kara Liste Bilgileri Güncellendi", "Tebrikler (:")
-    
     })
   }
 
-  createBlacklistUpdateForm() {
-    this.blacklistUpdateForm = this.formBuilder.group({
-      applicantId: [null, Validators.required],
-      date: [null, Validators.required],
-      reason: [null, Validators.required],
-    });
-  }
-
-  getBlacklistDataForm(){
-    this.blacklistService.getBlacklistById(this.activatedRoute.snapshot.params["id"]).subscribe((result)=>{
-      this.blacklistUpdateForm = new FormGroup({
-        applicantId: new FormControl(result['basvuranId']),
-        date: new FormControl(result['tarih']),
-        reason: new FormControl(result['sebep']),
-      })
-    })
-  }
-
-  deleteToBlacklist(id: any) {
+  deleteToBlacklist(id: number) {
     this.blacklistService.deleteToBlacklist(id).subscribe(() => {
       this.ngOnInit();
       this.toastrService.success('Silme İşlemi Gerçekleşti', 'Tebrikler (:');

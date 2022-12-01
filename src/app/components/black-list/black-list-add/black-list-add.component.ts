@@ -19,10 +19,10 @@ export class BlackListAddComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.createBlacklistForm();
+    this.createBlacklistAddForm();
   }
 
-  createBlacklistForm() {
+  createBlacklistAddForm() {
     this.blacklistAddForm = this.formBuilder.group({
       applicantId: ['', Validators.required],
       date: ['', Validators.required],
