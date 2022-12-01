@@ -1,3 +1,4 @@
+import { IBootcampGetModel } from './../models/response/bootcamp/bootcamp-get-model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -15,6 +16,10 @@ export class BootcampService {
 
   getBootcamps(): Observable<IBootcampGetAllModel[]> {
     return this.httpClient.get<IBootcampGetAllModel[]>(this.apiUrl);
+  }
+
+  getBootcampById(id:number):Observable<IBootcampGetModel> {
+    return this.httpClient.get<IBootcampGetModel>(this.apiUrl + '/' + id);
   }
 
   addToBootcamp(bootcamp: IBootcampAddModel) {
