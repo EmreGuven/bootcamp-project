@@ -1,3 +1,6 @@
+import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { InstructorService } from './../../../services/instructor.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstructorAddComponent implements OnInit {
 
-  constructor() { }
+  instructorAddForm:FormGroup;
+  constructor(private instructorService:InstructorService,
+    private formBuilder:FormBuilder,
+    private toastrService:ToastrService) { }
 
   ngOnInit(): void {
+    this.createInstructorAddForm();
+  }
+
+  addToInstructor(){
+    if (this.instructorAddForm.valid) {
+      let carModel = Object.assign({}, this.instructorAddForm.value);
+      this.instructorService.addToInstructor(carModel).subscribe((data) => {
+        this.clearForm();
+        
+        this.toastrService.success('Yeni Eğitmen Eklendi', 'Tebrikler (:');
+      });
+    } else {
+      this.toastrService.error('Eksik Bilgi', '!!!');
+    }
+  }
+  clearForm(){
+    this.instructorAddForm.reset();
+  }
+  
+
+
+  createInstructorAddForm() {
+    this.instructorAddForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      nationalIdentity: ['', Validators.required],
+      dateOfBirth: ['', Validators.required],
+      companyName: ['',Validators.required]
+    });
+    
   }
 
 }

@@ -1,6 +1,6 @@
 import { IInstructorUpdateModel } from './../models/request/instructor/instructor-update-model';
 import { IInstructorAddModel } from './../models/request/instructor/instructor-add-model';
-import { IInstructorGetModel } from './../models/response/instructor/instructor-getall-model';
+import { IInstructorGetAllModel } from './../models/response/instructor/instructor-getall-model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -13,8 +13,11 @@ export class InstructorService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getInstructors(): Observable<IInstructorGetModel[]> {
-    return this.httpClient.get<IInstructorGetModel[]>(this.apiUrl);
+  getInstructors(): Observable<IInstructorGetAllModel[]> {
+    return this.httpClient.get<IInstructorGetAllModel[]>(this.apiUrl);
+  }
+  getInstructorsById(id:number): Observable<IInstructorGetAllModel[]> {
+    return this.httpClient.get<IInstructorGetAllModel[]>(this.apiUrl+"/"+id);
   }
 
   addToInstructor(instructor: IInstructorAddModel) {

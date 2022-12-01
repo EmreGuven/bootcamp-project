@@ -1,1 +1,27 @@
-<p>instructor-list works!</p>
+<div class="col-md-2">
+    <hr>
+    <h3>Eğitmenler</h3>
+    <hr>
+    <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Ad</th>
+            <th scope="col">Soyad</th>
+            <th scope="col">Email</th>
+            <th scope="col">Firma Adı</th>
+            <th scope="col">Şifre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let instructor of instructors">
+            <td>{{instructor.firstName}}</td>
+            <td>{{instructor.lastName}}</td>
+            <td>{{instructor.email}}</td>
+            <td>{{instructor.companyName}}</td>
+            <td>{{instructor.password}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+
