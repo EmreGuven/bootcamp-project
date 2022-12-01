@@ -4,7 +4,6 @@ import { IEmployeeGetAllModel } from './../models/response/employee/employee-get
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IEmployeeUpdateModel } from '../models/request/employee/employee-update-model';
 
 @Injectable({
   providedIn: 'root',
@@ -26,8 +25,8 @@ export class EmployeeService {
     return this.httpClient.post(this.apiUrl, employee);
   }
 
-  updateToEmployee(id: number, employee: IEmployeeUpdateModel) {
-    return this.httpClient.put(this.apiUrl + '/' + id, employee);
+  updateToEmployee(id: number, data: any) {
+    return this.httpClient.put(this.apiUrl + '/' + id, data);
   }
 
   deleteToEmployee(id: number) {

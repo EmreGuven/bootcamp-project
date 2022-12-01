@@ -1,1 +1,70 @@
-<p>employee-add works!</p>
+<div class="content">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header"><h5 class="title">Marka Ekle</h5></div>
+        <div class="card-body">
+          <form [formGroup]="employeeAddForm">
+
+              <label for="carName">Adı</label>
+              <div class="form-group">
+                  <input type="text"formControlName="firstName">
+                  <small *ngIf="employeeAddForm.get('firstName').hasError('required') && employeeAddForm.get('firstName').touched" class="form-text text-muted">
+                    Ad alanı zorunludur.
+                </small>
+              </div>
+
+              <label for="carName">Soyadı</label>
+              <div class="form-group">
+                  <input type="text"formControlName="lastName">
+                  <small *ngIf="employeeAddForm.get('lastName').hasError('required') && employeeAddForm.get('lastName').touched" class="form-text text-muted">
+                    Soyad alanı zorunludur.
+                </small>
+              </div>
+
+              <label for="carName">Email</label>
+              <div class="form-group">
+                  <input type="text"formControlName="email">
+                  <small *ngIf="employeeAddForm.get('email').hasError('required') && employeeAddForm.get('email').touched" class="form-text text-muted">
+                    Email alanı zorunludur.
+                </small>
+              </div>
+
+              <label for="carName">Şifre</label>
+              <div class="form-group">
+                  <input type="text"formControlName="password">
+                  <small *ngIf="employeeAddForm.get('password').hasError('required') && employeeAddForm.get('password').touched" class="form-text text-muted">
+                    Şifre alanı zorunludur.
+                </small>
+              </div>
+
+              <label for="carName">Tc No</label>
+              <div class="form-group">
+                  <input type="text"formControlName="nationalIdentity">
+                  <small *ngIf="employeeAddForm.get('nationalIdentity').hasError('required') && employeeAddForm.get('nationalIdentity').touched" class="form-text text-muted">
+                    TC alanı zorunludur.
+                </small>
+              </div>
+
+              <label for="carName">Doğum Tarihi</label>
+              <div class="form-group">
+                  <input type="text"formControlName="dateOfBirth">
+                  <small *ngIf="employeeAddForm.get('dateOfBirth').hasError('required') && employeeAddForm.get('dateOfBirth').touched" class="form-text text-muted">
+                    Doğum Tarihi alanı zorunludur.
+                </small>
+              </div>
+
+              <label for="carName">Pozisyon</label>
+              <div class="form-group">
+                  <input type="text"formControlName="position">
+                  <small *ngIf="employeeAddForm.get('position').hasError('required') && employeeAddForm.get('position').touched" class="form-text text-muted">
+                    Pozisyon alanı zorunludur.
+                </small>
+              </div>
+          </form>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-outline-success" (click)="addToEmployee()">Ekle</button>
+        </div>
+      </div>
+    </div>
+  </div>

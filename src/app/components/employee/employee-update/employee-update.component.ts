@@ -1,9 +1,15 @@
 import { IEmployeeGetModel } from './../../../models/response/employee/employee-get-model';
 import { ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { EmployeeService } from './../../../services/employee.service';
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-employee-update',
@@ -28,7 +34,6 @@ export class EmployeeUpdateComponent implements OnInit {
   getEmployeeById() {
     this.activatedRoute.params.subscribe((params) => {
       this.getEmployee(params['id']);
-      this.deleteToEmployee(params['id']);
     });
   }
   getEmployee(id: number) {
@@ -37,10 +42,11 @@ export class EmployeeUpdateComponent implements OnInit {
       this.createEmployeeUpdateForm();
     });
   }
+
   createEmployeeUpdateForm() {
     this.employeeUpdateForm = this.formBuilder.group({
       firstName: [this.employee.firstName, Validators.required],
-      lastName: [this.employee.lastName, Validators.required],
+      lastName: [this.employee.firstName, Validators.required],
       email: [this.employee.email, Validators.required],
       password: [this.employee.password, Validators.required],
       nationalIdentity: [this.employee.nationalIdentity, Validators.required],
@@ -61,11 +67,6 @@ export class EmployeeUpdateComponent implements OnInit {
           'Tebrikler (:'
         );
       });
-  }
-
-  deleteToEmployee(id: number) {
-    this.employeeService.deleteToEmployee(id).subscribe(() => {
-      this.toastrService.success('Silme İşlemi Gerçekleşti', 'Tebrikler (:');
-    });
+    this.location.back();
   }
 }

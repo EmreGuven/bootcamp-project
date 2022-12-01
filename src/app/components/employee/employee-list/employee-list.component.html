@@ -1,28 +1,28 @@
-<div class="col-md-2">
-    <hr>
-    <h3>Çalışanlar</h3>
-    <hr>
-    <table class="table table-dark table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Ad</th>
-            <th scope="col">Soyad</th>
-            <th scope="col">Email</th>
-            <th scope="col">TC No</th>
-            <th scope="col">Doğum Tarihi</th>
-            <th scope="col">Pozisyon</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let employee of employees">
-            <td>{{employee.firstName}}</td>
-            <td>{{employee.lastName}}</td>
-            <td>{{employee.email}}</td>
-            <td>{{employee.nationalIdentity}}</td>
-            <td>{{employee.dateOfBirth}}</td>
-            <td>{{employee.position}}</td>
-          </tr>
-        </tbody>
-      </table>
+<div class="container-fluid row-cols-md-5">
+  <div class="">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Ad</th>
+          <th scope="col">Soyad</th>
+          <th scope="col">Email</th>
+          <th scope="col">TC No</th>
+          <th scope="col">Doğum Tarihi</th>
+          <th scope="col">Pozisyon</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.firstName }}</td>
+          <td>{{ employee.lastName }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.nationalIdentity }}</td>
+          <td>{{ employee.dateOfBirth }}</td>
+          <td>{{ employee.position }}</td>
+          <td><button routerLink="update/{{employee.id}}" class="btn btn-warning">Güncelle</button></td>
+          <td><button (click)="deleteToEmployee(employee.id)" class="btn btn-danger">Sil</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-

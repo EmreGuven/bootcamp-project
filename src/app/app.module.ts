@@ -30,6 +30,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { MatTableModule } from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
@@ -64,6 +66,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatSlideToggleModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTableModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(
       {

@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['admin']);
       });
     } else {
-      this.toastrService.error('Eksik bilgi', 'Lütfen tekrar deneyiniz');
+      this.toastrService.error('Eksik bilgi !!!', 'Lütfen tekrar deneyiniz');
     }
   }
 }

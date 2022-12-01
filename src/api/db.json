@@ -1,10 +1,4 @@
 {
-  "admin": [
-    {
-      "email": "emre@gmail.com",
-      "password": "12345"
-    }
-  ],
   "applicant": [
     {
       "id": 1,
@@ -19,24 +13,24 @@
   ],
   "employee": [
     {
-      "id": 1,
-      "firstName": "hasan",
-      "lastName": "toprak",
+      "firstName": "hasana",
+      "lastName": "hasan",
       "email": "hasan@hotmail.com",
       "password": "2312323",
       "nationalIdentity": "39832578547",
       "dateOfBirth": "17/10/22",
-      "position": "müdür"
+      "position": "müdür",
+      "id": 1
     },
     {
-      "id": 2,
-      "firstName": "ali",
-      "lastName": "deniz",
+      "firstName": "ali veli",
+      "lastName": "ali",
       "email": "ali@hotmail.com",
       "password": "2312323",
       "nationalIdentity": "39832511547",
       "dateOfBirth": "18/10/22",
-      "position": "müdür yardımcısı"
+      "position": "müdür yardımcısı",
+      "id": 2
     },
     {
       "id": 1,
@@ -94,12 +88,6 @@
       "email": "emre@emre.emre",
       "password": "12345",
       "token": "asldal12ledsa23mggk331"
-    },
-    {
-      "fullName": "ali",
-      "email": "ali@ali.ali",
-      "password": "ali123",
-      "id": 2
     }
   ]
 }
