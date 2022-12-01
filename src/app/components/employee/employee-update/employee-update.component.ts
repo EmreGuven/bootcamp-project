@@ -34,10 +34,10 @@ export class EmployeeUpdateComponent implements OnInit {
   getEmployee(id: number) {
     this.employeeService.getEmployeById(id).subscribe((data) => {
       this.employee = data;
-      this.createEmployeeForm();
+      this.createEmployeeUpdateForm();
     });
   }
-  createEmployeeForm() {
+  createEmployeeUpdateForm() {
     this.employeeUpdateForm = this.formBuilder.group({
       firstName: [this.employee.firstName, Validators.required],
       lastName: [this.employee.lastName, Validators.required],
