@@ -1,3 +1,4 @@
+import { IInstructorGetModel } from './../../../models/response/instructor/instructor-get-model';
 import { IInstructorUpdateModel } from './../../../models/request/instructor/instructor-update-model';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -13,54 +14,47 @@ import { InstructorService } from 'src/app/services/instructor.service';
 })
 export class InstructorUpdateComponent implements OnInit {
 
-  instructorUpdateForm:FormGroup;
-  instructor:IInstructorUpdateModel;
-
   constructor(private instructorService:InstructorService,
     private formBuilder:FormBuilder,
     private toastrService:ToastrService,
     private activatedRoute:ActivatedRoute,
     private location:Location ) { }
 
-  ngOnInit(): void {
-    this.getInstructorDataForm();
-    this.updateToInstructor();
-    this.createInstructorUpdateForm();
-
-  }
-
-  updateToInstructor(){
-    this.instructorService.updateToInstructor(this.activatedRoute.snapshot.params["id"],this.instructorUpdateForm.value)
-    .subscribe(()=>{
-      this.toastrService.success("Eğitmen Bilgileri Güncellendi", "Tebrikler (:")
+    instructorUpdateForm:FormGroup;
+    instructor:IInstructorGetModel
     
-    })
+  ngOnInit(): void {
+    this.getInstructorById();
   }
-
-  createInstructorUpdateForm() {
-    this.instructorUpdateForm = this.formBuilder.group({
-      firstName: [null, Validators.required],
-      lastName: [null, Validators.required],
-      email: [null, Validators.required],
-      password: [null, Validators.required],
-      nationalIdentity: [null, Validators.required],
-      dateOfBirth: [null, Validators.required],
-      companyName: [null,Validators.required]
+  getInstructorById() {
+    this.activatedRoute.params.subscribe((params) => {
+      this.getInstructors(params['id']);
+      this.deleteToInstructor(params['id']);
     });
   }
-
-  getInstructorDataForm(){
-    this.instructorService.getInstructorById(this.activatedRoute.snapshot.params["id"]).subscribe((result)=>{
-      this.instructorUpdateForm = new FormGroup({
-        firstName: new FormControl(result['adi']),
-        lastName: new FormControl(result['branssoyadioyadidId']),
-        email: new FormControl(result['email']),
-        password: new FormControl(result['sifre']),
-        nationalIdentity: new FormControl(result['tc']),
-        dateOfBirth:new FormControl(result['dogumtarihi']),
-        companyName: new FormControl(result['firma']),
-      })
-    })
+  getInstructors(id:number){
+    this.instructorService.getInstructorById(id).subscribe((data) => {
+      this.instructor = data;
+      this.createinstructorForm();
+    });
+  }
+  createinstructorForm() {
+    this.instructorUpdateForm = this.formBuilder.group({
+      firstName: [this.instructor.firstName, Validators.required],
+      lastName: [this.instructor.lastName, Validators.required],
+      email: [this.instructor.email, Validators.required],
+      password: [this.instructor.password, Validators.required],
+      companyName: [this.instructor.companyName,Validators.required]
+    });
+  }
+  updateToInstructor(){
+    this.instructorService.updateToInstructor(
+      this.activatedRoute.snapshot.params["id"],
+      this.instructorUpdateForm.value)
+    .subscribe(()=>{
+      this.toastrService.success("Eğitmen Bilgileri Güncellendi", 
+      "Tebrikler (:")
+    });
   }
 
   deleteToInstructor(id: any) {
@@ -69,7 +63,4 @@ export class InstructorUpdateComponent implements OnInit {
       this.toastrService.success('Silme İşlemi Gerçekleşti', 'Tebrikler (:');
     });
   }
-
-
-
 }
