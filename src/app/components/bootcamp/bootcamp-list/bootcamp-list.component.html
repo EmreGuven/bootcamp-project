@@ -1,1 +1,40 @@
-<p>bootcamp-list works!</p>
+<div class="container-fluid row-cols-md-5">
+  <div class="">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Bootcamp Adı</th>
+          <th scope="col">Eğitmen Adı</th>
+          <th scope="col">Başlama Tarihi</th>
+          <th scope="col">Bitiş Tarihi</th>
+          <th scope="col">Durumu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bootcamp of bootcamps">
+          <td>{{ bootcamp.name }}</td>
+          <td>{{ bootcamp.instructerId }}</td>
+          <td>{{ bootcamp.dateStart }}</td>
+          <td>{{ bootcamp.dateEnd }}</td>
+          <td>{{ bootcamp.state }}</td>
+          <td>
+            <button
+              routerLink="update/{{ bootcamp.id }}"
+              class="btn btn-warning"
+            >
+              Güncelle
+            </button>
+          </td>
+          <td>
+            <button
+              (click)="deleteToBootcamp(bootcamp.id)"
+              class="btn btn-danger"
+            >
+              Sil
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
