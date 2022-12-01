@@ -55,14 +55,7 @@
       "companyName": "kodlamaio"
     }
   ],
-  "application": [
-    {
-      "id": 1,
-      "userId": 1,
-      "bootcampId": 1,
-      "state": 1
-    }
-  ],
+  "application": [],
   "blackList": [
     {
       "id": 1,

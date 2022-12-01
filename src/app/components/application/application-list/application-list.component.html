@@ -1,1 +1,23 @@
-<p>application-list works!</p>
+<div class="container-fluid row-cols-md-5">
+    <div class="">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Applicant</th>
+            <th scope="col">Bootcamp</th>
+            <th scope="col">State</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let application of applications">
+            <td>{{ application.userId }}</td>
+            <td>{{ application.bootcampId }}</td>
+            <td>{{ application.state }}</td>
+            <td><button routerLink="update/{{application.id}}" class="btn btn-warning">Güncelle</button></td>
+            <td><button (click)="deleteToApplication(application.id)" class="btn btn-danger">Sil</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

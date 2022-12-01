@@ -4,6 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 import { ApplicationService } from './../../../services/application.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { IApplicantGetAllModel } from 'src/app/models/response/applicant/applicant-getall-model';
+import { IBootcampGetAllModel } from 'src/app/models/response/bootcamp/bootcamp-getall-model';
+import { ApplicantService } from 'src/app/services/applicant.service';
+import { BootcampService } from 'src/app/services/bootcamp.service';
 
 @Component({
   selector: 'app-application-update',
@@ -17,19 +21,21 @@ export class ApplicationUpdateComponent implements OnInit {
     private applicationService:ApplicationService,
     private activatedRoute:ActivatedRoute,
     private toastrService:ToastrService,
-    private location:Location
+    private applicantService:ApplicantService,
+    private bootcampService:BootcampService
   ) {}
 
     applicationUpdateForm:FormGroup;
     application: IApplicationGetModel
-
+    applicants:IApplicantGetAllModel[];
+    bootcamps:IBootcampGetAllModel[];
+    
   ngOnInit(): void {
     this.getApplicationById();
   }
   getApplicationById() {
     this.activatedRoute.params.subscribe((params) => {
       this.getApplications(params['id']);
-      this.deleteToApplication(params['id']);
     });
   }
   getApplications(id:number) {
@@ -57,9 +63,17 @@ export class ApplicationUpdateComponent implements OnInit {
       );
     });
   }
-  deleteToApplication(id:number) {
-    this.applicationService.deleteToApplication(id).subscribe(() => {
-      this.toastrService.success('Silme İşlemi Gerçekleşti', 'Tebrikler (:');
+  
+
+  getApplicant() {
+    this.applicantService.getApplicants().subscribe((data) => {
+      this.applicants = data
+    });
+  }
+
+  getBootcamp() {
+    this.bootcampService.getBootcamps().subscribe((data) => {
+      this.bootcamps = data
     });
   }
 }
