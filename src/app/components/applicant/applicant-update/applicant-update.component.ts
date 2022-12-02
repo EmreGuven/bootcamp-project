@@ -16,18 +16,19 @@ export class ApplicantUpdateComponent implements OnInit {
     private applicantService: ApplicantService,
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService,
-    private location: Location
+   
   ) {}
 
   applicantUpdateForm: FormGroup;
   applicant: IApplicantGetModel;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getApplicantById();
+  }
 
   getApplicantById() {
     this.activatedRoute.params.subscribe((params) => {
       this.getApplicant(params['id']);
-      this.deleteToApplicant(params['id']);
     });
   }
 
@@ -40,13 +41,13 @@ export class ApplicantUpdateComponent implements OnInit {
 
   createApplicantUpdateForm() {
     this.applicantUpdateForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-      nationalIdentity: ['', Validators.required],
-      dateOfBirth: ['', Validators.required],
-      about: ['', Validators.required],
+      firstName: [this.applicant.firstName, Validators.required],
+      lastName: [this.applicant.lastName, Validators.required],
+      email: [this.applicant.email, Validators.required],
+      password: [this.applicant.password, Validators.required],
+      nationalIdentity: [this.applicant.nationalIdentity, Validators.required],
+      dateOfBirth: [this.applicant.dateOfBirth, Validators.required],
+      about: [this.applicant.about, Validators.required],
     });
   }
   updateToApplicant() {
@@ -63,9 +64,5 @@ export class ApplicantUpdateComponent implements OnInit {
       });
   }
 
-  deleteToApplicant(id: number) {
-    this.applicantService.deleteToApplicant(id).subscribe(() => {
-      this.toastrService.success('Silme İşlemi Gerçekleşti', 'Tebrikler (:');
-    });
-  }
+ 
 }

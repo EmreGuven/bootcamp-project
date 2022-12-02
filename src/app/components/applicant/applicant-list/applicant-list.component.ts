@@ -1,3 +1,5 @@
+import { Location } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 import { IApplicantGetAllModel } from './../../../models/response/applicant/applicant-getall-model';
 import { ApplicantService } from './../../../services/applicant.service';
 import { Component, OnInit } from '@angular/core';
@@ -8,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./applicant-list.component.css'],
 })
 export class ApplicantListComponent implements OnInit {
-  constructor(private applicantService: ApplicantService) {}
+  
+  constructor(private applicantService: ApplicantService,
+     private toastrService:ToastrService,
+     private location:Location) {}
 
   applicants: IApplicantGetAllModel[] = [];
 
@@ -19,6 +24,13 @@ export class ApplicantListComponent implements OnInit {
   getApplicants() {
     this.applicantService.getApplicants().subscribe((data) => {
       this.applicants = data;
+    });
+  }
+
+  deleteToApplicant(id: number) {
+    this.applicantService.deleteToApplicant(id).subscribe(() => {
+      this.toastrService.success('Silme İşlemi Gerçekleşti', 'Tebrikler (:');
+      window.location.reload();
     });
   }
 }
