@@ -31,6 +31,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { MatTableModule } from '@angular/material/table';
+import { NavbarComponent } from './layouts/navbar/navbar.component';
+import { ToolbarComponent } from './layouts/toolbar/toolbar.component';
+import { FooterComponent } from './layouts/footer/footer.component';
+import { SettingsComponent } from './layouts/settings/settings.component';
 
 
 @NgModule({
@@ -57,6 +61,10 @@ import { MatTableModule } from '@angular/material/table';
     AdminPanelComponent,
     LoginComponent,
     RegisterComponent,
+    NavbarComponent,
+    ToolbarComponent,
+    FooterComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
