@@ -1,58 +1,194 @@
 {
   "applicant": [
     {
-      "firstName": "emreee",
-      "lastName": "güvennn",
+      "firstName": "Emre",
+      "lastName": "Güven",
       "email": "emre@hotmail.com",
       "password": "12345",
       "nationalIdentity": "39834578547",
-      "dateOfBirth": "13/10/22",
-      "about": "asdfasdf a dfasdf asdf as",
+      "dateOfBirth": "13/10/1998",
+      "about": "Sivas Üniversitesi Bilgisayar Mühendisliği",
       "id": 1
+    },
+    {
+      "firstName": "İlknur",
+      "lastName": "Yıldırım",
+      "email": "ilknur@gmail.com",
+      "password": "478521",
+      "nationalIdentity": "1456327852",
+      "dateOfBirth": "12/06/1999",
+      "about": "Selçuk Üniversitesi Bilgisayar Mühendisliği",
+      "id": 2
+    },
+    {
+      "firstName": "Sevda",
+      "lastName": "Şimşek",
+      "email": "sevda@gmail.com",
+      "password": "412369",
+      "nationalIdentity": "1245789632",
+      "dateOfBirth": "14/12/1998",
+      "about": "Gazi Üniversitesi Bilgisayar Mühendisliği",
+      "id": 3
+    },
+    {
+      "firstName": "Burak",
+      "lastName": "Ergin",
+      "email": "burak@gmail.com",
+      "password": "412369",
+      "nationalIdentity": "1063897552",
+      "dateOfBirth": "17/03/2001",
+      "about": "Hitit Üniversitesi Bilgisayar Programcılığı",
+      "id": 4
+    },
+    {
+      "firstName": "Mert ",
+      "lastName": "Subaşı",
+      "email": "mert@gmail.com",
+      "password": "742596",
+      "nationalIdentity": "2054865645",
+      "dateOfBirth": "12/17/1998",
+      "about": "Kırıkkale Üniversitesi İşletme",
+      "id": 5
+    },
+    {
+      "firstName": "Haluk",
+      "lastName": "Gül",
+      "email": "haluk@gmail.com",
+      "password": "456321",
+      "nationalIdentity": "1075951535",
+      "dateOfBirth": "16/07/2000",
+      "about": "Erzurum Üniversitesi YBS",
+      "id": 6
     }
   ],
   "employee": [
     {
-      "firstName": "hasan",
-      "lastName": "hasa",
-      "email": "hasan@hotmail.com",
-      "password": "2312323",
-      "nationalIdentity": "39832578547",
-      "dateOfBirth": "17/10/22",
-      "position": "müdür",
-      "id": 1
-    },
-    {
-      "firstName": "ali veli",
-      "lastName": "ali",
-      "email": "ali@hotmail.com",
+      "firstName": "Ali",
+      "lastName": "Akman",
+      "email": "aliakman@hotmail.com",
       "password": "2312323",
       "nationalIdentity": "39832511547",
-      "dateOfBirth": "18/10/22",
-      "position": "müdür yardımcısı",
+      "dateOfBirth": "18/10/1975",
+      "position": "Müdür Yardımcısı",
       "id": 2
     },
     {
-      "id": 1,
-      "firstName": "hasvelian",
-      "lastName": "kıran",
-      "email": "veli@hotmail.com",
+      "firstName": "Hasvelian",
+      "lastName": "Kıran",
+      "email": "kiran@hotmail.com",
       "password": "55444445",
       "nationalIdentity": "39832111547",
-      "dateOfBirth": "10/10/22",
-      "position": "temizlikçi"
+      "dateOfBirth": "10/08/1985",
+      "position": "temizlikçi",
+      "id": 1
+    },
+    {
+      "firstName": "Enes Bin Malik",
+      "lastName": "Köksal",
+      "email": "enesköksal@gmail.com",
+      "password": "25524565",
+      "nationalIdentity": "24568534672",
+      "dateOfBirth": "12/05/1977",
+      "position": "Uzman",
+      "id": 3
+    },
+    {
+      "firstName": "Esra Pakdemir",
+      "lastName": "Taşcı",
+      "email": "esratascı@gmail.com",
+      "password": "852147",
+      "nationalIdentity": "7596127596",
+      "dateOfBirth": "06/05/1980",
+      "position": "Tekniker",
+      "id": 4
+    },
+    {
+      "firstName": "Gamze ",
+      "lastName": "Karaman",
+      "email": "gamze@gmail.com",
+      "password": "75963145",
+      "nationalIdentity": "1265743698",
+      "dateOfBirth": "25/03/1995",
+      "position": "Mühendis",
+      "id": 5
+    },
+    {
+      "firstName": "Büşra",
+      "lastName": "Aydın",
+      "email": "aydın@gmail.com",
+      "password": "96324532",
+      "nationalIdentity": "2175634586",
+      "dateOfBirth": "03/09/1994",
+      "position": "Tekniker",
+      "id": 6
+    },
+    {
+      "firstName": "Uğur",
+      "lastName": "Gündoğan",
+      "email": "ugur@gmail.com",
+      "password": "478524",
+      "nationalIdentity": "7845123698",
+      "dateOfBirth": "23/05/1990",
+      "position": "Kordinatör",
+      "id": 7
     }
   ],
   "instructor": [
     {
-      "id": 1,
-      "firstName": "engin",
-      "lastName": "demiroğ",
+      "firstName": "Engin",
+      "lastName": "Demiroğ",
       "email": "engin@hotmail.com",
       "password": "434523",
-      "nationalIdentity": "39832568547",
-      "dateOfBirth": "17/10/22",
-      "companyName": "kodlamaio"
+      "companyName": "kodlamaio",
+      "id": 1
+    },
+    {
+      "firstName": "Arda",
+      "lastName": "Karaca",
+      "email": "arda@gmail.com",
+      "password": "45368",
+      "companyName": "Udemy",
+      "id": 2
+    },
+    {
+      "firstName": "Seher",
+      "lastName": "Karaman",
+      "email": "karaman@gmail.com",
+      "password": "147852",
+      "nationalIdentity": "3245963214",
+      "dateOfBirth": "30/12/1993",
+      "companyName": "Gelecek Yazılım",
+      "id": 3
+    },
+    {
+      "firstName": "Merve",
+      "lastName": "Kara",
+      "email": "merve@gmail.com",
+      "password": "746312",
+      "nationalIdentity": "36925814775",
+      "dateOfBirth": "15/12/1990",
+      "companyName": "Baykar",
+      "id": 4
+    },
+    {
+      "firstName": "Selim",
+      "lastName": "Güngör",
+      "email": "selim@gmail.com",
+      "password": "412369",
+      "nationalIdentity": "1056821475",
+      "dateOfBirth": "20/04/1995",
+      "companyName": "Aselsan",
+      "id": 5
+    },
+    {
+      "firstName": "Kübra",
+      "lastName": "Kul",
+      "email": "Kubra@gmail.com",
+      "password": "147852",
+      "nationalIdentity": "5296741236",
+      "dateOfBirth": "13/09/1996",
+      "companyName": "Havelsan",
+      "id": 6
     }
   ],
   "application": [
@@ -61,20 +197,62 @@
       "bootcampId": 1,
       "state": "2",
       "id": 1
+    },
+    {
+      "userId": "4",
+      "bootcampId": "1",
+      "state": "1",
+      "id": 2
+    },
+    {
+      "userId": "1",
+      "bootcampId": "1",
+      "state": "1",
+      "id": 3
+    },
+    {
+      "userId": "2",
+      "bootcampId": "1",
+      "state": "1",
+      "id": 4
+    },
+    {
+      "userId": "3",
+      "bootcampId": "1",
+      "state": "1",
+      "id": 5
+    },
+    {
+      "userId": "5",
+      "bootcampId": "2",
+      "state": "1",
+      "id": 6
+    },
+    {
+      "userId": "6",
+      "bootcampId": "5",
+      "state": "2",
+      "id": 7
     }
   ],
   "blackList": [
     {
-      "id": 1,
-      "applicantId": 1,
+      "applicantId": "2",
       "date": "14/04/21",
-      "reason": "evlilik"
+      "reason": "Eksik Evrak",
+      "id": 1
     },
     {
-      "applicantId": "1",
+      "applicantId": "5",
       "date": "14/11/22",
-      "reason": "sdfasdfasdf",
+      "reason": "Çalışıyor",
       "id": 2
+    },
+    {
+      "applicantId": "6",
+      "date": "14/11/2022",
+      "reason": "Askerde",
+      "id": 3
     }
   ],
   "bootcamp": [
@@ -93,6 +271,38 @@
       "dateEnd": "2023",
       "state": "1",
       "id": 2
+    },
+    {
+      "instructerId": "5",
+      "name": "Solana Practium",
+      "dateStart": "02/12/2022",
+      "dateEnd": "03/01/2023",
+      "state": "1",
+      "id": 3
+    },
+    {
+      "instructerId": "3",
+      "name": "Coderspace Machine Learning ",
+      "dateStart": "14/11/2022",
+      "dateEnd": "12/12/2022",
+      "state": "1",
+      "id": 4
+    },
+    {
+      "instructerId": "4",
+      "name": "System & Network",
+      "dateStart": "02/01/2023",
+      "dateEnd": "05/03/2023",
+      "state": "2",
+      "id": 5
+    },
+    {
+      "instructerId": "2",
+      "name": "Bilgi Teknolojileri Denetimi",
+      "dateStart": "15/12/2022",
+      "dateEnd": "18/01/2023",
+      "state": "2",
+      "id": 6
     }
   ],
   "users": [
