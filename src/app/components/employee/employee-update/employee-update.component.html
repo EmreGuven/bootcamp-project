@@ -1,49 +1,38 @@
-<div class="content">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header"><h5 class="title">Çalışan Güncelle</h5></div>
-        <div class="card-body">
-          <form [formGroup]="employeeUpdateForm" *ngIf="employeeUpdateForm">
+  <div class="card-header"><h5 class="title" >Çalışan Güncelle</h5></div>
+  <form [formGroup]="employeeUpdateForm" *ngIf="employeeUpdateForm">
 
-              <label for="carName">Adı</label>
-              <div class="form-group">
-                  <input type="text"formControlName="firstName">
-              </div>
-
-              <label for="carName">Soyadı</label>
-              <div class="form-group">
-                  <input type="text"formControlName="lastName">
-              </div>
-
-              <label for="carName">Email</label>
-              <div class="form-group">
-                  <input type="text"formControlName="email">
-              </div>
-
-              <label for="carName">Şifre</label>
-              <div class="form-group">
-                  <input type="text"formControlName="password">
-              </div>
-
-              <label for="carName">Tc No</label>
-              <div class="form-group">
-                  <input type="text"formControlName="nationalIdentity">
-              </div>
-
-              <label for="carName">Doğum Tarihi</label>
-              <div class="form-group">
-                  <input type="text"formControlName="dateOfBirth">
-              </div>
-
-              <label for="carName">Pozisyon</label>
-              <div class="form-group">
-                  <input type="text"formControlName="position">
-              </div>
-          </form>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-outline-success" (click)="updateToEmployee()">Kaydet</button>
-        </div>
-      </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label"></label>
+      <input type="text" class="form-control" formControlName="firstName">
     </div>
-  </div>
+
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label"></label>
+      <input type="text" class="form-control" formControlName="lastName">
+    </div>
+
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label"></label>
+      <input type="email" class="form-control" formControlName="email">
+    </div>
+    
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label"></label>
+      <input type="text" class="form-control" formControlName="password">
+    </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label"></label>
+      <input type="text" class="form-control" formControlName="nationalIdentity">
+    </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label"></label>
+      <input type="text" class="form-control" formControlName="dateOfBirth">
+    </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label"></label>
+      <input type="text" class="form-control" formControlName="position">
+    </div>
+</form>
+<div class="card-footer">
+  <button type="button" class="btn btn-success" (click)="updateToEmployee()">Kaydet</button>
+</div>

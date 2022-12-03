@@ -1,23 +1,44 @@
-<div class="container-fluid row-cols-md-5">
-    <div class="">
-      <table class="table table-striped">
+    <div class="card">
+    <div class="table-responsive">
+      <table class="table align-items-center mb-0">
         <thead>
           <tr>
-            <th scope="col">Başvuran Kimliği</th>
-            <th scope="col">Tarih</th>
-            <th scope="col">Sebep</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Başvuran Kimliği</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tarih</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Sebep</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let blacklist of blacklists">
-            <td>{{ blacklist.applicantId }}</td>
-            <td>{{ blacklist.date }}</td>
-            <td>{{ blacklist.reason }}</td>
+            <td>
+              <div class="d-flex px-2">
+                <div class="my-auto">
+                  <h6 class="mb-0 text-xs">{{ blacklist.applicantId }}</h6>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <div class="d-flex px-2">
+                <div class="my-auto">
+                  <h6 class="mb-0 text-xs">{{ blacklist.date }}</h6>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <div class="d-flex px-2">
+                <div class="my-auto">
+                  <h6 class="mb-0 text-xs">{{ blacklist.reason}}</h6>
+                </div>
+              </div>
+            </td>
+            <td>
             <td><button routerLink="update/{{blacklist.id}}" class="btn btn-warning">Güncelle</button></td>
-            <td><button (click)="deleteToBlacklist(blacklist.id)" class="btn btn-danger">Sil</button></td>
+            <td><button (click)="deleteToBlacklist(blacklist.id)" type="button" class="btn btn-primary">Sil</button></td>
           </tr>
         </tbody>
       </table>
     </div>
-  </div>
+    </div>
   

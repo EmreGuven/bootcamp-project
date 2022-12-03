@@ -1,27 +1,63 @@
-<div class="container-fluid row-cols-md-5">
-  <div class="">
-    <table class="table table-striped">
+<div class="card">
+  <div class="table-responsive">
+    <table class="table align-items-center mb-0">
       <thead>
         <tr>
-          <th scope="col">Ad</th>
-          <th scope="col">Soyad</th>
-          <th scope="col">Email</th>
-          <th scope="col">Şifre</th>
-          <th scope="col">Firma Adı</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Ad</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Soyad</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Email</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Şifre</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Firma Adı</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let instructor of instructors">
-          <td>{{ instructor.firstName }}</td>
-          <td>{{ instructor.lastName }}</td>
-          <td>{{ instructor.email }}</td>
-          <td>{{ instructor.password }}</td>
-          <td>{{ instructor.companyName }}</td>
+          <td>
+            <div class="d-flex px-2">
+              <div class="my-auto">
+                <h6 class="mb-0 text-xs">{{ instructor.firstName }}</h6>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="d-flex px-2">
+              <div class="my-auto">
+                <h6 class="mb-0 text-xs">{{ instructor.lastName }}</h6>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="d-flex px-2">
+              <div class="my-auto">
+                <h6 class="mb-0 text-xs">{{ instructor.email}}</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+
+          <td>
+            <div class="d-flex px-2">
+              <div class="my-auto">
+                <h6 class="mb-0 text-xs">{{ instructor.password }}</h6>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="d-flex px-2">
+              <div class="my-auto">
+                <h6 class="mb-0 text-xs">{{ instructor.companyName }}</h6>
+              </div>
+            </div>
+          </td>
           <td><button routerLink="update/{{instructor.id}}" class="btn btn-warning">Güncelle</button></td>
-          <td><button (click)="deleteToInstructor(instructor.id)" class="btn btn-danger">Sil</button></td>
+          <td><button (click)="deleteToInstructor(instructor.id)" type="button" class="btn btn-primary">Sil</button></td>
         </tr>
       </tbody>
     </table>
   </div>
-</div>
+  </div>
+
 

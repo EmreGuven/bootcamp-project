@@ -1,28 +1,71 @@
-<div class="container-fluid row-cols-md-5">
-  <div class="">
-    <table class="table table-striped">
+<div class="card">
+  <div class="table-responsive">
+    <table class="table align-items-center mb-0">
       <thead>
         <tr>
-          <th scope="col">Ad</th>
-          <th scope="col">Soyad</th>
-          <th scope="col">Email</th>
-          <th scope="col">TC No</th>
-          <th scope="col">Doğum Tarihi</th>
-          <th scope="col">Pozisyon</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ad</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Soyad</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Email</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tc No</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Doğum Tarihi</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Pozisyon</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let employee of employees">
-          <td>{{ employee.firstName }}</td>
-          <td>{{ employee.lastName }}</td>
-          <td>{{ employee.email }}</td>
-          <td>{{ employee.nationalIdentity }}</td>
-          <td>{{ employee.dateOfBirth }}</td>
-          <td>{{ employee.position }}</td>
+          <td>
+            <div class="d-flex px-2">
+              <div class="my-auto">
+                <h6 class="mb-0 text-xs">{{ employee.firstName }}</h6>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="d-flex px-2">
+              <div class="my-auto">
+                <h6 class="mb-0 text-xs">{{ employee.lastName }}</h6>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="d-flex px-2">
+              <div class="my-auto">
+                <h6 class="mb-0 text-xs">{{ employee.email}}</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+
+          <td>
+            <div class="d-flex px-2">
+              <div class="my-auto">
+                <h6 class="mb-0 text-xs">{{ employee.nationalIdentity }}</h6>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="d-flex px-2">
+              <div class="my-auto">
+                <h6 class="mb-0 text-xs">{{ employee.dateOfBirth }}</h6>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="d-flex px-2">
+              <div class="my-auto">
+                <h6 class="mb-0 text-xs">{{ employee.position }}</h6>
+              </div>
+            </div>
+          </td>
           <td><button routerLink="update/{{employee.id}}" class="btn btn-warning">Güncelle</button></td>
-          <td><button (click)="deleteToEmployee(employee.id)" class="btn btn-danger">Sil</button></td>
+          <td><button (click)="deleteToEmployee(employee.id)" type="button" class="btn btn-primary">Sil</button></td>
         </tr>
       </tbody>
     </table>
   </div>
-</div>
+  </div>
+

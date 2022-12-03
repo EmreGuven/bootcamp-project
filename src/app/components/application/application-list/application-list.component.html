@@ -1,23 +1,45 @@
-<div class="container-fluid row-cols-md-5">
-    <div class="">
-      <table class="table table-striped">
+  <div class="card">
+    <div class="table-responsive">
+      <table class="table align-items-center mb-0">
         <thead>
           <tr>
-            <th scope="col">Applicant</th>
-            <th scope="col">Bootcamp</th>
-            <th scope="col">State</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Applicant</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Bootcamp</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">State</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let application of applications">
-            <td>{{ application.userId }}</td>
-            <td>{{ application.bootcampId }}</td>
-            <td>{{ application.state }}</td>
+            <td>
+              <div class="d-flex px-2">
+                <div class="my-auto">
+                  <h6 class="mb-0 text-xs">{{ application.userId }}</h6>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <div class="d-flex px-2">
+                <div class="my-auto">
+                  <h6 class="mb-0 text-xs">{{ application.bootcampId }}</h6>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <div class="d-flex px-2">
+                <div class="my-auto">
+                  <h6 class="mb-0 text-xs">{{ application.state}}</h6>
+                </div>
+              </div>
+            </td>
             <td><button routerLink="update/{{application.id}}" class="btn btn-warning">Güncelle</button></td>
-            <td><button (click)="deleteToApplication(application.id)" class="btn btn-danger">Sil</button></td>
+            <td><button (click)="deleteToApplication(application.id)" type="button" class="btn btn-primary">Sil</button></td>
           </tr>
         </tbody>
       </table>
     </div>
-  </div>
+    </div>
+  
+
   

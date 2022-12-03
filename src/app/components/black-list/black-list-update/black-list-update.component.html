@@ -1,34 +1,26 @@
-<div class="content">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header"><h5 class="title">Kara Lİste Güncelle</h5></div>
-        <div class="card-body">
-          <form [formGroup]="blacklistUpdateForm" *ngIf="blacklistUpdateForm">
+ <div class="card-header"><h5 class="title">Kara Lİste Güncelle</h5></div>
+  <form [formGroup]="blacklistUpdateForm" *ngIf="blacklistUpdateForm">
 
-            <label for="applicantId">Aday Adı</label>
-            <div class="form-group">
-                <select id="applicantId" formControlName="applicantId" class="form-select rounded-0">
-                    <option [value]="null" disabled hidden>Aday Seçiniz</option>
-                    <option *ngFor="let applicant of applicants" [value]="applicant.id">
-                        {{ applicant.firstName }}
-                    </option>
-                </select>
-            </div>
-
-              <label for="carName">Tarih</label>
-              <div class="form-group">
-                  <input type="text"formControlName="date">
-              </div>
-
-              <label for="carName">Sebep</label>
-              <div class="form-group">
-                  <input type="text"formControlName="reason">
-              </div>
-          </form>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-outline-success" (click)="updateToBlacklist()">Kaydet</button>
-        </div>
-      </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label"></label>
+      <select id="applicantId" formControlName="applicantId" class="form-select rounded-0">
+        <option [value]="null" disabled hidden>Aday Seçiniz</option>
+        <option *ngFor="let applicant of applicants" [value]="applicant.id">
+            {{ applicant.firstName }}
+        </option>
+    </select>
     </div>
-  </div>
+
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label"></label>
+      <input type="text" class="form-control" formControlName="date">
+    </div>
+
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label"></label>
+      <input type="email" class="form-control" formControlName="reason">
+    </div>
+</form>
+<div class="card-footer">
+  <button type="button" class="btn btn-success" (click)="updateToBlacklist()">Kaydet</button>
+</div>

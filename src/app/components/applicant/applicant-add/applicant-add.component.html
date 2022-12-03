@@ -1,70 +1,59 @@
-<div class="content">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header"><h5 class="title">Aday Ekle</h5></div>
-        <div class="card-body">
-          <form [formGroup]="applicantAddForm">
+  <div class="card-header"><h5 class="title" >Aday Ekle</h5></div>
+  <form [formGroup]="applicantAddForm">
 
-              <label for="carName">Adı</label>
-              <div class="form-group">
-                  <input type="text"formControlName="firstName">
-                  <small *ngIf="applicantAddForm.get('firstName').hasError('required') && applicantAddForm.get('firstName').touched" class="form-text text-muted">
-                    Ad alanı zorunludur.
-                </small>
-              </div>
-
-              <label for="carName">Soyadı</label>
-              <div class="form-group">
-                  <input type="text"formControlName="lastName">
-                  <small *ngIf="applicantAddForm.get('lastName').hasError('required') && applicantAddForm.get('lastName').touched" class="form-text text-muted">
-                    Soyad alanı zorunludur.
-                </small>
-              </div>
-
-              <label for="carName">Email</label>
-              <div class="form-group">
-                  <input type="text"formControlName="email">
-                  <small *ngIf="applicantAddForm.get('email').hasError('required') && applicantAddForm.get('email').touched" class="form-text text-muted">
-                    Email alanı zorunludur.
-                </small>
-              </div>
-
-              <label for="carName">Şifre</label>
-              <div class="form-group">
-                  <input type="text"formControlName="password">
-                  <small *ngIf="applicantAddForm.get('password').hasError('required') && applicantAddForm.get('password').touched" class="form-text text-muted">
-                    Şifre alanı zorunludur.
-                </small>
-              </div>
-
-              <label for="carName">Tc No</label>
-              <div class="form-group">
-                  <input type="text"formControlName="nationalIdentity">
-                  <small *ngIf="applicantAddForm.get('nationalIdentity').hasError('required') && applicantAddForm.get('nationalIdentity').touched" class="form-text text-muted">
-                    TC alanı zorunludur.
-                </small>
-              </div>
-
-              <label for="carName">Doğum Tarihi</label>
-              <div class="form-group">
-                  <input type="text"formControlName="dateOfBirth">
-                  <small *ngIf="applicantAddForm.get('dateOfBirth').hasError('required') && applicantAddForm.get('dateOfBirth').touched" class="form-text text-muted">
-                    Doğum Tarihi alanı zorunludur.
-                </small>
-              </div>
-
-              <label for="carName">Hakkında</label>
-              <div class="form-group">
-                  <input type="text"formControlName="about">
-                  <small *ngIf="applicantAddForm.get('about').hasError('required') && applicantAddForm.get('about').touched" class="form-text text-muted">
-                    Hakkında alanı zorunludur.
-                </small>
-              </div>
-          </form>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-outline-success" (click)="addToApplicant()">Ekle</button>
-        </div>
-      </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Adı</label>
+      <input type="text" class="form-control" formControlName="firstName">
+     <small *ngIf="applicantAddForm.get('firstName').hasError('required') && applicantAddForm.get('firstName').touched" class="form-text text-muted">
+     Ad alanı zorunludur.
+     </small>
     </div>
-  </div>
+
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Soyad</label>
+      <input type="text" class="form-control" formControlName="lastName">
+      <small *ngIf="applicantAddForm.get('lastName').hasError('required') && applicantAddForm.get('lastName').touched" class="form-text text-muted">
+        Soyad alanı zorunludur.
+    </small>
+    </div>
+
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" formControlName="email">
+      <small *ngIf="applicantAddForm.get('email').hasError('required') && applicantAddForm.get('email').touched" class="form-text text-muted">
+        Email alanı zorunludur.
+    </small>
+    </div>
+    
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Şifre</label>
+      <input type="text" class="form-control" formControlName="password">
+      <small *ngIf="applicantAddForm.get('password').hasError('required') && applicantAddForm.get('password').touched" class="form-text text-muted">
+        Şifre alanı zorunludur.
+    </small>
+    </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">TC No</label>
+      <input type="text" class="form-control" formControlName="nationalIdentity">
+      <small *ngIf="applicantAddForm.get('nationalIdentity').hasError('required') && applicantAddForm.get('nationalIdentity').touched" class="form-text text-muted">
+        TC alanı zorunludur.
+    </small>
+    </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Doğum Tarihi</label>
+      <input type="text" class="form-control" formControlName="dateOfBirth">
+      <small *ngIf="applicantAddForm.get('dateOfBirth').hasError('required') && applicantAddForm.get('dateOfBirth').touched" class="form-text text-muted">
+        Doğum Tarihi alanı zorunludur.
+    </small>
+    </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Hakkında</label>
+      <input type="text" class="form-control" formControlName="about">
+      <small *ngIf="applicantAddForm.get('about').hasError('required') && applicantAddForm.get('about').touched" class="form-text text-muted">
+        Hakkında alanı zorunludur.
+    </small>
+    </div>
+</form>
+<div class="card-footer">
+  <button type="button" class="btn btn-success" (click)="addToApplicant()">Ekle</button>
+</div>

@@ -1,44 +1,34 @@
-<div class="content">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header"><h5 class="title">Başvuru </h5></div>
-        <div class="card-body">
-          <form [formGroup]="applicationAddForm">
+  <div class="card-header"><h5 class="title">Başvuru</h5></div>
+  <form [formGroup]="applicationAddForm">
 
-              <label for="applicant">Aday</label>
-              <div class="form-group">
-                <select id="userId" formControlName="userId" class="form-select rounded-0">
-                    <option [value]="null" disabled hidden>Aday Seçiniz</option>
-                    <option *ngFor="let applicant of applicants" [value]="applicant.id">
-                        {{ applicant.firstName + " " + applicant.lastName }}
-                    </option>
-                </select>
-              </div> 
-            
-              <label for="bootcamp">Bootcamp</label>
-              <div class="form-group">
-                <select id="bootcampId" formControlName="bootcampId" class="form-select rounded-0">
-                    <option [value]="null" disabled hidden>Bootcamp Seçiniz</option>
-                    <option *ngFor="let bootcamp of bootcamps" [value]="bootcamp.id">
-                        {{ bootcamp.name }}
-                    </option>
-                </select>
-              </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Aday</label>
+      <select id="userId" formControlName="userId" class="form-select rounded-0">
+          <option [value]="null" disabled hidden>Aday Seçiniz</option>
+          <option *ngFor="let applicant of applicants" [value]="applicant.id">
+              {{ applicant.firstName + " " + applicant.lastName }}
+          </option>
+      </select>
+    </div> 
 
-              <label for="state">State</label>
-              <div class="form-group">
-                  <input type="text"formControlName="state">
-                  <small *ngIf="applicationAddForm.get('state').hasError('required') && applicationAddForm.get('state').touched" class="form-text text-muted">
-                    Durum alanı zorunludur.
-                </small>
-              </div>
-
-             
-          </form>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-outline-success" (click)="addToApplication()">Ekle</button>
-        </div>
-      </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Bootcamp</label>
+      <select id="bootcampId" formControlName="bootcampId" class="form-select rounded-0">
+          <option [value]="null" disabled hidden>Bootcamp Seçiniz</option>
+          <option *ngFor="let bootcamp of bootcamps" [value]="bootcamp.id">
+              {{ bootcamp.name }}
+          </option>
+      </select>
     </div>
-  </div>
+
+    <div class="input-group input-group-outline my-3">
+    <label class="form-label">State</label>
+    <input type="text" class="form-control" formControlName="state">
+      <small *ngIf="applicationAddForm.get('state').hasError('required') && applicationAddForm.get('state').touched" class="form-text text-muted">
+    Durum alanı zorunludur.
+      </small>
+    </div>
+</form>
+<div class="card-footer">
+  <button type="button" class="btn btn-success" (click)="addToApplication()">Ekle</button>
+</div>

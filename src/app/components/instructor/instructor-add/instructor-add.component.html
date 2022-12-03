@@ -1,70 +1,60 @@
-<div class="content">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header"><h5 class="title">Eğitmen Ekle</h5></div>
-        <div class="card-body">
-          <form [formGroup]="instructorAddForm">
+  <div class="card-header"><h5 class="title" >Eğitmen Ekle</h5></div>
+  <form [formGroup]="instructorAddForm">
 
-              <label for="carName">Adı</label>
-              <div class="form-group">
-                  <input type="text"formControlName="firstName">
-                  <small *ngIf="instructorAddForm.get('firstName').hasError('required') && instructorAddForm.get('firstName').touched" class="form-text text-muted">
-                    Ad alanı zorunludur.
-                </small>
-              </div>
-
-              <label for="carName">Soyadı</label>
-              <div class="form-group">
-                  <input type="text"formControlName="lastName">
-                  <small *ngIf="instructorAddForm.get('lastName').hasError('required') && instructorAddForm.get('lastName').touched" class="form-text text-muted">
-                    Soyad alanı zorunludur.
-                </small>
-              </div>
-
-              <label for="carName">Email</label>
-              <div class="form-group">
-                  <input type="text"formControlName="email">
-                  <small *ngIf="instructorAddForm.get('email').hasError('required') && instructorAddForm.get('email').touched" class="form-text text-muted">
-                    Email alanı zorunludur.
-                </small>
-              </div>
-
-              <label for="carName">Şifre</label>
-              <div class="form-group">
-                  <input type="text"formControlName="password">
-                  <small *ngIf="instructorAddForm.get('password').hasError('required') && instructorAddForm.get('password').touched" class="form-text text-muted">
-                    Şifre alanı zorunludur.
-                </small>
-              </div>
-
-              <label for="carName">Tc No</label>
-              <div class="form-group">
-                  <input type="text"formControlName="nationalIdentity">
-                  <small *ngIf="instructorAddForm.get('nationalIdentity').hasError('required') && instructorAddForm.get('nationalIdentity').touched" class="form-text text-muted">
-                    TC alanı zorunludur.
-                </small>
-              </div>
-
-              <label for="carName">Doğum Tarihi</label>
-              <div class="form-group">
-                  <input type="text"formControlName="dateOfBirth">
-                  <small *ngIf="instructorAddForm.get('dateOfBirth').hasError('required') && instructorAddForm.get('dateOfBirth').touched" class="form-text text-muted">
-                    Doğum Tarihi alanı zorunludur.
-                </small>
-              </div>
-
-              <label for="carName">Firma Adı</label>
-              <div class="form-group">
-                  <input type="text"formControlName="companyName">
-                  <small *ngIf="instructorAddForm.get('companyName').hasError('required') && instructorAddForm.get('companyName').touched" class="form-text text-muted">
-                    Firma Adı alanı zorunludur.
-                </small>
-              </div>
-          </form>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-outline-success" (click)="addToInstructor()">Ekle</button>
-        </div>
-      </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Adı</label>
+      <input type="text" class="form-control" formControlName="firstName">
+     <small *ngIf="instructorAddForm.get('firstName').hasError('required') && instructorAddForm.get('firstName').touched" class="form-text text-muted">
+     Ad alanı zorunludur.
+     </small>
     </div>
-  </div>
+
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Soyad</label>
+      <input type="text" class="form-control" formControlName="lastName">
+      <small *ngIf="instructorAddForm.get('lastName').hasError('required') && instructorAddForm.get('lastName').touched" class="form-text text-muted">
+        Soyad alanı zorunludur.
+    </small>
+    </div>
+
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" formControlName="email">
+      <small *ngIf="instructorAddForm.get('email').hasError('required') && instructorAddForm.get('email').touched" class="form-text text-muted">
+        Email alanı zorunludur.
+    </small>
+    </div>
+
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Şifre</label>
+      <input type="text" class="form-control" formControlName="password">
+      <small *ngIf="instructorAddForm.get('password').hasError('required') && instructorAddForm.get('password').touched" class="form-text text-muted">
+        Şifre alanı zorunludur.
+    </small>
+    </div>
+    
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">TC No</label>
+      <input type="text" class="form-control" formControlName="nationalIdentity">
+      <small *ngIf="instructorAddForm.get('nationalIdentity').hasError('required') && instructorAddForm.get('nationalIdentity').touched" class="form-text text-muted">
+        TC alanı zorunludur.
+    </small>
+    </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Doğum Tarihi</label>
+      <input type="text" class="form-control" formControlName="dateOfBirth">
+      <small *ngIf="instructorAddForm.get('dateOfBirth').hasError('required') && instructorAddForm.get('dateOfBirth').touched" class="form-text text-muted">
+        Doğum Tarihi alanı zorunludur.
+    </small>
+    </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Firma Adı</label>
+      <input type="text" class="form-control" formControlName="companyName">
+      <small *ngIf="instructorAddForm.get('companyName').hasError('required') && instructorAddForm.get('companyName').touched" class="form-text text-muted">
+        Firma Adı alanı zorunludur.
+    </small>
+    </div>
+</form>
+<div class="card-footer">
+  <button type="button" class="btn btn-success" (click)="addToInstructor()">Ekle</button>
+</div>

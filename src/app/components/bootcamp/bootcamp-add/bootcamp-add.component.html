@@ -1,81 +1,47 @@
-<div class="content">
-  <div class="col-md-12">
-    <div class="card">
-      <div class="card-header"><h5 class="title">Bootcamp Ekle</h5></div>
-      <div class="card-body">
-        <form [formGroup]="bootcampAddForm">
-          <label for="name">Bootcamp Adı</label>
-          <div class="form-group">
-            <input type="text" formControlName="name" />
-            <small
-              *ngIf="
-                bootcampAddForm.get('name').hasError('required') &&
-                bootcampAddForm.get('name').touched
-              "
-              class="form-text text-muted"
-            >
-              Ad alanı zorunludur.
-            </small>
-          </div>
-          <label for="instructerId">Eğitmen Adı</label>
-          <div class="form-group">
-            <select id="instructerId" formControlName="instructerId">
-              <option
-                *ngFor="let instructor of instructors"
-                [value]="instructor.id"
-              >
-                {{ instructor.firstName }} {{ instructor.lastName }}
-              </option>
-            </select>
-          </div>
-          <label for="dateStart">Başlangıç Tarihi</label>
-          <div class="form-group">
-            <input type="text" formControlName="dateStart" />
-            <small
-              *ngIf="
-                bootcampAddForm.get('dateStart').hasError('required') &&
-                bootcampAddForm.get('dateStart').touched
-              "
-              class="form-text text-muted"
-            >
-              Soyad alanı zorunludur.
-            </small>
-          </div>
+<div class="card-header"><h5 class="title">Bootcamp Ekle</h5></div>
+<form [formGroup]="bootcampAddForm">
 
-          <label for="dateEnd">Bitiş Tarihi</label>
-          <div class="form-group">
-            <input type="text" formControlName="dateEnd" />
-            <small
-              *ngIf="
-                bootcampAddForm.get('dateEnd').hasError('required') &&
-                bootcampAddForm.get('dateEnd').touched
-              "
-              class="form-text text-muted"
-            >
-              Email alanı zorunludur.
-            </small>
-          </div>
-
-          <label for="state">Durumu</label>
-          <div class="form-group">
-            <input type="text" formControlName="state" />
-            <small
-              *ngIf="
-                bootcampAddForm.get('state').hasError('required') &&
-                bootcampAddForm.get('state').touched
-              "
-              class="form-text text-muted"
-            >
-              Şifre alanı zorunludur.
-            </small>
-          </div>
-        </form>
-      </div>
-      <div class="card-footer">
-        <button class="btn btn-outline-success" (click)="addToBootcamp()">
-          Ekle
-        </button>
-      </div>
-    </div>
+  <div class="input-group input-group-outline my-3">
+    <label class="form-label">Bootcamp Adı</label>
+    <input type="text" class="form-control" formControlName="name">
+   <small *ngIf="bootcampAddForm.get('name').hasError('required') && bootcampAddForm.get('name').touched" class="form-text text-muted">
+    Bootcamp alanı zorunludur.
+   </small>
   </div>
+
+  <div class="input-group input-group-outline my-3">
+    <label class="form-label"></label>
+    <select id="instructerId" formControlName="instructerId" class="form-select rounded-0">
+      <option [value]="null" disabled hidden>Eğitmen Seçiniz</option>
+      <option *ngFor="let instructor of instructors" [value]="instructor.id">
+        {{ instructor.firstName }} {{ instructor.lastName }}
+      </option>
+    </select>
+  </div>
+
+  <div class="input-group input-group-outline my-3">
+    <label class="form-label">Başlangıç Tarihi</label>
+    <input type="text" class="form-control" formControlName="dateStart">
+    <small *ngIf="bootcampAddForm.get('dateStart').hasError('required') && bootcampAddForm.get('dateStart').touched" class="form-text text-muted">
+      Tarih alanı zorunludur.
+  </small>
+  </div>
+  
+  <div class="input-group input-group-outline my-3">
+    <label class="form-label">Bitiş Tarihi</label>
+    <input type="text" class="form-control" formControlName="dateEnd">
+    <small *ngIf="bootcampAddForm.get('dateEnd').hasError('required') && bootcampAddForm.get('dateEnd').touched" class="form-text text-muted">
+      Tarih alanı zorunludur.
+  </small>
+  </div>
+  <div class="input-group input-group-outline my-3">
+    <label class="form-label">Durumu</label>
+    <input type="text" class="form-control" formControlName="state">
+    <small *ngIf="bootcampAddForm.get('state').hasError('required') && bootcampAddForm.get('state').touched" class="form-text text-muted">
+      Durumu alanı zorunludur.
+  </small>
+  </div>
+</form>
+<div class="card-footer">
+<button type="button" class="btn btn-success" (click)="addToBootcamp()">Ekle</button>
 </div>
