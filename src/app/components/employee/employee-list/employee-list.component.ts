@@ -2,11 +2,6 @@ import { ToastrService } from 'ngx-toastr';
 import { EmployeeService } from './../../../services/employee.service';
 import { Component, OnInit } from '@angular/core';
 import { IEmployeeGetAllModel } from 'src/app/models/response/employee/employee-getall-model';
-import {
-  Location,
-  LocationStrategy,
-  PathLocationStrategy,
-} from '@angular/common';
 
 @Component({
   selector: 'app-employee-list',
@@ -22,11 +17,15 @@ export class EmployeeListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log("sfsdfsdf");
+    
     this.getEmployees();
   }
 
   getEmployees() {
     this.employeeService.getEmployees().subscribe((data) => {
+      console.log(data);
+      
       this.employees = data;
     });
   }

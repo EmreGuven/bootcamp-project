@@ -35,6 +35,7 @@ import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { ToolbarComponent } from './layouts/toolbar/toolbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { SettingsComponent } from './layouts/settings/settings.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { SettingsComponent } from './layouts/settings/settings.component';
     ToolbarComponent,
     FooterComponent,
     SettingsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

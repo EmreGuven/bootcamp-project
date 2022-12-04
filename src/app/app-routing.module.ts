@@ -23,37 +23,42 @@ import { ApplicationAddComponent } from './components/application/application-ad
 import { ApplicationUpdateComponent } from './components/application/application-update/application-update.component';
 import { BlackListUpdateComponent } from './components/black-list/black-list-update/black-list-update.component';
 import { BootcampUpdateComponent } from './components/bootcamp/bootcamp-update/bootcamp-update.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
 
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
 
-  { path: 'admin', component: AdminPanelComponent, canActivate: [LoginGuard] },
+  { path:"",component:HomeComponent},
 
-  { path: 'admin/employees', component: EmployeeListComponent, canActivate: [LoginGuard] },
-  { path: 'admin/employees/add', component: EmployeeAddComponent },
-  { path: 'admin/employees/update/:id', component: EmployeeUpdateComponent },
+  { path: 'admin', component: AdminPanelComponent, canActivate: [LoginGuard],children:
+  [
+    { path: 'employees', component: EmployeeListComponent},
+    { path: 'employees/add', component: EmployeeAddComponent },
+    { path: 'employees/update/:id', component: EmployeeUpdateComponent },
 
-  { path: 'admin/instructors', component: InstructorListComponent, canActivate: [LoginGuard] },
-  { path: 'admin/instructors/add', component: InstructorAddComponent, canActivate: [LoginGuard] },
-  { path: 'admin/instructors/update/:id', component: InstructorUpdateComponent, canActivate: [LoginGuard] },
+    { path: 'instructors', component: InstructorListComponent },
+    { path: 'instructors/add', component: InstructorAddComponent},
+    { path: 'instructors/update/:id', component: InstructorUpdateComponent},
 
-  { path: 'admin/applicants', component: ApplicantListComponent, canActivate: [LoginGuard] },
-  { path: 'admin/applicants/add', component: ApplicantAddComponent, canActivate: [LoginGuard] },
-  { path: 'admin/applicants/update/:id', component: ApplicantUpdateComponent, canActivate: [LoginGuard] },
+    { path: 'applicants', component: ApplicantListComponent},
+    { path: 'applicants/add', component: ApplicantAddComponent },
+    { path: 'applicants/update/:id', component: ApplicantUpdateComponent },
 
-  { path: 'admin/bootcamps', component: BootcampListComponent, canActivate: [LoginGuard] },
-  { path: 'admin/bootcamps/add', component: BootcampAddComponent, canActivate: [LoginGuard] },
-  { path: 'admin/bootcamps/update/:id', component: BootcampUpdateComponent, canActivate: [LoginGuard] },
+    { path: 'bootcamps', component: BootcampListComponent },
+    { path: 'bootcamps/add', component: BootcampAddComponent},
+    { path: 'bootcamps/update/:id', component: BootcampUpdateComponent },
 
-  { path: 'admin/blacklists', component: BlackListListComponent, canActivate: [LoginGuard] },
-  { path: 'admin/blacklists/add', component: BlackListAddComponent, canActivate: [LoginGuard] },
-  { path: 'admin/blacklists/update/:id', component: BlackListUpdateComponent, canActivate: [LoginGuard] },
+    { path: 'blacklists', component: BlackListListComponent },
+    { path: 'blacklists/add', component: BlackListAddComponent },
+    { path: 'blacklists/update/:id', component: BlackListUpdateComponent },
 
-  { path: 'admin/applications', component: ApplicationListComponent, canActivate: [LoginGuard] },
-  { path: 'admin/applications/add', component: ApplicationAddComponent, canActivate: [LoginGuard] },
-  { path: 'admin/applications/update/:id', component: ApplicationUpdateComponent, canActivate: [LoginGuard] },
+    { path: 'applications', component: ApplicationListComponent },
+    { path: 'applications/add', component: ApplicationAddComponent },
+    { path: 'applications/update/:id', component: ApplicationUpdateComponent },
+  ] 
+},
 ];
 
 @NgModule({
