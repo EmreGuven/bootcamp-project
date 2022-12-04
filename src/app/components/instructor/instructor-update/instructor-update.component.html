@@ -1,4 +1,5 @@
-  <div class="card-header"><h5 class="title" >Eğitmen Güncelle</h5></div>
+  <div class="container" style="margin: auto; width:800px;">
+  <div class="card-header"><h5 class="title" style="text-align: center;">Eğitmen Güncelle</h5></div>
   <form [formGroup]="instructorUpdateForm" *ngIf="instructorUpdateForm">
 
     <div class="input-group input-group-outline my-3">
@@ -27,4 +28,5 @@
 </form>
 <div class="card-footer">
   <button type="button" class="btn btn-success" (click)="updateToInstructor()">Kaydet</button>
+</div>
 </div>
