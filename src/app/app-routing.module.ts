@@ -34,6 +34,7 @@ const routes: Routes = [
 
   { path: 'admin', component: AdminPanelComponent, canActivate: [LoginGuard],children:
   [
+
     { path: 'employees', component: EmployeeListComponent},
     { path: 'employees/add', component: EmployeeAddComponent },
     { path: 'employees/update/:id', component: EmployeeUpdateComponent },

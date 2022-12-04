@@ -193,9 +193,9 @@
   ],
   "application": [
     {
-      "userId": 1,
-      "bootcampId": 1,
-      "state": "2",
+      "userId": "2",
+      "bootcampId": "6",
+      "state": "1",
       "id": 1
     },
     {
@@ -203,6 +203,12 @@
       "bootcampId": "1",
       "state": "1",
       "id": 3
+    },
+    {
+      "userId": "6",
+      "bootcampId": "4",
+      "state": "1",
+      "id": 4
     }
   ],
   "blackList": [
@@ -219,7 +225,7 @@
       "id": 2
     },
     {
-      "applicantId": "6",
+      "applicantId": "5",
       "date": "14/11/2022",
       "reason": "Askerde",
       "id": 3

@@ -19,10 +19,10 @@
     <div class="row">
       <div class="col-12">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
+        <nav class="navbar navbar-expand-lg blur border-radius-xl top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
           <div class="container-fluid ps-2 pe-0">
-            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="../pages/dashboard.html">
-              Bootcamp Admin Panel
+            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " routerLink="/">
+              Bootcamp Project
             </a>
             <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon mt-2">
@@ -34,36 +34,33 @@
             <div class="collapse navbar-collapse" id="navigation">
               <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" routerLink="register">
+                  <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" routerLink="/login">
                     <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
                     Dashboard
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-2" routerLink="register">
+                  <a class="nav-link me-2" routerLink="/login">
                     <i class="fa fa-user opacity-6 text-dark me-1"></i>
                     Profil
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-2" routerLink="register">
+                  <a class="nav-link me-2" routerLink="/register">
                     <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
                     Kayıt Ol
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-2" routerLink="login">
+                  <a class="nav-link me-2" routerLink="/login">
                     <i class="fas fa-key opacity-6 text-dark me-1"></i>
                     Giriş Yap
                   </a>
                 </li>
               </ul>
               <ul class="navbar-nav d-lg-flex d-none">
-                <li class="nav-item d-flex align-items-center">
-                  <a class="btn btn-outline-primary btn-sm mb-0 me-2" target="_blank" href="https://www.creative-tim.com/builder/material?ref=navbar-dashboard">Online Builder</a>
-                </li>
                 <li class="nav-item">
-                  <a href="https://www.creative-tim.com/product/material-dashboard" class="btn btn-sm mb-0 me-1 bg-gradient-dark">Free download</a>
+                  <a routerLink="/admin" class="btn btn-sm mb-0 me-1 bg-gradient-dark">Admin Panel</a>
                 </li>
               </ul>
             </div>
@@ -116,7 +113,7 @@
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-2 text-sm mx-auto">
                     Zaten hesabınız var mı ?
-                    <a routerLink="login" class="text-primary text-gradient font-weight-bold">Giriş Yap</a>
+                    <a routerLink="/login" class="text-primary text-gradient font-weight-bold">Giriş Yap</a>
                   </p>
                 </div>
               </div>
@@ -126,21 +123,3 @@
       </div>
     </section>
   </main>
-  <!--   Core JS Files   -->
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-  </script>
-  <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/material-dashboard.min.js?v=3.0.4"></script>
