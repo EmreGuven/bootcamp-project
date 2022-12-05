@@ -8,7 +8,8 @@
       "nationalIdentity": "39834578547",
       "dateOfBirth": "13/10/1998",
       "about": "Sivas Üniversitesi Bilgisayar Mühendisliği",
-      "id": 1
+      "id": 1,
+      "role":"ROLE_APPLICANT"
     },
     {
       "firstName": "İlknur",
@@ -18,7 +19,8 @@
       "nationalIdentity": "1456327852",
       "dateOfBirth": "12/06/1999",
       "about": "Selçuk Üniversitesi Bilgisayar Mühendisliği",
-      "id": 2
+      "id": 2,
+      "role":"ROLE_APPLICANT"
     },
     {
       "firstName": "Sevda",
@@ -28,7 +30,8 @@
       "nationalIdentity": "1245789632",
       "dateOfBirth": "14/12/1998",
       "about": "Gazi Üniversitesi Bilgisayar Mühendisliği",
-      "id": 3
+      "id": 3,
+      "role":"ROLE_APPLICANT"
     },
     {
       "firstName": "Burak",
@@ -38,7 +41,8 @@
       "nationalIdentity": "1063897552",
       "dateOfBirth": "17/03/2001",
       "about": "Hitit Üniversitesi Bilgisayar Programcılığı",
-      "id": 4
+      "id": 4,
+      "role":"ROLE_APPLICANT"
     },
     {
       "firstName": "Mert ",
@@ -48,7 +52,8 @@
       "nationalIdentity": "2054865645",
       "dateOfBirth": "12/17/1998",
       "about": "Kırıkkale Üniversitesi İşletme",
-      "id": 5
+      "id": 5,
+      "role":"ROLE_APPLICANT"
     },
     {
       "firstName": "Haluk",
@@ -58,7 +63,8 @@
       "nationalIdentity": "1075951535",
       "dateOfBirth": "16/07/2000",
       "about": "Erzurum Üniversitesi YBS",
-      "id": 6
+      "id": 6,
+      "role":"ROLE_APPLICANT"
     }
   ],
   "employee": [
@@ -70,7 +76,8 @@
       "nationalIdentity": "39832511547",
       "dateOfBirth": "18/10/1975",
       "position": "Müdür Yardımcısı",
-      "id": 2
+      "id": 2,
+      "role":"ROLE_EMPLOYEE"
     },
     {
       "firstName": "Hasvelian",
@@ -80,7 +87,8 @@
       "nationalIdentity": "39832111547",
       "dateOfBirth": "10/08/1985",
       "position": "temizlikçi",
-      "id": 1
+      "id": 1,
+      "role":"ROLE_EMPLOYEE"
     },
     {
       "firstName": "Enes Bin Malik",
@@ -90,7 +98,8 @@
       "nationalIdentity": "24568534672",
       "dateOfBirth": "12/05/1977",
       "position": "Uzman",
-      "id": 3
+      "id": 3,
+      "role":"ROLE_EMPLOYEE"
     },
     {
       "firstName": "Esra Pakdemird",
@@ -100,7 +109,8 @@
       "nationalIdentity": "7596127596",
       "dateOfBirth": "06/05/1980",
       "position": "Tekniker",
-      "id": 4
+      "id": 4,
+      "role":"ROLE_EMPLOYEE"
     },
     {
       "firstName": "Gamze ",
@@ -110,7 +120,8 @@
       "nationalIdentity": "1265743698",
       "dateOfBirth": "25/03/1995",
       "position": "Mühendis",
-      "id": 5
+      "id": 5,
+      "role":"ROLE_EMPLOYEE"
     },
     {
       "firstName": "Büşra",
@@ -120,7 +131,8 @@
       "nationalIdentity": "2175634586",
       "dateOfBirth": "03/09/1994",
       "position": "Tekniker",
-      "id": 6
+      "id": 6,
+      "role":"ROLE_EMPLOYEE"
     },
     {
       "firstName": "Uğur",
@@ -130,7 +142,8 @@
       "nationalIdentity": "7845123698",
       "dateOfBirth": "23/05/1990",
       "position": "Kordinatör",
-      "id": 7
+      "id": 7,
+      "role":"ROLE_EMPLOYEE"
     }
   ],
   "instructor": [
@@ -140,7 +153,8 @@
       "email": "engin@hotmail.com",
       "password": "434523",
       "companyName": "kodlama.io",
-      "id": 1
+      "id": 1,
+      "role":"ROLE_INSTRUCTOR"
     },
     {
       "firstName": "Arda",
@@ -148,7 +162,8 @@
       "email": "arda@gmail.com",
       "password": "45368",
       "companyName": "Udemy",
-      "id": 2
+      "id": 2,
+      "role":"ROLE_INSTRUCTOR"
     },
     {
       "firstName": "Seher",
@@ -158,7 +173,8 @@
       "nationalIdentity": "3245963214",
       "dateOfBirth": "30/12/1993",
       "companyName": "Gelecek Yazılım",
-      "id": 3
+      "id": 3,
+      "role":"ROLE_INSTRUCTOR"
     },
     {
       "firstName": "Merve",
@@ -168,7 +184,8 @@
       "nationalIdentity": "36925814775",
       "dateOfBirth": "15/12/1990",
       "companyName": "Baykar",
-      "id": 4
+      "id": 4,
+      "role":"ROLE_INSTRUCTOR"
     },
     {
       "firstName": "Selim",
@@ -178,7 +195,8 @@
       "nationalIdentity": "1056821475",
       "dateOfBirth": "20/04/1995",
       "companyName": "Aselsan",
-      "id": 5
+      "id": 5,
+      "role":"ROLE_INSTRUCTOR"
     },
     {
       "firstName": "Kübra",
@@ -188,13 +206,14 @@
       "nationalIdentity": "5296741236",
       "dateOfBirth": "13/09/1996",
       "companyName": "Havelsan",
-      "id": 6
+      "id": 6,
+      "role":"ROLE_INSTRUCTOR"
     }
   ],
   "application": [
     {
       "userId": "2",
-      "bootcampId": "6",
+      "bootcampId": "4",
       "state": "1",
       "id": 1
     },
@@ -284,10 +303,29 @@
   "users": [
     {
       "id": 1,
-      "fullName": "emre",
-      "email": "emre@emre.com",
+      "firstName": "Emre",
+      "lastName": "Güven",
+      "dateOfBirth": "15/04/1994",
+      "email": "emre@e.com",
       "password": "12345",
-      "token": "asldal12ledsa23mggk331"
+      "companyName": "casgem",
+      "nationalIdentity": 43564123212,
+      "token": "casvBNhgfdsDDAAa",
+      "role": "ROLE_EMPLOYEE",
+      "expiration": "01/01/2026"
+    },
+    {
+      "id": 2,
+      "firstName": "Arda",
+      "lastName": "Karaca",
+      "email": "arda@gmail.com",
+      "password": "45368",
+      "dateOfBirth": "15/04/1994",
+      "nationalIdentity": 43564123212,
+      "token": "casvBNhgfdsDDAAa",
+      "expiration": "01/01/2026",
+      "companyName": "Udemy",
+      "role":"ROLE_INSTRUCTOR"
     }
   ]
 }

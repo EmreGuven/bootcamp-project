@@ -12,22 +12,33 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
+
 export class LoginGuard implements CanActivate {
+  roles = '';
   constructor(private authService: AuthService, private router: Router) {}
+  
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ):
+  
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    let isAuthenticated = this.authService.isAuthenticated();
-    if (isAuthenticated == true) {
-      return true;
-    } else {
-      this.router.navigate(['login']);
+      let url:string = state.url;
+      return this.checkLogin(route, url)
+    }
+
+    checkLogin(route:ActivatedRouteSnapshot, url:any):boolean{
+      if(this.authService.isLoggedIn()){
+        const userRole = this.authService.getRoles();
+        this.roles = userRole;
+        if(route.data['role'] && route.data['role'].indexOf(userRole) ===-1){
+          return false;
+        }
+        return true;
+      }
       return false;
     }
-  }
 }

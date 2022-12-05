@@ -12,6 +12,7 @@ import { ILoginUser } from 'src/app/models/auth/user-login-model';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  user:ILoginUser[]=[];
 
   constructor(
     private authService: AuthService,
@@ -32,21 +33,22 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    let user: ILoginUser = this.loginForm.value;
-    this.authService.login(user).subscribe((data) => {
-      if (data.length > 0) {
-        localStorage.setItem('token', JSON.stringify(data[0].token));
-        this.toastrService.success(
-          'Başarılı bir şekilde giriş yapıldı',
-          'Tebrikler (:'
-        );
-        this.router.navigate(['admin']);
-      } else {
-        this.toastrService.error(
-          'Kullanıcı bilgileri hatalı',
-          'Lütfen tekrar deneyiniz ):'
-        );
-      }
-    });
+    if(this.loginForm.valid) {
+      this.authService.userLogin(this.loginForm.value).subscribe((data)=>{
+        if(data.length>0){
+          this.toastrService.success('Başarılı bir şekilde giriş yapıldı','Tebrikler (:')
+          data[0].role == 'ROLE_INSTRUCTOR'
+            ? this.router.navigate(['instructor'])
+            : this.router.navigate(['admin']);
+          localStorage.setItem('token', data[0].token);
+          localStorage.setItem('role',data[0].role)
+        } else {
+          this.toastrService.error('Giriş başarısız','!!!' )
+        }
+      });
+    } else {
+      this.toastrService.error('Kullanıcı bilgileri hatalı',
+      'Lütfen tekrar deneyiniz ')
+    }
   }
 }

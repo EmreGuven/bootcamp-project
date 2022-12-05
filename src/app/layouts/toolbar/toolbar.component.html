@@ -276,7 +276,7 @@
         </div>
       </li>
       <!---->
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="loginGuard.roles !== 'ROLE_INSTRUCTOR'">
         <a
           data-bs-toggle="collapse"
           href="#blacklistsExamples"
@@ -289,9 +289,9 @@
             class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}"
             >playlist_remove</i
           >
-          <span class="nav-link-text ms-2 ps-1">Black-List</span>
+          <span class="nav-link-text ms-2 ps-1" >Black-List</span>
         </a>
-        <div class="collapse" id="blacklistsExamples">
+        <div class="collapse" id="blacklistsExamples" >
           <ul class="nav">
             <li class="nav-item">
               <a
@@ -299,7 +299,7 @@
                 href="../../pages/applications/crm.html"
               >
                 <span class="sidenav-mini-icon"> G </span>
-                <span class="sidenav-normal ms-2 ps-1"> Giriş </span>
+                <span class="sidenav-normal ms-2 ps-1"> Giriş{{loginGuard.roles}} </span>
               </a>
             </li>
             <li class="nav-item">

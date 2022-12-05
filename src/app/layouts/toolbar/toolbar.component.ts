@@ -1,3 +1,4 @@
+import { LoginGuard } from './../../guards/login.guard';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public loginGuard:LoginGuard) { }
 
   ngOnInit(): void {
   }
