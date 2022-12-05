@@ -15,17 +15,11 @@
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Tarih</label>
       <input type="text" class="form-control" formControlName="date">
-      <small *ngIf="blacklistAddForm.get('date').hasError('required') && blacklistAddForm.get('date').touched" class="form-text text-muted">
-        Tarih alanı zorunludur.
-    </small>
     </div>
 
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Sebep</label>
       <input type="text" class="form-control" formControlName="reason">
-      <small *ngIf="blacklistAddForm.get('reason').hasError('required') && blacklistAddForm.get('reason').touched" class="form-text text-muted">
-        Sebep alanı zorunludur.
-    </small>
     </div>
 </form>
 <div class="card-footer">

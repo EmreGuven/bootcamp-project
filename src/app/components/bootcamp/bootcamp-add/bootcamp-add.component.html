@@ -5,9 +5,6 @@
   <div class="input-group input-group-outline my-3">
     <label class="form-label">Bootcamp Adı</label>
     <input type="text" class="form-control" formControlName="name">
-   <small *ngIf="bootcampAddForm.get('name').hasError('required') && bootcampAddForm.get('name').touched" class="form-text text-muted">
-    Bootcamp alanı zorunludur.
-   </small>
   </div>
 
   <div class="input-group input-group-outline my-3">
@@ -23,24 +20,15 @@
   <div class="input-group input-group-outline my-3">
     <label class="form-label">Başlangıç Tarihi</label>
     <input type="text" class="form-control" formControlName="dateStart">
-    <small *ngIf="bootcampAddForm.get('dateStart').hasError('required') && bootcampAddForm.get('dateStart').touched" class="form-text text-muted">
-      Tarih alanı zorunludur.
-  </small>
   </div>
   
   <div class="input-group input-group-outline my-3">
     <label class="form-label">Bitiş Tarihi</label>
     <input type="text" class="form-control" formControlName="dateEnd">
-    <small *ngIf="bootcampAddForm.get('dateEnd').hasError('required') && bootcampAddForm.get('dateEnd').touched" class="form-text text-muted">
-      Tarih alanı zorunludur.
-  </small>
   </div>
   <div class="input-group input-group-outline my-3">
     <label class="form-label">Durumu</label>
     <input type="text" class="form-control" formControlName="state">
-    <small *ngIf="bootcampAddForm.get('state').hasError('required') && bootcampAddForm.get('state').touched" class="form-text text-muted">
-      Durumu alanı zorunludur.
-  </small>
   </div>
 </form>
 <div class="card-footer">

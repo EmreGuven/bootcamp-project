@@ -25,9 +25,6 @@
     <div class="input-group input-group-outline my-3">
     <label class="form-label">State</label>
     <input type="text" class="form-control" formControlName="state">
-      <small *ngIf="applicationAddForm.get('state').hasError('required') && applicationAddForm.get('state').touched" class="form-text text-muted">
-    Durum alanı zorunludur.
-      </small>
     </div>
 </form>
 <div class="card-footer">

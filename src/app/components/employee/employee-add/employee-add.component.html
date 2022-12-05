@@ -5,55 +5,34 @@
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Adı</label>
       <input type="text" class="form-control" formControlName="firstName">
-     <small *ngIf="employeeAddForm.get('firstName').hasError('required') && employeeAddForm.get('firstName').touched" class="form-text text-muted">
-     Ad alanı zorunludur.
-     </small>
     </div>
 
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Soyad</label>
       <input type="text" class="form-control" formControlName="lastName">
-      <small *ngIf="employeeAddForm.get('lastName').hasError('required') && employeeAddForm.get('lastName').touched" class="form-text text-muted">
-        Soyad alanı zorunludur.
-    </small>
     </div>
 
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Email</label>
       <input type="email" class="form-control" formControlName="email">
-      <small *ngIf="employeeAddForm.get('email').hasError('required') && employeeAddForm.get('email').touched" class="form-text text-muted">
-        Email alanı zorunludur.
-    </small>
     </div>
 
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Şifre</label>
       <input type="text" class="form-control" formControlName="password">
-      <small *ngIf="employeeAddForm.get('password').hasError('required') && employeeAddForm.get('password').touched" class="form-text text-muted">
-        Şifre alanı zorunludur.
-    </small>
     </div>
     
     <div class="input-group input-group-outline my-3">
       <label class="form-label">TC No</label>
       <input type="text" class="form-control" formControlName="nationalIdentity">
-      <small *ngIf="employeeAddForm.get('nationalIdentity').hasError('required') && employeeAddForm.get('nationalIdentity').touched" class="form-text text-muted">
-        TC alanı zorunludur.
-    </small>
     </div>
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Doğum Tarihi</label>
       <input type="text" class="form-control" formControlName="dateOfBirth">
-      <small *ngIf="employeeAddForm.get('dateOfBirth').hasError('required') && employeeAddForm.get('dateOfBirth').touched" class="form-text text-muted">
-        Doğum Tarihi alanı zorunludur.
-    </small>
     </div>
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Pozisyon</label>
       <input type="text" class="form-control" formControlName="position">
-      <small *ngIf="employeeAddForm.get('position').hasError('required') && employeeAddForm.get('position').touched" class="form-text text-muted">
-        Pozisyon alanı zorunludur.
-    </small>
     </div>
 </form>
 <div class="card-footer">
