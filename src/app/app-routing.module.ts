@@ -1,3 +1,4 @@
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 import { ApplicationListComponent } from './components/application/application-list/application-list.component';
 import { EmployeeUpdateComponent } from './components/employee/employee-update/employee-update.component';
 import { EmployeeAddComponent } from './components/employee/employee-add/employee-add.component';
@@ -33,8 +34,11 @@ const routes: Routes = [
   { path:"",component:HomeComponent},
 
   { path: 'admin', component: AdminPanelComponent, canActivate: [LoginGuard],children:
-  [
-
+  [ 
+    { path:"",component:AdminHomeComponent},
+    { path: 'employees', component: EmployeeListComponent},
+    { path: 'employees/add', component: EmployeeAddComponent },
+    { path: 'employees/update/:id', component: EmployeeUpdateComponent },
     { path: 'employees', component: EmployeeListComponent},
     { path: 'employees/add', component: EmployeeAddComponent },
     { path: 'employees/update/:id', component: EmployeeUpdateComponent },
