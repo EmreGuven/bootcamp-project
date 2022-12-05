@@ -23,8 +23,11 @@
     </div>
 
     <div class="input-group input-group-outline my-3">
-    <label class="form-label">State</label>
+    <label class="form-label">Durum</label>
     <input type="text" class="form-control" formControlName="state">
+    </div>
+    <div *ngIf="applicationAddForm.get('state').hasError('required') && applicationAddForm.get('state').touched" class="form-text text-muted uyari">
+      Durum alanı zorunludur
     </div>
 </form>
 <div class="card-footer">
