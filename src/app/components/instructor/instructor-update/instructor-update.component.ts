@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { IInstructorGetModel } from './../../../models/response/instructor/instructor-get-model';
 import { IInstructorUpdateModel } from './../../../models/request/instructor/instructor-update-model';
 import { ActivatedRoute } from '@angular/router';
@@ -18,7 +19,7 @@ export class InstructorUpdateComponent implements OnInit {
     private formBuilder:FormBuilder,
     private toastrService:ToastrService,
     private activatedRoute:ActivatedRoute,
-     ) { }
+    private location:Location ) { }
 
     instructorUpdateForm:FormGroup;
     instructor:IInstructorGetModel
@@ -54,6 +55,7 @@ export class InstructorUpdateComponent implements OnInit {
       this.toastrService.success("Eğitmen Bilgileri Güncellendi", 
       "Tebrikler (:")
     });
+    this.location.back();
   }
 
 }

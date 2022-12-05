@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { IBlacklistGetModel } from './../../../models/response/blacklist/blacklist-get-model';
 import { BlacklistService } from './../../../services/blacklist.service';
 import { IBlacklistUpdateModel } from './../../../models/request/blacklist/blacklist-update-model';
@@ -24,8 +25,8 @@ export class BlackListUpdateComponent implements OnInit {
     private formBuilder:FormBuilder,
     private toastrService:ToastrService,
     private activatedRoute:ActivatedRoute,
-    private applicantService:ApplicantService
-   ) { }
+    private applicantService:ApplicantService,
+    private location:Location ) { }
 
   ngOnInit(): void {
     this.getBlacklistById();
@@ -57,7 +58,8 @@ export class BlackListUpdateComponent implements OnInit {
     this.blacklistService.updateToBlacklist(this.activatedRoute.snapshot.params["id"],this.blacklistUpdateForm.value)
     .subscribe(()=>{
       this.toastrService.success("Kara Liste Bilgileri Güncellendi", "Tebrikler (:")
-    })
+    });
+    this.location.back();
   }
 
   getApplicants(){

@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { IApplicationGetModel } from './../../../models/response/application/application-get-model';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
@@ -21,8 +22,8 @@ export class ApplicationUpdateComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService,
     private applicantService: ApplicantService,
-    private bootcampService: BootcampService
-  ) {}
+    private bootcampService: BootcampService,
+    private location:Location ) {}
 
   applicationUpdateForm: FormGroup;
   application: IApplicationGetModel;
@@ -64,6 +65,7 @@ export class ApplicationUpdateComponent implements OnInit {
           'Tebrikler (:'
         );
       });
+      this.location.back();
   }
 
   getApplicant() {

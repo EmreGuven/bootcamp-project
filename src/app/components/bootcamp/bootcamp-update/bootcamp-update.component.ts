@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { IInstructorGetAllModel } from './../../../models/response/instructor/instructor-getall-model';
 import { InstructorService } from 'src/app/services/instructor.service';
 import { IBootcampGetModel } from './../../../models/response/bootcamp/bootcamp-get-model';
@@ -19,8 +20,8 @@ export class BootcampUpdateComponent implements OnInit {
     private bootcampService: BootcampService,
     private instructorService: InstructorService,
     private activatedRoute: ActivatedRoute,
-    private toastrService: ToastrService
-  ) {}
+    private toastrService: ToastrService,
+    private location:Location ) {}
 
   bootcampUpdateForm: FormGroup;
   bootcamp: IBootcampGetModel;
@@ -68,5 +69,6 @@ export class BootcampUpdateComponent implements OnInit {
           'Tebrikler (:'
         );
       });
+      this.location.back();
   }
 }
