@@ -93,7 +93,7 @@
       "id": 3
     },
     {
-      "firstName": "Esra Pakdemir",
+      "firstName": "Esra Pakdemird",
       "lastName": "Taşcı",
       "email": "esratascı@gmail.com",
       "password": "852147",
@@ -139,7 +139,7 @@
       "lastName": "Demiroğ",
       "email": "engin@hotmail.com",
       "password": "434523",
-      "companyName": "kodlamaio",
+      "companyName": "kodlama.io",
       "id": 1
     },
     {
@@ -288,12 +288,6 @@
       "email": "emre@emre.com",
       "password": "12345",
       "token": "asldal12ledsa23mggk331"
-    },
-    {
-      "fullName": "ali",
-      "email": "ali@ali.com",
-      "password": "12345",
-      "id": 2
     }
   ]
 }
