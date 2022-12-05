@@ -7,7 +7,7 @@
       <input type="text" class="form-control" formControlName="firstName">
     </div>
     <div *ngIf="instructorAddForm.get('firstName').hasError('required') && instructorAddForm.get('firstName').touched" class="form-text text-muted uyari">
-      Ad alanı zorunludur
+      Ad zorunludur!
     </div>
 
     <div class="input-group input-group-outline my-3">
@@ -15,7 +15,7 @@
       <input type="text" class="form-control" formControlName="lastName">
     </div>
     <div *ngIf="instructorAddForm.get('lastName').hasError('required') && instructorAddForm.get('lastName').touched" class="form-text text-muted uyari">
-      Soyad alanı zorunludur
+      Soyad zorunludur!
     </div>
 
     <div class="input-group input-group-outline my-3">
@@ -23,7 +23,10 @@
       <input type="email" class="form-control" formControlName="email">
     </div>
     <div *ngIf="instructorAddForm.get('email').hasError('required') && instructorAddForm.get('email').touched" class="form-text text-muted uyari">
-      Email alanı zorunludur
+      Email zorunludur!
+    </div>
+    <div *ngIf="instructorAddForm.get('email').hasError('pattern') && instructorAddForm.get('email').touched" class="form-text text-muted uyari">
+      Email adresi geçersiz!
     </div>
 
     <div class="input-group input-group-outline my-3">
@@ -31,7 +34,10 @@
       <input type="text" class="form-control" formControlName="password">
     </div>
     <div *ngIf="instructorAddForm.get('password').hasError('required') && instructorAddForm.get('password').touched" class="form-text text-muted uyari">
-      Şifre alanı zorunludur
+      Şifre zorunludur!
+    </div>
+    <div *ngIf="instructorAddForm.get('password').errors?.['minlength'] && instructorAddForm.get('password').touched" class="form-text text-muted uyari">
+      Şifre en az 5 karakterli olmalı!
     </div>
     
     <div class="input-group input-group-outline my-3">
@@ -39,15 +45,15 @@
       <input type="text" class="form-control" formControlName="nationalIdentity">
     </div>
     <div *ngIf="instructorAddForm.get('nationalIdentity').hasError('required') && instructorAddForm.get('nationalIdentity').touched" class="form-text text-muted uyari">
-      TC No alanı zorunludur
+      TC No zorunludur!
     </div>
 
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label">Doğum Tarihi</label>
-      <input type="text" class="form-control" formControlName="dateOfBirth">
+    <div class="input-group input-group-static my-3">
+      <label>Doğum Tarihi</label>
+      <input type="date" class="form-control" formControlName="dateOfBirth">
     </div>
     <div *ngIf="instructorAddForm.get('dateOfBirth').hasError('required') && instructorAddForm.get('dateOfBirth').touched" class="form-text text-muted uyari">
-      Doğum Tarihi alanı zorunludur
+      Doğum Tarihi zorunludur
     </div>
 
     <div class="input-group input-group-outline my-3">
@@ -55,7 +61,7 @@
       <input type="text" class="form-control" formControlName="companyName">
     </div>
     <div *ngIf="instructorAddForm.get('companyName').hasError('required') && instructorAddForm.get('companyName').touched" class="form-text text-muted uyari">
-      Firma Adı alanı zorunludur
+      Firma Adı zorunludur!
     </div>
 
 </form>

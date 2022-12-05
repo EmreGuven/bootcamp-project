@@ -1,4 +1,4 @@
-<div class="container" style="margin: auto; width:800px;">
+<div class="container-fluid" style="margin: auto; width:800px;">
 <div class="card-header"><h5 class="title" style="text-align: center;">Bootcamp Ekle</h5></div>
 <form [formGroup]="bootcampAddForm">
 
@@ -7,7 +7,7 @@
     <input type="text" class="form-control" formControlName="name">
   </div>
   <div *ngIf="bootcampAddForm.get('name').hasError('required') && bootcampAddForm.get('name').touched" class="form-text text-muted uyari">
-    Bootcamp Adı alanı zorunludur
+    Bootcamp zorunludur!
   </div>
 
   <div class="input-group input-group-outline my-3">
@@ -19,29 +19,32 @@
       </option>
     </select>
   </div>
+  <div *ngIf="bootcampAddForm.get('instructerId').hasError('required') && bootcampAddForm.get('instructerId').touched" class="form-text text-muted uyari">
+    Eğitmen zorunludur!
+  </div>
 
-  <div class="input-group input-group-outline my-3">
-    <label class="form-label">Başlangıç Tarihi</label>
-    <input type="text" class="form-control" formControlName="dateStart">
+  <div class="input-group input-group-static my-3">
+    <label>Başlangıç Tarihi</label>
+    <input type="date" class="form-control" formControlName="dateStart">
   </div>
   <div *ngIf="bootcampAddForm.get('dateStart').hasError('required') && bootcampAddForm.get('dateStart').touched" class="form-text text-muted uyari">
-    Başlangıç Tarihi alanı zorunludur
+    Başlangıç Tarihi zorunludur!
   </div>
-  
-  <div class="input-group input-group-outline my-3">
-    <label class="form-label">Bitiş Tarihi</label>
-    <input type="text" class="form-control" formControlName="dateEnd">
+
+  <div class="input-group input-group-static my-3">
+    <label>Bitiş Tarihi</label>
+    <input type="date" class="form-control" formControlName="dateEnd">
   </div>
   <div *ngIf="bootcampAddForm.get('dateEnd').hasError('required') && bootcampAddForm.get('dateEnd').touched" class="form-text text-muted uyari">
-    Bitiş Tarihi alanı zorunludur
+    Bitiş Tarihi zorunludur!
   </div>
 
   <div class="input-group input-group-outline my-3">
-    <label class="form-label">Durumu</label>
+    <label class="form-label">Durum</label>
     <input type="text" class="form-control" formControlName="state">
   </div>
   <div *ngIf="bootcampAddForm.get('state').hasError('required') && bootcampAddForm.get('state').touched" class="form-text text-muted uyari">
-    Durumu alanı zorunludur
+    Durum zorunludur!
   </div>
 
 </form>

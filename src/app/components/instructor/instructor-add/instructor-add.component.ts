@@ -1,5 +1,5 @@
 import { ToastrService } from 'ngx-toastr';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { InstructorService } from './../../../services/instructor.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -41,8 +41,9 @@ export class InstructorAddComponent implements OnInit {
     this.instructorAddForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+      email:new FormControl('', [Validators.required, 
+        Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
+      password:new FormControl('', [Validators.required, Validators.minLength(5)]),
       nationalIdentity: ['', Validators.required],
       dateOfBirth: ['', Validators.required],
       companyName: ['',Validators.required]
