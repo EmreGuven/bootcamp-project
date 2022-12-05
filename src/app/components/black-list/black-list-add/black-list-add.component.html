@@ -3,7 +3,7 @@
   <form [formGroup]="blacklistAddForm">
 
     <div class="input-group input-group-outline my-3">
-      <label for="applicantId" class="form-label"></label>
+      <label for="applicantId" class="form-label">Adı</label>
       <select id="applicantId" formControlName="applicantId" class="form-select rounded-0">
         <option [value]="null" disabled hidden>Aday Seçiniz</option>
         <option *ngFor="let applicant of applicants" [value]="applicant.id">
@@ -16,10 +16,16 @@
       <label class="form-label">Tarih</label>
       <input type="text" class="form-control" formControlName="date">
     </div>
+    <div *ngIf="blacklistAddForm.get('date').hasError('required') && blacklistAddForm.get('date').touched" class="form-text text-muted uyari">
+      Tarih alanı zorunludur
+    </div>
 
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Sebep</label>
       <input type="text" class="form-control" formControlName="reason">
+    </div>
+    <div *ngIf="blacklistAddForm.get('reason').hasError('required') && blacklistAddForm.get('reason').touched" class="form-text text-muted uyari">
+      Sebep alanı zorunludur
     </div>
 </form>
 <div class="card-footer">
