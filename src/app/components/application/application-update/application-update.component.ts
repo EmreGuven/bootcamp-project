@@ -3,7 +3,7 @@ import { IApplicationGetModel } from './../../../models/response/application/app
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
 import { ApplicationService } from './../../../services/application.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { IApplicantGetAllModel } from 'src/app/models/response/applicant/applicant-getall-model';
 import { IBootcampGetAllModel } from 'src/app/models/response/bootcamp/bootcamp-getall-model';
@@ -48,12 +48,13 @@ export class ApplicationUpdateComponent implements OnInit {
   }
   createApplicationForm() {
     this.applicationUpdateForm = this.formBuilder.group({
-      userId: [this.application.userId, Validators.required],
-      bootcampId: [this.application.bootcampId, Validators.required],
-      state: [this.application.state, Validators.required],
+      userId: new FormControl(this.application.userId, [Validators.required]),
+      bootcampId: new FormControl(this.application.bootcampId, [Validators.required]),
+      state: new FormControl(this.application.state, [Validators.required]),
     });
   }
   updateToApplication() {
+    if(this.applicationUpdateForm.valid){
     this.applicationService
       .updateToApplication(
         this.activatedRoute.snapshot.params['id'],
@@ -64,8 +65,11 @@ export class ApplicationUpdateComponent implements OnInit {
           'Application Bilgileri Güncellendi',
           'Tebrikler (:'
         );
-      });
+      });      
       this.location.back();
+    }else {
+      this.toastrService.error('Eksik Bilgi', '!!!');
+    }
   }
 
   getApplicant() {

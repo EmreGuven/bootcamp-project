@@ -6,7 +6,10 @@
       <label class="form-label"></label>
       <input type="text" class="form-control" formControlName="name">
     </div>
-
+    <div *ngIf="bootcampUpdateForm.get('name').hasError('required') && bootcampUpdateForm.get('name').touched" class="form-text text-muted uyari">
+      Bootcamp zorunludur!
+    </div>
+  
     <div class="input-group input-group-outline my-3">
       <label class="form-label"></label>
       <select id="instructerId" formControlName="instructerId" class="form-select rounded-0">
@@ -15,16 +18,35 @@
         </option>
       </select>
     </div>
-
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label"></label>
-      <input type="text" class="form-control" formControlName="dateStart">
+    <div *ngIf="bootcampUpdateForm.get('instructerId').hasError('required') && bootcampUpdateForm.get('instructerId').touched" class="form-text text-muted uyari">
+      Eğitmen zorunludur!
     </div>
 
     <div class="input-group input-group-outline my-3">
-    <label class="form-label"></label>
-    <input type="text" class="form-control" formControlName="dateEnd">
+      <label></label>
+      <input type="date" class="form-control" formControlName="dateStart">
     </div>
+    <div *ngIf="bootcampUpdateForm.get('dateStart').hasError('required') && bootcampUpdateForm.get('dateStart').touched" class="form-text text-muted uyari">
+      Başlangıç Tarihi zorunludur!
+    </div>
+
+    <div class="input-group input-group-outline my-3">
+    <label></label>
+    <input type="date" class="form-control" formControlName="dateEnd">
+    </div>
+    <div *ngIf="bootcampUpdateForm.get('dateEnd').hasError('required') && bootcampUpdateForm.get('dateEnd').touched" class="form-text text-muted uyari">
+      Bitiş Tarihi zorunludur!
+    </div>
+
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Durum</label>
+      <input type="text" class="form-control" formControlName="state">
+    </div>
+    <div *ngIf="bootcampUpdateForm.get('state').hasError('required') && bootcampUpdateForm.get('state').touched" class="form-text text-muted uyari">
+      Durum zorunludur!
+    </div>
+  
+
 </form>
 <div class="card-footer">
   <button type="button" class="btn btn-success" (click)="updateToBootcamp()">Kaydet</button>

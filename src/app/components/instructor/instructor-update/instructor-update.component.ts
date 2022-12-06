@@ -47,7 +47,8 @@ export class InstructorUpdateComponent implements OnInit {
       companyName: [this.instructor.companyName,Validators.required]
     });
   }
-  updateToInstructor(){
+  updateToInstructor(){    
+    if (this.instructorUpdateForm.valid) {
     this.instructorService.updateToInstructor(
       this.activatedRoute.snapshot.params["id"],
       this.instructorUpdateForm.value)
@@ -56,6 +57,8 @@ export class InstructorUpdateComponent implements OnInit {
       "Tebrikler (:")
     });
     this.location.back();
+  } else {
+    this.toastrService.error('Eksik Bilgi', '!!!');
   }
-
+}
 }

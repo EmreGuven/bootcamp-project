@@ -35,6 +35,7 @@
     <div *ngIf="applicationAddForm.get('state').hasError('required') && applicationAddForm.get('state').touched" class="form-text text-muted uyari">
       Durum zorunludur!
     </div>
+    
 </form>
 <div class="card-footer">
   <button type="button" class="btn btn-success" (click)="addToApplication()">Ekle</button>
