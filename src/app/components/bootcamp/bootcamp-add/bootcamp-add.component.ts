@@ -1,3 +1,6 @@
+import { IBootcampAddModel } from './../../../models/request/bootcamp/bootcamp-add-model';
+import { IBlacklistAddModel } from './../../../models/request/blacklist/blacklist-add-model';
+import { IBootcampGetAllModel } from 'src/app/models/response/bootcamp/bootcamp-getall-model';
 import { IInstructorGetAllModel } from './../../../models/response/instructor/instructor-getall-model';
 import { InstructorService } from './../../../services/instructor.service';
 import { ToastrService } from 'ngx-toastr';
@@ -42,11 +45,20 @@ export class BootcampAddComponent implements OnInit {
   }
   addToBootcamp() {
     if (this.bootcampAddForm.valid) {
-      let bootcamp = Object.assign({}, this.bootcampAddForm.value);
-      this.bootcampService.addToBootcamp(bootcamp).subscribe((data) => {
-        this.clearForm();
-        this.toastrService.success('Bootcamp Eklendi', 'Tebrikler (:');
-      });
+      let bootcamp: IBootcampAddModel = Object.assign(
+        {},
+        this.bootcampAddForm.value
+      );
+      this.instructorService
+        .getInstructorById(bootcamp.instructerId)
+        .subscribe((ins) => {
+          bootcamp.instructorName = ins.firstName + ' ' + ins.lastName;
+
+          this.bootcampService.addToBootcamp(bootcamp).subscribe((data) => {
+            this.clearForm();
+            this.toastrService.success('Bootcamp Eklendi', 'Tebrikler (:');
+          });
+        });
     } else {
       this.toastrService.error('Eksik Bilgi', '!!!');
     }

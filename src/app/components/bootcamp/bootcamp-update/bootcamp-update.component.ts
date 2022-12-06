@@ -1,3 +1,4 @@
+import { IBootcampUpdateModel } from './../../../models/request/bootcamp/bootcamp-update-model';
 import { Location } from '@angular/common';
 import { IInstructorGetAllModel } from './../../../models/response/instructor/instructor-getall-model';
 import { InstructorService } from 'src/app/services/instructor.service';
@@ -21,7 +22,8 @@ export class BootcampUpdateComponent implements OnInit {
     private instructorService: InstructorService,
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService,
-    private location:Location ) {}
+    private location: Location
+  ) {}
 
   bootcampUpdateForm: FormGroup;
   bootcamp: IBootcampGetModel;
@@ -57,18 +59,32 @@ export class BootcampUpdateComponent implements OnInit {
       state: [this.bootcamp.state, Validators.required],
     });
   }
+
   updateToBootcamp() {
-    this.bootcampService
-      .updateToBootcamp(
-        this.activatedRoute.snapshot.params['id'],
+    if (this.bootcampUpdateForm.valid) {
+      let bootcamp: IBootcampUpdateModel = Object.assign(
+        {},
         this.bootcampUpdateForm.value
-      )
-      .subscribe(() => {
-        this.toastrService.success(
-          'Bootcamp Bilgileri Güncellendi',
-          'Tebrikler (:'
-        );
-      });
-      this.location.back();
+      );
+      this.instructorService
+        .getInstructorById(bootcamp.instructerId)
+        .subscribe((ins) => {
+          bootcamp.instructorName = ins.firstName + ' ' + ins.lastName;
+          console.log(ins);
+
+          this.bootcampService
+            .updateToBootcamp(
+              this.activatedRoute.snapshot.params['id'],
+              bootcamp
+            )
+            .subscribe(() => {
+              this.toastrService.success(
+                'Bootcamp Bilgileri Güncellendi',
+                'Tebrikler (:'
+              );
+            });
+          this.location.back();
+        });
+    }
   }
 }

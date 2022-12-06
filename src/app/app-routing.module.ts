@@ -62,16 +62,26 @@ const routes: Routes = [
     { path: 'applications/add', component: ApplicationAddComponent },
     { path: 'applications/update/:id', component: ApplicationUpdateComponent },
   ],
-  canActivate:[LoginGuard],data:{role:'ROLE_EMPLOYEE'}, 
+  canActivate:[LoginGuard],
+  data:{role:'ROLE_EMPLOYEE'}
 },
 {
   path:'instructor', component:AdminPanelComponent, children:[
+    { path:"",component:AdminHomeComponent},
     { path:'applicants', component:ApplicantListComponent },
     { path:'bootcamps', component:BootcampListComponent },
-    { path:'blacklists', component:BlackListListComponent } 
   ],
   canActivate: [LoginGuard],
   data:{ role: 'ROLE_INSTRUCTOR' }
+},
+{
+  path:'applicant', component:AdminPanelComponent, children:[
+    { path: "", component:AdminHomeComponent},
+    { path: 'instructors', component:InstructorListComponent},
+    { path: 'bootcamps', component:BootcampListComponent },
+  ],
+  canActivate: [LoginGuard],
+  data:{ role: 'ROLE_APPLICANT'}
 }
 ];
 

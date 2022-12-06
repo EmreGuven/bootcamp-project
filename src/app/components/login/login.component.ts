@@ -40,6 +40,9 @@ export class LoginComponent implements OnInit {
           data[0].role == 'ROLE_INSTRUCTOR'
             ? this.router.navigate(['instructor'])
             : this.router.navigate(['admin']);
+          data[0].role == 'ROLE_APPLICANT'  
+            ? this.router.navigate(['applicant'])
+            : this.router.navigate(['admin'])
           localStorage.setItem('token', data[0].token);
           localStorage.setItem('role',data[0].role)
         } else {
