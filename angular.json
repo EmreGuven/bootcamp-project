@@ -38,7 +38,7 @@
               "./node_modules/jquery/dist/jquery.min.js",
               "./src/assets/js/plugins/perfect-scrollbar.min.js",
               "./src/assets/js/plugins/smooth-scrollbar.min.js",
-              "./src/assets/js/material-dashboard.min.js"
+              "./src/assets/js/material-dashboard.js"
             ]
           },
           "configurations": {

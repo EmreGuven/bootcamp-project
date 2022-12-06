@@ -1,509 +1,873 @@
-       <!-- Navbar -->
-       <nav class="navbar navbar-expand-lg blur border-radius-xl top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
-        <div class="container-fluid ps-2 pe-0">
-          <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " routerLink="/">
-            Bootcamp Project
-          </a>
-          <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon mt-2">
-              <span class="navbar-toggler-bar bar1"></span>
-              <span class="navbar-toggler-bar bar2"></span>
-              <span class="navbar-toggler-bar bar3"></span>
-            </span>
-          </button>
-          <div class="collapse navbar-collapse" id="navigation">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" routerLink="/login">
-                  <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
-                  Dashboard
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link me-2" routerLink="/login">
-                  <i class="fa fa-user opacity-6 text-dark me-1"></i>
-                  Profil
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link me-2" routerLink="/register">
-                  <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
-                  Kayıt Ol
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link me-2" routerLink="/login">
-                  <i class="fas fa-key opacity-6 text-dark me-1"></i>
-                  Giriş Yap
-                </a>
-              </li>
-            </ul>
-            <ul class="navbar-nav d-lg-flex d-none">
-              <li class="nav-item">
-                <a routerLink="/admin" class="btn btn-sm mb-0 me-1 bg-gradient-dark">Admin Panel</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- End Navbar -->
-<hr><hr>
-<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-
-    <div class="container-fluid py-4">
-      <!-- Start Carausel -->
-      <div class="row">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner mb-4">
-            <div *ngFor="let bootcamp of bootcamps" class="carousel-item">
-              <div class="page-header min-vh-75 m-3 border-radius-xl" style="background-image: url('https://cdn-employer-wp.arc.dev/wp-content/uploads/2022/04/software-development-costs-1128x635.jpg');">
-                <span class="mask bg-gradient-dark"></span>
-                <div class="container">
-                  <div class="row">
-                    <div class="col-lg-6 my-auto">
-                      <h4 class="text-white mb-0 fadeIn1 fadeInBottom">{{bootcamp.name}}  Bootcamp</h4>
-                      <h1 class="text-white fadeIn2 fadeInBottom">Başlangıç Tarihi : {{bootcamp.dateStart}}</h1>
-                      <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">Bitiş Tarihi : {{bootcamp.dateEnd}}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item active">
-              <div class="page-header min-vh-75 m-3 border-radius-xl" style="background-image: url('https://www.appstudio.ca/blog/wp-content/uploads/2020/09/Modern-Software-Development.jpg');">
-                <span class="mask bg-gradient-dark"></span>
-                <div class="container">
-                  <div class="row">
-                    <div class="col-lg-6 my-auto">
-                      <h4 class="text-white mb-0 fadeIn1 fadeInBottom">Yaklaşan Bootcamp Etkinlikleri</h4>
-                      <h1 class="text-white fadeIn2 fadeInBottom">Hemen kaydını oluştur</h1>
-                      <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">Kodlama dünyasına girmeye hazır mısın (:</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="min-vh-75 position-absolute w-100 top-0">
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon position-absolute bottom-50" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
-              <span class="carousel-control-next-icon position-absolute bottom-50" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- End Carausel -->
-      
-      <div class="row mb-4">
-        <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
-          <div class="card">
-            <div class="card-header pb-0">
-              <div class="row">
-                <div class="col-lg-6 col-7">
-                  <h6>Projects</h6>
-                  <p class="text-sm mb-0">
-                    <i class="fa fa-check text-info" aria-hidden="true"></i>
-                    <span class="font-weight-bold ms-1">30 done</span> this month
-                  </p>
-                </div>
-                <div class="col-lg-6 col-5 my-auto text-end">
-                  <div class="dropdown float-lg-end pe-4">
-                    <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa fa-ellipsis-v text-secondary"></i>
-                    </a>
-                    <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
-                      <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
-                      <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
-                      <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-body px-0 pb-2">
-              <div class="table-responsive">
-                <table class="table align-items-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Companies</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Members</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Budget</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Completion</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Material XD Version</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="avatar-group mt-2">
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img src="../assets/img/team-1.jpg" alt="team1">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img src="../assets/img/team-2.jpg" alt="team2">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                            <img src="../assets/img/team-3.jpg" alt="team3">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="../assets/img/team-4.jpg" alt="team4">
-                          </a>
-                        </div>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> $14,000 </span>
-                      </td>
-                      <td class="align-middle">
-                        <div class="progress-wrapper w-75 mx-auto">
-                          <div class="progress-info">
-                            <div class="progress-percentage">
-                              <span class="text-xs font-weight-bold">60%</span>
-                            </div>
-                          </div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-info w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm me-3" alt="atlassian">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Add Progress Track</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="avatar-group mt-2">
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img src="../assets/img/team-2.jpg" alt="team5">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="../assets/img/team-4.jpg" alt="team6">
-                          </a>
-                        </div>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> $3,000 </span>
-                      </td>
-                      <td class="align-middle">
-                        <div class="progress-wrapper w-75 mx-auto">
-                          <div class="progress-info">
-                            <div class="progress-percentage">
-                              <span class="text-xs font-weight-bold">10%</span>
-                            </div>
-                          </div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-info w-10" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/small-logos/logo-slack.svg" class="avatar avatar-sm me-3" alt="team7">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Fix Platform Errors</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="avatar-group mt-2">
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img src="../assets/img/team-3.jpg" alt="team8">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="../assets/img/team-1.jpg" alt="team9">
-                          </a>
-                        </div>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> Not set </span>
-                      </td>
-                      <td class="align-middle">
-                        <div class="progress-wrapper w-75 mx-auto">
-                          <div class="progress-info">
-                            <div class="progress-percentage">
-                              <span class="text-xs font-weight-bold">100%</span>
-                            </div>
-                          </div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm me-3" alt="spotify">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Launch our Mobile App</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="avatar-group mt-2">
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img src="../assets/img/team-4.jpg" alt="user1">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img src="../assets/img/team-3.jpg" alt="user2">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                            <img src="../assets/img/team-4.jpg" alt="user3">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="../assets/img/team-1.jpg" alt="user4">
-                          </a>
-                        </div>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> $20,500 </span>
-                      </td>
-                      <td class="align-middle">
-                        <div class="progress-wrapper w-75 mx-auto">
-                          <div class="progress-info">
-                            <div class="progress-percentage">
-                              <span class="text-xs font-weight-bold">100%</span>
-                            </div>
-                          </div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/small-logos/logo-jira.svg" class="avatar avatar-sm me-3" alt="jira">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Add the New Pricing Page</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="avatar-group mt-2">
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img src="../assets/img/team-4.jpg" alt="user5">
-                          </a>
-                        </div>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> $500 </span>
-                      </td>
-                      <td class="align-middle">
-                        <div class="progress-wrapper w-75 mx-auto">
-                          <div class="progress-info">
-                            <div class="progress-percentage">
-                              <span class="text-xs font-weight-bold">25%</span>
-                            </div>
-                          </div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-info w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="25"></div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/small-logos/logo-invision.svg" class="avatar avatar-sm me-3" alt="invision">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Redesign New Online Shop</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="avatar-group mt-2">
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img src="../assets/img/team-1.jpg" alt="user6">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="../assets/img/team-4.jpg" alt="user7">
-                          </a>
-                        </div>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> $2,000 </span>
-                      </td>
-                      <td class="align-middle">
-                        <div class="progress-wrapper w-75 mx-auto">
-                          <div class="progress-info">
-                            <div class="progress-percentage">
-                              <span class="text-xs font-weight-bold">40%</span>
-                            </div>
-                          </div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-info w-40" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="40"></div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card h-100">
-            <div class="card-header pb-0">
-              <h6>Orders overview</h6>
-              <p class="text-sm">
-                <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
-                <span class="font-weight-bold">24%</span> this month
-              </p>
-            </div>
-            <div class="card-body p-3">
-              <div class="timeline timeline-one-side">
-                <div class="timeline-block mb-3">
-                  <span class="timeline-step">
-                    <i class="material-icons text-success text-gradient">notifications</i>
-                  </span>
-                  <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">$2400, Design changes</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">22 DEC 7:20 PM</p>
-                  </div>
-                </div>
-                <div class="timeline-block mb-3">
-                  <span class="timeline-step">
-                    <i class="material-icons text-danger text-gradient">code</i>
-                  </span>
-                  <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">New order #1832412</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 11 PM</p>
-                  </div>
-                </div>
-                <div class="timeline-block mb-3">
-                  <span class="timeline-step">
-                    <i class="material-icons text-info text-gradient">shopping_cart</i>
-                  </span>
-                  <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">Server payments for April</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 9:34 PM</p>
-                  </div>
-                </div>
-                <div class="timeline-block mb-3">
-                  <span class="timeline-step">
-                    <i class="material-icons text-warning text-gradient">credit_card</i>
-                  </span>
-                  <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">New card added for order #4395133</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">20 DEC 2:20 AM</p>
-                  </div>
-                </div>
-                <div class="timeline-block mb-3">
-                  <span class="timeline-step">
-                    <i class="material-icons text-primary text-gradient">key</i>
-                  </span>
-                  <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">Unlock packages for development</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">18 DEC 4:54 AM</p>
-                  </div>
-                </div>
-                <div class="timeline-block">
-                  <span class="timeline-step">
-                    <i class="material-icons text-dark text-gradient">payments</i>
-                  </span>
-                  <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">New order #9583120</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">17 DEC</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-<footer class="footer py-4">
-  <div class="container-fluid">
-    <div class="row align-items-center justify-content-lg-between">
-      <div class="col-lg-6 mb-lg-0 mb-4">
-        <div class="copyright text-center text-sm text-muted text-lg-start">
-          ©
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
-          2022 made with <i class="fa fa-heart"></i> by
+<!-- Navbar -->
+<nav
+  class="navbar navbar-expand-lg blur border-radius-xl top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4"
+>
+  <div class="container-fluid ps-2 pe-0">
+    <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3" routerLink="/">
+      Bootcamp Project
+    </a>
+    <button
+      class="navbar-toggler shadow-none ms-2"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navigation"
+      aria-controls="navigation"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon mt-2">
+        <span class="navbar-toggler-bar bar1"></span>
+        <span class="navbar-toggler-bar bar2"></span>
+        <span class="navbar-toggler-bar bar3"></span>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navigation">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
           <a
-            href="https://www.creative-tim.com"
-            class="font-weight-bold"
-            target="_blank"
-            >ESBI Team</a
+            class="nav-link d-flex align-items-center me-2 active"
+            aria-current="page"
+            routerLink="/"
           >
-          tarafından yapıldı.
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <ul
-          class="nav nav-footer justify-content-center justify-content-lg-end"
-        >
-          <li class="nav-item">
-            <a
-              href="https://www.creative-tim.com"
-              class="nav-link text-muted"
-              target="_blank"
-              >ESBI Team</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              href="https://www.creative-tim.com/presentation"
-              class="nav-link text-muted"
-              target="_blank"
-              >Hakkımızda</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              href="https://www.creative-tim.com/blog"
-              class="nav-link text-muted"
-              target="_blank"
-              >Blog</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              href="https://www.creative-tim.com/license"
-              class="nav-link pe-0 text-muted"
-              target="_blank"
-              >Lisans</a
-            >
-          </li>
-        </ul>
-      </div>
+            <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
+            Ana Sayfa
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link me-2" routerLink="/register">
+            <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
+            Kayıt Ol
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link me-2" routerLink="/login">
+            <i class="fas fa-key opacity-6 text-dark me-1"></i>
+            Giriş Yap
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav d-lg-flex d-none">
+        <li class="nav-item">
+          <a routerLink="/admin" class="btn btn-sm mb-0 me-1 bg-gradient-dark"
+            >Admin Panel</a
+          >
+        </li>
+      </ul>
     </div>
   </div>
-</footer>
+</nav>
+<!-- End Navbar -->
+<hr />
+<hr />
+<main
+  class="main-content position-relative max-height-vh-100 h-100 border-radius-lg"
+>
+  <div class="container-fluid py-4">
+    <!-- Start Carausel -->
+    <div class="row">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner mb-4">
+          <div *ngFor="let bootcamp of bootcamps" class="carousel-item">
+            <div
+              class="page-header min-vh-75 m-3 border-radius-xl"
+              style="
+                background-image: url('https://cdn-employer-wp.arc.dev/wp-content/uploads/2022/04/software-development-costs-1128x635.jpg');
+              "
+            >
+              <span class="mask bg-gradient-dark"></span>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 my-auto">
+                    <h4 class="text-white mb-0 fadeIn1 fadeInBottom">
+                      {{ bootcamp.name }} Bootcamp
+                    </h4>
+                    <h1 class="text-white fadeIn2 fadeInBottom">
+                      Başlangıç Tarihi : {{ bootcamp.dateStart }}
+                    </h1>
+                    <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">
+                      Bitiş Tarihi : {{ bootcamp.dateEnd }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item active">
+            <div
+              class="page-header min-vh-75 m-3 border-radius-xl"
+              style="
+                background-image: url('https://www.appstudio.ca/blog/wp-content/uploads/2020/09/Modern-Software-Development.jpg');
+              "
+            >
+              <span class="mask bg-gradient-dark"></span>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 my-auto">
+                    <h4 class="text-white mb-0 fadeIn1 fadeInBottom">
+                      Yaklaşan Bootcamp Etkinlikleri
+                    </h4>
+                    <h1 class="text-white fadeIn2 fadeInBottom">
+                      Hemen kaydını oluştur
+                    </h1>
+                    <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">
+                      Kodlama dünyasına girmeye hazır mısın (:
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="min-vh-75 position-absolute w-100 top-0">
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleControls"
+            role="button"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon position-absolute bottom-50"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleControls"
+            role="button"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon position-absolute bottom-50"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Next</span>
+          </a>
+        </div>
+      </div>
     </div>
-  </main>   
- 
+    <!-- End Carausel -->
+    <div class="row mb-4">
+      <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+          <div class="card-header p-3 pt-2">
+            <div
+              class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute"
+            >
+              <i class="material-icons opacity-10">school</i>
+            </div>
+            <div class="text-end pt-1">
+              <h4 class="mb-0 text-capitalize">Bootcampler</h4>
+            </div>
+          </div>
+          <hr class="dark horizontal my-0" />
+          <div class="card-footer p-3">
+            <p class="mb-0 text-end" style="float: right">
+              2022 yılında
+              <strong class="mb-0">{{ bootcamps.length }}</strong>
+              bootcamp açıldı.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+          <div class="card-header p-3 pt-2">
+            <div
+              class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute"
+            >
+              <i class="material-icons opacity-10">person</i>
+            </div>
+            <div class="text-end pt-1">
+              <h4 class="mb-0 text-capitalize">Eğitmenler</h4>
+            </div>
+          </div>
+          <hr class="dark horizontal my-0" />
+          <div class="card-footer p-3">
+            <p class="mb-0 text-end">
+              2022 yılında
+              <strong class="mb-0">{{ instructors.length }}</strong>
+              eğitmen katılım sağladı.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+          <div class="card-header p-3 pt-2">
+            <div
+              class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute"
+            >
+              <i class="material-icons opacity-10">people</i>
+            </div>
+            <div class="text-end pt-1">
+              <h4 class="mb-0 text-capitalize">Adaylar</h4>
+            </div>
+          </div>
+          <hr class="dark horizontal my-0" />
+          <div class="card-footer p-3">
+            <p class="mb-0 text-end">
+              2022 yılında
+              <strong class="mb-0">{{ applicants.length }}</strong>
+              aday eğitim aldı
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6">
+        <div class="card">
+          <div class="card-header p-3 pt-2">
+            <div
+              class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute"
+            >
+              <i class="material-icons opacity-10">description</i>
+            </div>
+            <div class="text-end pt-1">
+              <h4 class="mb-0 text-capitalize">Başvurular</h4>
+            </div>
+          </div>
+          <hr class="dark horizontal my-0" />
+          <div class="card-footer p-3">
+            <p class="mb-0 text-end">
+              2022 yılında
+              <strong class="mb-0">{{ applications.length }}</strong>
+              başvuru oldu.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
+        <div class="card">
+          <div class="card-header pb-0">
+            <div class="row">
+              <div class="col-lg-6 col-7">
+                <h6>Projects</h6>
+                <p class="text-sm mb-0">
+                  <i class="fa fa-check text-info" aria-hidden="true"></i>
+                  <span class="font-weight-bold ms-1">30 done</span> this month
+                </p>
+              </div>
+              <div class="col-lg-6 col-5 my-auto text-end">
+                <div class="dropdown float-lg-end pe-4">
+                  <a
+                    class="cursor-pointer"
+                    id="dropdownTable"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa fa-ellipsis-v text-secondary"></i>
+                  </a>
+                  <ul
+                    class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5"
+                    aria-labelledby="dropdownTable"
+                  >
+                    <li>
+                      <a
+                        class="dropdown-item border-radius-md"
+                        href="javascript:;"
+                        >Action</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item border-radius-md"
+                        href="javascript:;"
+                        >Another action</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item border-radius-md"
+                        href="javascript:;"
+                        >Something else here</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body px-0 pb-2">
+            <div class="table-responsive">
+              <table class="table align-items-center mb-0">
+                <thead>
+                  <tr>
+                    <th
+                      class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                    >
+                      Companies
+                    </th>
+                    <th
+                      class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                    >
+                      Members
+                    </th>
+                    <th
+                      class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                    >
+                      Budget
+                    </th>
+                    <th
+                      class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                    >
+                      Completion
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div>
+                          <img
+                            src="../assets/img/small-logos/logo-xd.svg"
+                            class="avatar avatar-sm me-3"
+                            alt="xd"
+                          />
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">Material XD Version</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="avatar-group mt-2">
+                        <a
+                          href="javascript:;"
+                          class="avatar avatar-xs rounded-circle"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Ryan Tompson"
+                        >
+                          <img src="../assets/img/team-1.jpg" alt="team1" />
+                        </a>
+                        <a
+                          href="javascript:;"
+                          class="avatar avatar-xs rounded-circle"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Romina Hadid"
+                        >
+                          <img src="../assets/img/team-2.jpg" alt="team2" />
+                        </a>
+                        <a
+                          href="javascript:;"
+                          class="avatar avatar-xs rounded-circle"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Alexander Smith"
+                        >
+                          <img src="../assets/img/team-3.jpg" alt="team3" />
+                        </a>
+                        <a
+                          href="javascript:;"
+                          class="avatar avatar-xs rounded-circle"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Jessica Doe"
+                        >
+                          <img src="../assets/img/team-4.jpg" alt="team4" />
+                        </a>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> $14,000 </span>
+                    </td>
+                    <td class="align-middle">
+                      <div class="progress-wrapper w-75 mx-auto">
+                        <div class="progress-info">
+                          <div class="progress-percentage">
+                            <span class="text-xs font-weight-bold">60%</span>
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div
+                            class="progress-bar bg-gradient-info w-60"
+                            role="progressbar"
+                            aria-valuenow="60"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          ></div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div>
+                          <img
+                            src="../assets/img/small-logos/logo-atlassian.svg"
+                            class="avatar avatar-sm me-3"
+                            alt="atlassian"
+                          />
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">Add Progress Track</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="avatar-group mt-2">
+                        <a
+                          href="javascript:;"
+                          class="avatar avatar-xs rounded-circle"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Romina Hadid"
+                        >
+                          <img src="../assets/img/team-2.jpg" alt="team5" />
+                        </a>
+                        <a
+                          href="javascript:;"
+                          class="avatar avatar-xs rounded-circle"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Jessica Doe"
+                        >
+                          <img src="../assets/img/team-4.jpg" alt="team6" />
+                        </a>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> $3,000 </span>
+                    </td>
+                    <td class="align-middle">
+                      <div class="progress-wrapper w-75 mx-auto">
+                        <div class="progress-info">
+                          <div class="progress-percentage">
+                            <span class="text-xs font-weight-bold">10%</span>
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div
+                            class="progress-bar bg-gradient-info w-10"
+                            role="progressbar"
+                            aria-valuenow="10"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          ></div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div>
+                          <img
+                            src="../assets/img/small-logos/logo-slack.svg"
+                            class="avatar avatar-sm me-3"
+                            alt="team7"
+                          />
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">Fix Platform Errors</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="avatar-group mt-2">
+                        <a
+                          href="javascript:;"
+                          class="avatar avatar-xs rounded-circle"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Romina Hadid"
+                        >
+                          <img src="../assets/img/team-3.jpg" alt="team8" />
+                        </a>
+                        <a
+                          href="javascript:;"
+                          class="avatar avatar-xs rounded-circle"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Jessica Doe"
+                        >
+                          <img src="../assets/img/team-1.jpg" alt="team9" />
+                        </a>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> Not set </span>
+                    </td>
+                    <td class="align-middle">
+                      <div class="progress-wrapper w-75 mx-auto">
+                        <div class="progress-info">
+                          <div class="progress-percentage">
+                            <span class="text-xs font-weight-bold">100%</span>
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div
+                            class="progress-bar bg-gradient-success w-100"
+                            role="progressbar"
+                            aria-valuenow="100"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          ></div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div>
+                          <img
+                            src="../assets/img/small-logos/logo-spotify.svg"
+                            class="avatar avatar-sm me-3"
+                            alt="spotify"
+                          />
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">Launch our Mobile App</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="avatar-group mt-2">
+                        <a
+                          href="javascript:;"
+                          class="avatar avatar-xs rounded-circle"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Ryan Tompson"
+                        >
+                          <img src="../assets/img/team-4.jpg" alt="user1" />
+                        </a>
+                        <a
+                          href="javascript:;"
+                          class="avatar avatar-xs rounded-circle"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Romina Hadid"
+                        >
+                          <img src="../assets/img/team-3.jpg" alt="user2" />
+                        </a>
+                        <a
+                          href="javascript:;"
+                          class="avatar avatar-xs rounded-circle"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Alexander Smith"
+                        >
+                          <img src="../assets/img/team-4.jpg" alt="user3" />
+                        </a>
+                        <a
+                          href="javascript:;"
+                          class="avatar avatar-xs rounded-circle"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Jessica Doe"
+                        >
+                          <img src="../assets/img/team-1.jpg" alt="user4" />
+                        </a>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> $20,500 </span>
+                    </td>
+                    <td class="align-middle">
+                      <div class="progress-wrapper w-75 mx-auto">
+                        <div class="progress-info">
+                          <div class="progress-percentage">
+                            <span class="text-xs font-weight-bold">100%</span>
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div
+                            class="progress-bar bg-gradient-success w-100"
+                            role="progressbar"
+                            aria-valuenow="100"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          ></div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div>
+                          <img
+                            src="../assets/img/small-logos/logo-jira.svg"
+                            class="avatar avatar-sm me-3"
+                            alt="jira"
+                          />
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">Add the New Pricing Page</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="avatar-group mt-2">
+                        <a
+                          href="javascript:;"
+                          class="avatar avatar-xs rounded-circle"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Ryan Tompson"
+                        >
+                          <img src="../assets/img/team-4.jpg" alt="user5" />
+                        </a>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> $500 </span>
+                    </td>
+                    <td class="align-middle">
+                      <div class="progress-wrapper w-75 mx-auto">
+                        <div class="progress-info">
+                          <div class="progress-percentage">
+                            <span class="text-xs font-weight-bold">25%</span>
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div
+                            class="progress-bar bg-gradient-info w-25"
+                            role="progressbar"
+                            aria-valuenow="25"
+                            aria-valuemin="0"
+                            aria-valuemax="25"
+                          ></div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div>
+                          <img
+                            src="../assets/img/small-logos/logo-invision.svg"
+                            class="avatar avatar-sm me-3"
+                            alt="invision"
+                          />
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">Redesign New Online Shop</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="avatar-group mt-2">
+                        <a
+                          href="javascript:;"
+                          class="avatar avatar-xs rounded-circle"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Ryan Tompson"
+                        >
+                          <img src="../assets/img/team-1.jpg" alt="user6" />
+                        </a>
+                        <a
+                          href="javascript:;"
+                          class="avatar avatar-xs rounded-circle"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Jessica Doe"
+                        >
+                          <img src="../assets/img/team-4.jpg" alt="user7" />
+                        </a>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> $2,000 </span>
+                    </td>
+                    <td class="align-middle">
+                      <div class="progress-wrapper w-75 mx-auto">
+                        <div class="progress-info">
+                          <div class="progress-percentage">
+                            <span class="text-xs font-weight-bold">40%</span>
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div
+                            class="progress-bar bg-gradient-info w-40"
+                            role="progressbar"
+                            aria-valuenow="40"
+                            aria-valuemin="0"
+                            aria-valuemax="40"
+                          ></div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100">
+          <div class="card-header pb-0">
+            <h6>Orders overview</h6>
+            <p class="text-sm">
+              <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
+              <span class="font-weight-bold">24%</span> this month
+            </p>
+          </div>
+          <div class="card-body p-3">
+            <div class="timeline timeline-one-side">
+              <div class="timeline-block mb-3">
+                <span class="timeline-step">
+                  <i class="material-icons text-success text-gradient"
+                    >notifications</i
+                  >
+                </span>
+                <div class="timeline-content">
+                  <h6 class="text-dark text-sm font-weight-bold mb-0">
+                    $2400, Design changes
+                  </h6>
+                  <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                    22 DEC 7:20 PM
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-block mb-3">
+                <span class="timeline-step">
+                  <i class="material-icons text-danger text-gradient">code</i>
+                </span>
+                <div class="timeline-content">
+                  <h6 class="text-dark text-sm font-weight-bold mb-0">
+                    New order #1832412
+                  </h6>
+                  <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                    21 DEC 11 PM
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-block mb-3">
+                <span class="timeline-step">
+                  <i class="material-icons text-info text-gradient"
+                    >shopping_cart</i
+                  >
+                </span>
+                <div class="timeline-content">
+                  <h6 class="text-dark text-sm font-weight-bold mb-0">
+                    Server payments for April
+                  </h6>
+                  <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                    21 DEC 9:34 PM
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-block mb-3">
+                <span class="timeline-step">
+                  <i class="material-icons text-warning text-gradient"
+                    >credit_card</i
+                  >
+                </span>
+                <div class="timeline-content">
+                  <h6 class="text-dark text-sm font-weight-bold mb-0">
+                    New card added for order #4395133
+                  </h6>
+                  <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                    20 DEC 2:20 AM
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-block mb-3">
+                <span class="timeline-step">
+                  <i class="material-icons text-primary text-gradient">key</i>
+                </span>
+                <div class="timeline-content">
+                  <h6 class="text-dark text-sm font-weight-bold mb-0">
+                    Unlock packages for development
+                  </h6>
+                  <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                    18 DEC 4:54 AM
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-block">
+                <span class="timeline-step">
+                  <i class="material-icons text-dark text-gradient">payments</i>
+                </span>
+                <div class="timeline-content">
+                  <h6 class="text-dark text-sm font-weight-bold mb-0">
+                    New order #9583120
+                  </h6>
+                  <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                    17 DEC
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer py-4">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6 mb-lg-0 mb-4">
+            <div class="copyright text-center text-sm text-muted text-lg-start">
+              ©
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              2022 made with <i class="fa fa-heart"></i> by
+              <a
+                href="https://www.creative-tim.com"
+                class="font-weight-bold"
+                target="_blank"
+                >ESBI Team</a
+              >
+              tarafından yapıldı.
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <ul
+              class="nav nav-footer justify-content-center justify-content-lg-end"
+            >
+              <li class="nav-item">
+                <a
+                  href="https://www.creative-tim.com"
+                  class="nav-link text-muted"
+                  target="_blank"
+                  >ESBI Team</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  href="https://www.creative-tim.com/presentation"
+                  class="nav-link text-muted"
+                  target="_blank"
+                  >Hakkımızda</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  href="https://www.creative-tim.com/blog"
+                  class="nav-link text-muted"
+                  target="_blank"
+                  >Blog</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  href="https://www.creative-tim.com/license"
+                  class="nav-link pe-0 text-muted"
+                  target="_blank"
+                  >Lisans</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</main>
