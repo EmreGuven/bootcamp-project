@@ -1,47 +1,90 @@
-    <div class="card">
-    <div class="table-responsive">
-      <table class="table align-items-center mb-0">
-        <thead>
-          <tr>
-            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Başvuran Kimliği</th>
-            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tarih</th>
-            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Sebep</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let blacklist of blacklists">
-            <td>
-              <div class="d-flex px-2">
-                <div class="my-auto">
-                  <h6 class="mb-0 text-xs">{{ blacklist.applicantId }}</h6>
-                </div>
-              </div>
-            </td>
+<div class="container-fluid py-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card my-4">
+        <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+          <div
+            class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3"
+          >
+            <h6 class="text-white text-capitalize ps-3">Engellenenler</h6>
+          </div>
+        </div>
+        <div class="card-body px-0 pb-2">
+          <div class="table-responsive p-0">
+            <table class="table align-items-center mb-0">
+              <thead>
+                <tr>
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                  >
+                    Başvuran Kimliği
+                  </th>
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
+                    Tarih
+                  </th>
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
+                    Sebep
+                  </th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let blacklist of blacklists">
+                  <td>
+                    <div class="d-flex px-2">
+                      <div class="my-auto">
+                        <h6 class="mb-0 text-xs">
+                          {{ blacklist.applicantId }}
+                        </h6>
+                      </div>
+                    </div>
+                  </td>
 
-            <td>
-              <div class="d-flex px-2">
-                <div class="my-auto">
-                  <h6 class="mb-0 text-xs">{{ blacklist.date }}</h6>
-                </div>
-              </div>
-            </td>
+                  <td>
+                    <div class="d-flex px-2">
+                      <div class="my-auto">
+                        <h6 class="mb-0 text-xs">{{ blacklist.date }}</h6>
+                      </div>
+                    </div>
+                  </td>
 
-            <td>
-              <div class="d-flex px-2">
-                <div class="my-auto">
-                  <h6 class="mb-0 text-xs">{{ blacklist.reason}}</h6>
-                </div>
-              </div>
-            </td>
-            <td>
-            <td><button routerLink="update/{{blacklist.id}}" class="btn btn-warning btn-sm">Güncelle</button></td>
-            <td><button (click)="deleteToBlacklist(blacklist.id)" type="button" class="btn btn-primary btn-sm">Sil</button></td>
-          </tr>
-        </tbody>
-      </table>
+                  <td>
+                    <div class="d-flex px-2">
+                      <div class="my-auto">
+                        <h6 class="mb-0 text-xs">{{ blacklist.reason }}</h6>
+                      </div>
+                    </div>
+                  </td>
+                  <td></td>
+                  <td>
+                    <button
+                      routerLink="update/{{ blacklist.id }}"
+                      class="btn bg-gradient-info mb-0 mt-0 mt-md-n9 mt-lg-0"
+                    >
+                      Güncelle
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      (click)="deleteToBlacklist(blacklist.id)"
+                      type="button"
+                      class="btn bg-gradient-primary mb-0 mt-0 mt-md-n9 mt-lg-0"
+                    >
+                      Sil
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-  
+  </div>
+</div>
