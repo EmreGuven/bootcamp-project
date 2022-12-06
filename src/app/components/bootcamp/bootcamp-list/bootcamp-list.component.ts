@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { BootcampService } from './../../../services/bootcamp.service';
 import { IBootcampGetAllModel } from './../../../models/response/bootcamp/bootcamp-getall-model';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-bootcamp-list',
@@ -29,10 +30,43 @@ export class BootcampListComponent implements OnInit {
     });
   }
   deleteToBootcamp(id: number) {
-    this.activatedRoute.params.subscribe(() => {
-      this.bootcampService.deleteToBootcamp(id).subscribe(() => {
-        this.toastrService.success('Silme İşlemi Gerçekleşti', 'Tebrikler (:');
-      });
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger',
+      },
+      buttonsStyling: false,
     });
+
+    swalWithBootstrapButtons
+      .fire({
+        title: 'Emin misiniz?',
+        text: 'Bu işlem geri alınamaz!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Evet!',
+        cancelButtonText: 'Hayır',
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          this.bootcampService.deleteToBootcamp(id).subscribe(() => {
+            swalWithBootstrapButtons.fire(
+              'Silindi!',
+              'İstediğiniz veri silme işlemi tamamlandı.',
+              'success'
+            );
+          }),
+            setTimeout(() => {
+              window.location.reload();
+            }, 3000);
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire(
+            'İptal edildi',
+            'Veriniz hala güvende :)',
+            'error'
+          );
+        }
+      });
   }
 }

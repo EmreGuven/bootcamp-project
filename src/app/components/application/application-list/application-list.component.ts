@@ -2,6 +2,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ApplicationService } from './../../../services/application.service';
 import { IApplicationGetAllModel } from './../../../models/response/application/application-getall-model';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-application-list',
@@ -25,9 +26,43 @@ export class ApplicationListComponent implements OnInit {
     })
   }
   deleteToApplication(id:number) {
-    this.applicationService.deleteToApplication(id).subscribe(() => {
-      this.toastrService.success('Silme İşlemi Gerçekleşti', 'Tebrikler (:');
-      window.location.reload();
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger',
+      },
+      buttonsStyling: false,
     });
+
+    swalWithBootstrapButtons
+      .fire({
+        title: 'Emin misiniz?',
+        text: 'Bu işlem geri alınamaz!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Evet!',
+        cancelButtonText: 'Hayır',
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          this.applicationService.deleteToApplication(id).subscribe(() => {
+            swalWithBootstrapButtons.fire(
+              'Silindi!',
+              'İstediğiniz veri silme işlemi tamamlandı.',
+              'success'
+            );
+          }),
+            setTimeout(() => {
+              window.location.reload();
+            }, 3000);
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire(
+            'İptal edildi',
+            'Veriniz hala güvende :)',
+            'error'
+          );
+        }
+      });
   }
 }

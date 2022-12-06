@@ -3,6 +3,7 @@ import { IInstructorGetAllModel } from './../../../models/response/instructor/in
 import { Component,OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import { InstructorService } from 'src/app/services/instructor.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-instructor-list',
@@ -33,9 +34,43 @@ export class InstructorListComponent implements OnInit {
   }
 
   deleteToInstructor(id: number) {
-    this.instructorService.deleteToInstructor(id).subscribe(() => {
-      this.toastrService.success('Silme İşlemi Gerçekleşti', 'Tebrikler (:');
-      window.location.reload();
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger',
+      },
+      buttonsStyling: false,
     });
+
+    swalWithBootstrapButtons
+      .fire({
+        title: 'Emin misiniz?',
+        text: 'Bu işlem geri alınamaz!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Evet!',
+        cancelButtonText: 'Hayır',
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          this.instructorService.deleteToInstructor(id).subscribe(() => {
+            swalWithBootstrapButtons.fire(
+              'Silindi!',
+              'İstediğiniz veri silme işlemi tamamlandı.',
+              'success'
+            );
+          }),
+            setTimeout(() => {
+              window.location.reload();
+            }, 3000);
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire(
+            'İptal edildi',
+            'Veriniz hala güvende :)',
+            'error'
+          );
+        }
+      });
   }
 }

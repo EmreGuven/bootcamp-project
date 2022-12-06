@@ -45,17 +45,6 @@
       "role": "ROLE_APPLICANT"
     },
     {
-      "firstName": "Mert ",
-      "lastName": "Subaşı",
-      "email": "mert@gmail.com",
-      "password": "742596",
-      "nationalIdentity": "2054865645",
-      "dateOfBirth": "12/17/1998",
-      "about": "Kırıkkale Üniversitesi İşletme",
-      "id": 5,
-      "role": "ROLE_APPLICANT"
-    },
-    {
       "firstName": "Haluk",
       "lastName": "Gül",
       "email": "haluk@gmail.com",
@@ -64,6 +53,17 @@
       "dateOfBirth": "16/07/2000",
       "about": "Erzurum Üniversitesi YBS",
       "id": 6,
+      "role": "ROLE_APPLICANT"
+    },
+    {
+      "firstName": "Mert ",
+      "lastName": "Subaşı",
+      "email": "mert@gmail.com",
+      "password": "742596",
+      "nationalIdentity": "2054865645",
+      "dateOfBirth": "12/17/1998",
+      "about": "Kırıkkale Üniversitesi İşletme",
+      "id": 5,
       "role": "ROLE_APPLICANT"
     }
   ],
@@ -133,17 +133,6 @@
       "position": "Tekniker",
       "id": 6,
       "role": "ROLE_EMPLOYEE"
-    },
-    {
-      "firstName": "Uğur",
-      "lastName": "Gündoğan",
-      "email": "ugur@gmail.com",
-      "password": "478524",
-      "nationalIdentity": "7845123698",
-      "dateOfBirth": "23/05/1990",
-      "position": "Kordinatör",
-      "id": 7,
-      "role": "ROLE_EMPLOYEE"
     }
   ],
   "instructor": [
@@ -212,44 +201,12 @@
   ],
   "application": [
     {
-      "userId": "1",
-      "bootcampId": "1",
-      "state": "1",
-      "bootcampName": "FrontEnd",
-      "applicantName": "Emre Güven",
-      "id": 3
-    },
-    {
       "userId": "2",
       "bootcampId": "2",
       "state": "1",
       "bootcampName": "Backend",
       "applicantName": "İlknur Yıldırım",
-      "id": 4
-    },
-    {
-      "userId": "3",
-      "bootcampId": "2",
-      "state": "2",
-      "bootcampName": "Backend",
-      "applicantName": "Sevda Şimşek",
-      "id": 5
-    },
-    {
-      "userId": "2",
-      "bootcampId": "2",
-      "state": "1",
-      "bootcampName": "Backend",
-      "applicantName": "İlknur Yıldırım",
-      "id": 6
-    },
-    {
-      "userId": "4",
-      "bootcampId": "4",
-      "state": "2",
-      "bootcampName": "Coderspace Machine Learning ",
-      "applicantName": "Burak Ergin",
-      "id": 7
+      "id": 2
     }
   ],
   "blackList": [
@@ -280,13 +237,6 @@
       "reason": "yeni mezun",
       "applicantName": "Sevda Şimşek",
       "id": 5
-    },
-    {
-      "applicantId": "2",
-      "date": "2022-12-06",
-      "reason": "sigortalı",
-      "applicantName": "İlknur Yıldırım",
-      "id": 6
     }
   ],
   "bootcamp": [
@@ -337,24 +287,6 @@
       "dateEnd": "18/01/2023",
       "state": "2",
       "id": 6
-    },
-    {
-      "instructerId": "4",
-      "name": "gokalp",
-      "dateStart": "1111-11-11",
-      "dateEnd": "2222-02-22",
-      "state": "1",
-      "instructorName": "Merve Kara",
-      "id": 8
-    },
-    {
-      "instructerId": "5",
-      "name": "backend",
-      "dateStart": "2022-12-16",
-      "dateEnd": "2022-12-24",
-      "state": "1",
-      "instructorName": "Selim Güngör",
-      "id": 9
     }
   ],
   "users": [

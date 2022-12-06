@@ -37,7 +37,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { SettingsComponent } from './layouts/settings/settings.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
-
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -79,6 +79,7 @@ import { AdminHomeComponent } from './components/admin-home/admin-home.component
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
+    SweetAlert2Module.forRoot(),
     BrowserAnimationsModule,
     ToastrModule.forRoot(
       {
