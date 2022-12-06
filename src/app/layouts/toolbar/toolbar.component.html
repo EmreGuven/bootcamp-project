@@ -1,348 +1,324 @@
+<div class="sidenav-header">
+  <i
+    class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+    aria-hidden="true"
+    id="iconSidenav"
+  ></i>
+  <a
+    class="navbar-brand m-0"
+    href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard "
+    target="_blank"
+  >
+    <img
+      src="./assets/img/logo-ct.png"
+      class="navbar-brand-img h-100"
+      alt="main_logo"
+    />
+    <span class="ms-1 font-weight-bold text-white">Bootcamp Admin Panel</span>
+  </a>
+</div>
 
+<hr class="horizontal light mt-0 mb-2" />
 
-  <div class="sidenav-header">
-    <i
-      class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
-      aria-hidden="true"
-      id="iconSidenav"
-    ></i>
-    <a
-      class="navbar-brand m-0"
-      href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard "
-      target="_blank"
-    >
-      <img
-        src="./assets/img/logo-ct.png"
-        class="navbar-brand-img h-100"
-        alt="main_logo"
-      />
-      <span class="ms-1 font-weight-bold text-white">Bootcamp Admin Panel</span>
-    </a>
-  </div>
-
-  <hr class="horizontal light mt-0 mb-2" />
-
-  <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link text-white active" routerLink="./">
-          <div
-            class="text-white text-center me-2 d-flex align-items-center justify-content-center"
-          >
-            <i class="material-icons opacity-10">dashboard</i>
-          </div>
-
-          <span class="nav-link-text ms-1">Ana Sayfa</span>
-        </a>
-      </li>
-      <!---->
-      <li class="nav-item">
-        <a
-          data-bs-toggle="collapse"
-          href="#employeesExamples"
-          class="nav-link text-white collapsed"
-          aria-controls="employeesExamples"
-          role="button"
-          aria-expanded="false"
+<div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link text-white active" routerLink="./">
+        <div
+          class="text-white text-center me-2 d-flex align-items-center justify-content-center"
         >
-          <i
-            class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}"
-            >support_agent</i
-          >
-          <span class="nav-link-text ms-2 ps-1">Çalışan</span>
-        </a>
-        <div class="collapse" id="employeesExamples">
-          <ul class="nav">
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                href="../../pages/applications/crm.html"
-              >
-                <span class="sidenav-mini-icon"> G </span>
-                <span class="sidenav-normal ms-2 ps-1"> Giriş </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                routerLink="employees"
-              >
-                <span class="sidenav-mini-icon"> L </span>
-                <span class="sidenav-normal ms-2 ps-1"> Listele</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                routerLink="employees/add"
-              >
-                <span class="sidenav-mini-icon"> E </span>
-                <span class="sidenav-normal ms-2 ps-1"> Ekle </span>
-              </a>
-            </li>
-          </ul>
+          <i class="material-icons opacity-10">dashboard</i>
         </div>
-      </li>
-      <!---->
-      <li class="nav-item">
-        <a
-          data-bs-toggle="collapse"
-          href="#instructorsExamples"
-          class="nav-link text-white collapsed"
-          aria-controls="instructorsExamples"
-          role="button"
-          aria-expanded="false"
-        >
-          <i
-            class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}"
-            >person</i
-          >
-          <span class="nav-link-text ms-2 ps-1">Eğitmen</span>
-        </a>
-        <div class="collapse" id="instructorsExamples">
-          <ul class="nav">
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                href="../../pages/applications/crm.html"
-              >
-                <span class="sidenav-mini-icon"> G </span>
-                <span class="sidenav-normal ms-2 ps-1"> Giriş </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                routerLink="instructors"
-              >
-                <span class="sidenav-mini-icon"> L </span>
-                <span class="sidenav-normal ms-2 ps-1"> Listele</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                routerLink="instructors/add"
-              >
-                <span class="sidenav-mini-icon"> E </span>
-                <span class="sidenav-normal ms-2 ps-1"> Ekle </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <!---->
-      <li class="nav-item">
-        <a
-          data-bs-toggle="collapse"
-          href="#applicantsExamples"
-          class="nav-link text-white collapsed"
-          aria-controls="applicantsExamples"
-          role="button"
-          aria-expanded="false"
-        >
-          <i
-            class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}"
-            >people</i
-          >
-          <span class="nav-link-text ms-2 ps-1">Aday</span>
-        </a>
-        <div class="collapse" id="applicantsExamples">
-          <ul class="nav">
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                href="../../pages/applications/crm.html"
-              >
-                <span class="sidenav-mini-icon"> G </span>
-                <span class="sidenav-normal ms-2 ps-1"> Giriş </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                routerLink="applicants"
-              >
-                <span class="sidenav-mini-icon"> L </span>
-                <span class="sidenav-normal ms-2 ps-1"> Listele</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                routerLink="applicants/add"
-              >
-                <span class="sidenav-mini-icon"> E </span>
-                <span class="sidenav-normal ms-2 ps-1"> Ekle </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <!---->
-      <li class="nav-item">
-        <a
-          data-bs-toggle="collapse"
-          href="#bootcampsExamples"
-          class="nav-link text-white collapsed"
-          aria-controls="bootcampsExamples"
-          role="button"
-          aria-expanded="false"
-        >
-          <i
-            class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}"
-            >school</i
-          >
-          <span class="nav-link-text ms-2 ps-1">Bootcamp</span>
-        </a>
-        <div class="collapse" id="bootcampsExamples">
-          <ul class="nav">
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                href="../../pages/applications/crm.html"
-              >
-                <span class="sidenav-mini-icon"> G </span>
-                <span class="sidenav-normal ms-2 ps-1"> Giriş </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                routerLink="bootcamps"
-              >
-                <span class="sidenav-mini-icon"> L </span>
-                <span class="sidenav-normal ms-2 ps-1"> Listele</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                routerLink="bootcamps/add"
-              >
-                <span class="sidenav-mini-icon"> E </span>
-                <span class="sidenav-normal ms-2 ps-1"> Ekle </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <!---->
-      <li class="nav-item">
-        <a
-          data-bs-toggle="collapse"
-          href="#applicantionsExamples"
-          class="nav-link text-white collapsed"
-          aria-controls="applicantionsExamples"
-          role="button"
-          aria-expanded="false"
-        >
-          <i
-            class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}"
-            >description</i
-          >
-          <span class="nav-link-text ms-2 ps-1">Başvurular</span>
-        </a>
-        <div class="collapse" id="applicantionsExamples">
-          <ul class="nav">
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                href="../../pages/applications/crm.html"
-              >
-                <span class="sidenav-mini-icon"> G </span>
-                <span class="sidenav-normal ms-2 ps-1"> Giriş </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                routerLink="applications"
-              >
-                <span class="sidenav-mini-icon"> L </span>
-                <span class="sidenav-normal ms-2 ps-1"> Listele</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                routerLink="applications/add"
-              >
-                <span class="sidenav-mini-icon"> E </span>
-                <span class="sidenav-normal ms-2 ps-1"> Ekle </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <!---->
-      <li class="nav-item" *ngIf="loginGuard.roles !== 'ROLE_INSTRUCTOR'">
-        <a
-          data-bs-toggle="collapse"
-          href="#blacklistsExamples"
-          class="nav-link text-white collapsed"
-          aria-controls="blacklistsExamples"
-          role="button"
-          aria-expanded="false"
-        >
-          <i
-            class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}"
-            >playlist_remove</i
-          >
-          <span class="nav-link-text ms-2 ps-1" >Black-List</span>
-        </a>
-        <div class="collapse" id="blacklistsExamples" >
-          <ul class="nav">
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                href="../../pages/applications/crm.html"
-              >
-                <span class="sidenav-mini-icon"> G </span>
-                <span class="sidenav-normal ms-2 ps-1"> Giriş{{loginGuard.roles}} </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                routerLink="blacklists"
-              >
-                <span class="sidenav-mini-icon"> L </span>
-                <span class="sidenav-normal ms-2 ps-1"> Listele</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                routerLink="blacklists/add"
-              >
-                <span class="sidenav-mini-icon"> E </span>
-                <span class="sidenav-normal ms-2 ps-1"> Ekle </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
 
-      <!--Account-->
-      <li class="nav-item mt-3">
-        <h6
-          class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8"
+        <span class="nav-link-text ms-1">Ana Sayfa</span>
+      </a>
+    </li>
+    <!---->
+    <li class="nav-item">
+      <a
+        data-bs-toggle="collapse"
+        href="#employeesExamples"
+        class="nav-link text-white collapsed"
+        aria-controls="employeesExamples"
+        role="button"
+        aria-expanded="false"
+      >
+        <i
+          class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}"
+          >support_agent</i
         >
-          Account pages
-        </h6>
-      </li>
+        <span class="nav-link-text ms-2 ps-1">Çalışan</span>
+      </a>
+      <div class="collapse" id="employeesExamples">
+        <ul class="nav">
+          <li class="nav-item">
+            <a
+              class="nav-link text-white"
+              href="../../pages/applications/crm.html"
+            >
+              <span class="sidenav-mini-icon"> G </span>
+              <span class="sidenav-normal ms-2 ps-1"> Giriş </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="employees">
+              <span class="sidenav-mini-icon"> L </span>
+              <span class="sidenav-normal ms-2 ps-1"> Listele</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="employees/add">
+              <span class="sidenav-mini-icon"> E </span>
+              <span class="sidenav-normal ms-2 ps-1"> Ekle </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <!---->
+    <li class="nav-item">
+      <a
+        data-bs-toggle="collapse"
+        href="#instructorsExamples"
+        class="nav-link text-white collapsed"
+        aria-controls="instructorsExamples"
+        role="button"
+        aria-expanded="false"
+      >
+        <i
+          class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}"
+          >person</i
+        >
+        <span class="nav-link-text ms-2 ps-1">Eğitmen</span>
+      </a>
+      <div class="collapse" id="instructorsExamples">
+        <ul class="nav">
+          <li class="nav-item">
+            <a
+              class="nav-link text-white"
+              href="../../pages/applications/crm.html"
+            >
+              <span class="sidenav-mini-icon"> G </span>
+              <span class="sidenav-normal ms-2 ps-1"> Giriş </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="instructors">
+              <span class="sidenav-mini-icon"> L </span>
+              <span class="sidenav-normal ms-2 ps-1"> Listele</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="instructors/add">
+              <span class="sidenav-mini-icon"> E </span>
+              <span class="sidenav-normal ms-2 ps-1"> Ekle </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <!---->
+    <li class="nav-item">
+      <a
+        data-bs-toggle="collapse"
+        href="#applicantsExamples"
+        class="nav-link text-white collapsed"
+        aria-controls="applicantsExamples"
+        role="button"
+        aria-expanded="false"
+      >
+        <i
+          class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}"
+          >people</i
+        >
+        <span class="nav-link-text ms-2 ps-1">Aday</span>
+      </a>
+      <div class="collapse" id="applicantsExamples">
+        <ul class="nav">
+          <li class="nav-item">
+            <a
+              class="nav-link text-white"
+              href="../../pages/applications/crm.html"
+            >
+              <span class="sidenav-mini-icon"> G </span>
+              <span class="sidenav-normal ms-2 ps-1"> Giriş </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="applicants">
+              <span class="sidenav-mini-icon"> L </span>
+              <span class="sidenav-normal ms-2 ps-1"> Listele</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="applicants/add">
+              <span class="sidenav-mini-icon"> E </span>
+              <span class="sidenav-normal ms-2 ps-1"> Ekle </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <!---->
+    <li class="nav-item">
+      <a
+        data-bs-toggle="collapse"
+        href="#bootcampsExamples"
+        class="nav-link text-white collapsed"
+        aria-controls="bootcampsExamples"
+        role="button"
+        aria-expanded="false"
+      >
+        <i
+          class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}"
+          >school</i
+        >
+        <span class="nav-link-text ms-2 ps-1">Bootcamp</span>
+      </a>
+      <div class="collapse" id="bootcampsExamples">
+        <ul class="nav">
+          <li class="nav-item">
+            <a
+              class="nav-link text-white"
+              href="../../pages/applications/crm.html"
+            >
+              <span class="sidenav-mini-icon"> G </span>
+              <span class="sidenav-normal ms-2 ps-1"> Giriş </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="bootcamps">
+              <span class="sidenav-mini-icon"> L </span>
+              <span class="sidenav-normal ms-2 ps-1"> Listele</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="bootcamps/add">
+              <span class="sidenav-mini-icon"> E </span>
+              <span class="sidenav-normal ms-2 ps-1"> Ekle </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <!---->
+    <li class="nav-item">
+      <a
+        data-bs-toggle="collapse"
+        href="#applicantionsExamples"
+        class="nav-link text-white collapsed"
+        aria-controls="applicantionsExamples"
+        role="button"
+        aria-expanded="false"
+      >
+        <i
+          class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}"
+          >description</i
+        >
+        <span class="nav-link-text ms-2 ps-1">Başvurular</span>
+      </a>
+      <div class="collapse" id="applicantionsExamples">
+        <ul class="nav">
+          <li class="nav-item">
+            <a
+              class="nav-link text-white"
+              href="../../pages/applications/crm.html"
+            >
+              <span class="sidenav-mini-icon"> G </span>
+              <span class="sidenav-normal ms-2 ps-1"> Giriş </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="applications">
+              <span class="sidenav-mini-icon"> L </span>
+              <span class="sidenav-normal ms-2 ps-1"> Listele</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="applications/add">
+              <span class="sidenav-mini-icon"> E </span>
+              <span class="sidenav-normal ms-2 ps-1"> Ekle </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <!---->
+    <li class="nav-item" *ngIf="loginGuard.roles !== 'ROLE_INSTRUCTOR'">
+      <a
+        data-bs-toggle="collapse"
+        href="#blacklistsExamples"
+        class="nav-link text-white collapsed"
+        aria-controls="blacklistsExamples"
+        role="button"
+        aria-expanded="false"
+      >
+        <i
+          class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}"
+          >playlist_remove</i
+        >
+        <span class="nav-link-text ms-2 ps-1">Black-List</span>
+      </a>
+      <div class="collapse" id="blacklistsExamples">
+        <ul class="nav">
+          <li class="nav-item">
+            <a
+              class="nav-link text-white"
+              href="../../pages/applications/crm.html"
+            >
+              <span class="sidenav-mini-icon"> G </span>
+              <span class="sidenav-normal ms-2 ps-1">
+                Giriş{{ loginGuard.roles }}
+              </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="blacklists">
+              <span class="sidenav-mini-icon"> L </span>
+              <span class="sidenav-normal ms-2 ps-1"> Listele</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="blacklists/add">
+              <span class="sidenav-mini-icon"> E </span>
+              <span class="sidenav-normal ms-2 ps-1"> Ekle </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
 
-      <li class="nav-item">
-        <a class="nav-link text-white">
-          <div
-            class="text-white text-center me-2 d-flex align-items-center justify-content-center"
-          >
-            <i class="material-icons opacity-10">person</i>
-          </div>
+    <!--Account-->
+    <li class="nav-item mt-3">
+      <h6
+        class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8"
+      >
+        Account pages
+      </h6>
+    </li>
 
-          <span class="nav-link-text ms-1">Profil</span>
-        </a>
-      </li>
-    </ul>
-  </div>
+    <li class="nav-item">
+      <a class="nav-link text-white">
+        <div
+          class="text-white text-center me-2 d-flex align-items-center justify-content-center"
+        >
+          <i class="material-icons opacity-10">person</i>
+        </div>
+
+        <span class="nav-link-text ms-1">Profil</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link text-white" (click)="logout()" href="">
+        <div
+          class="text-white text-center me-2 d-flex align-items-center justify-content-center"
+        >
+          <i class="material-icons opacity-10">logout</i>
+        </div>
+
+        <span class="nav-link-text ms-1">Çıkış Yap</span>
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { LoginGuard } from './../../guards/login.guard';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor(public loginGuard:LoginGuard) { }
+  constructor(public loginGuard:LoginGuard,
+    private authService:AuthService) { }
 
   ngOnInit(): void {
+  }
+
+  logout(){
+    alert('sdkfjşs')
+    // this.authService.logout()
   }
 
 }
