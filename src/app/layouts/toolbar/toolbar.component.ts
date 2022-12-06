@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { AuthService } from './../../services/auth.service';
 import { LoginGuard } from './../../guards/login.guard';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor(public loginGuard:LoginGuard) { }
+  constructor(public loginGuard:LoginGuard, private authService:AuthService,private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  logout(){
+    localStorage.clear()
+    this.router.navigate([''])
   }
 
 }

@@ -14,7 +14,7 @@
     <label class="form-label"></label>
     <select id="instructerId" formControlName="instructerId" class="form-select rounded-0">
       <option [value]="null" disabled hidden>Eğitmen Seçiniz</option>
-      <option *ngFor="let instructor of instructors" [value]="instructor.id">
+      <option value="number" *ngFor="let instructor of instructors" [value]="instructor.id">
         {{ instructor.firstName }} {{ instructor.lastName }}
       </option>
     </select>

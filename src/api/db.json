@@ -292,15 +292,6 @@
       "dateEnd": "18/01/2023",
       "state": "2",
       "id": 6
-    },
-    {
-      "instructerId": "6",
-      "name": "cccc",
-      "dateStart": "2022-12-08",
-      "dateEnd": "2022-12-14",
-      "state": "1",
-      "instructorName": "Kübra Kul",
-      "id": 7
     }
   ],
   "users": [
