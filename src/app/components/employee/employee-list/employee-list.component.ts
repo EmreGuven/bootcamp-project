@@ -32,8 +32,8 @@ export class EmployeeListComponent implements OnInit {
   deleteToEmployee(id: number) {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
-        confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-danger',
+        confirmButton: 'btn bg-gradient-info active ms-3',
+        cancelButton: 'btn bg-gradient-primary active',
       },
       buttonsStyling: false,
     });
@@ -44,7 +44,7 @@ export class EmployeeListComponent implements OnInit {
         text: 'Bu işlem geri alınamaz!',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Evet!',
+        confirmButtonText: 'Evet !',
         cancelButtonText: 'Hayır',
         reverseButtons: true,
       })

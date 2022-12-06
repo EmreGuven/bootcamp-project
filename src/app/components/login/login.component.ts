@@ -12,7 +12,7 @@ import { ILoginUser } from 'src/app/models/auth/user-login-model';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  user:ILoginUser[]=[];
+  user: ILoginUser[] = [];
 
   constructor(
     private authService: AuthService,
@@ -33,25 +33,40 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if(this.loginForm.valid) {
-      this.authService.userLogin(this.loginForm.value).subscribe((data)=>{
-        if(data.length>0){
-          this.toastrService.success('Başarılı bir şekilde giriş yapıldı','Tebrikler (:')
-          data[0].role == 'ROLE_INSTRUCTOR'
-            ? this.router.navigate(['instructor'])
-            : this.router.navigate(['admin']);
-          data[0].role == 'ROLE_APPLICANT'  
-            ? this.router.navigate(['applicant'])
-            : this.router.navigate(['admin'])
-          localStorage.setItem('token', data[0].token);
-          localStorage.setItem('role',data[0].role)
+    if (this.loginForm.valid) {
+      this.authService.userLogin(this.loginForm.value).subscribe((data) => {
+        if (data.length > 0) {
+          this.toastrService.success(
+            'Başarılı bir şekilde giriş yapıldı',
+            'Tebrikler (:'
+          );
+
+          if (data[0].role == 'ROLE_EMPLOYEE') {
+            this.router.navigate(['admin']);
+            localStorage.setItem('token', data[0].token);
+            localStorage.setItem('role', data[0].role);
+          }
+
+          if (data[0].role == 'ROLE_INSTRUCTOR') {
+            this.router.navigate(['instructor']);
+            localStorage.setItem('token', data[0].token);
+            localStorage.setItem('role', data[0].role);
+          }
+
+          if (data[0].role == 'ROLE_APPLICANT') {
+            this.router.navigate(['applicant']);
+            localStorage.setItem('token', data[0].token);
+            localStorage.setItem('role', data[0].role);
+          }
         } else {
-          this.toastrService.error('Giriş başarısız','!!!' )
+          this.toastrService.error('Giriş başarısız', '!!!');
         }
       });
     } else {
-      this.toastrService.error('Kullanıcı bilgileri hatalı',
-      'Lütfen tekrar deneyiniz ')
+      this.toastrService.error(
+        'Kullanıcı bilgileri hatalı',
+        'Lütfen tekrar deneyiniz '
+      );
     }
   }
 }

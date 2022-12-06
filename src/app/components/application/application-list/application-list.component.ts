@@ -28,8 +28,8 @@ export class ApplicationListComponent implements OnInit {
   deleteToApplication(id:number) {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
-        confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-danger',
+        confirmButton: 'btn bg-gradient-info active ms-3',
+        cancelButton: 'btn bg-gradient-primary active',
       },
       buttonsStyling: false,
     });
