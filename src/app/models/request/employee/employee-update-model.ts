@@ -7,4 +7,5 @@ export interface IEmployeeUpdateModel{
     nationalIdentity:string;
     dateOfBirth:string;
     position:string;
+    image:string;
 }

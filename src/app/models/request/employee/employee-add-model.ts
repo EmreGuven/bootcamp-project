@@ -6,4 +6,5 @@ export interface IEmployeeAddModel{
     nationalIdentity:string;
     dateOfBirth:string;
     position:string;
+    image:string;
 }

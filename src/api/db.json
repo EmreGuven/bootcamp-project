@@ -77,7 +77,8 @@
       "dateOfBirth": "18/10/1975",
       "position": "Müdür Yardımcısı",
       "id": 2,
-      "role": "ROLE_EMPLOYEE"
+      "role": "ROLE_EMPLOYEE",
+      "image":"../../assets/img/products/product-1-min.jpg"
     },
     {
       "firstName": "Hasvelian",
@@ -88,7 +89,8 @@
       "dateOfBirth": "10/08/1985",
       "position": "temizlikçi",
       "id": 1,
-      "role": "ROLE_EMPLOYEE"
+      "role": "ROLE_EMPLOYEE",
+      "image":"../../assets/img/products/product-1-min.jpg"
     },
     {
       "firstName": "Enes Bin Malik",
@@ -99,7 +101,8 @@
       "dateOfBirth": "12/05/1977",
       "position": "Uzman",
       "id": 3,
-      "role": "ROLE_EMPLOYEE"
+      "role": "ROLE_EMPLOYEE",
+      "image":"../../assets/img/products/product-1-min.jpg"
     },
     {
       "firstName": "Esra Pakdemird",
@@ -110,7 +113,8 @@
       "dateOfBirth": "06/05/1980",
       "position": "Tekniker",
       "id": 4,
-      "role": "ROLE_EMPLOYEE"
+      "role": "ROLE_EMPLOYEE",
+      "image":"../../assets/img/products/product-1-min.jpg"
     },
     {
       "firstName": "Gamze ",
@@ -121,7 +125,8 @@
       "dateOfBirth": "25/03/1995",
       "position": "Mühendis",
       "id": 5,
-      "role": "ROLE_EMPLOYEE"
+      "role": "ROLE_EMPLOYEE",
+      "image":"../../assets/img/products/product-1-min.jpg"
     },
     {
       "firstName": "Büşra",
@@ -132,7 +137,8 @@
       "dateOfBirth": "03/09/1994",
       "position": "Tekniker",
       "id": 6,
-      "role": "ROLE_EMPLOYEE"
+      "role": "ROLE_EMPLOYEE",
+      "image":"../../assets/img/products/product-1-min.jpg"
     }
   ],
   "instructor": [

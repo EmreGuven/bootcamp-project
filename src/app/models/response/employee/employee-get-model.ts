@@ -7,4 +7,5 @@ export interface IEmployeeGetModel{
     nationalIdentity:string;
     dateOfBirth:Date;
     position:string;
+    image:string;
 }
