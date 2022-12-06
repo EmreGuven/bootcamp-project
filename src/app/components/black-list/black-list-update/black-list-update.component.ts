@@ -55,11 +55,15 @@ export class BlackListUpdateComponent implements OnInit {
   }
 
   updateToBlacklist(){
+    if (this.blacklistUpdateForm.valid) {
     this.blacklistService.updateToBlacklist(this.activatedRoute.snapshot.params["id"],this.blacklistUpdateForm.value)
     .subscribe(()=>{
       this.toastrService.success("Kara Liste Bilgileri Güncellendi", "Tebrikler (:")
     });
     this.location.back();
+    } else {
+      this.toastrService.error('Eksik Bilgi', '!!!');
+    }
   }
 
   getApplicants(){

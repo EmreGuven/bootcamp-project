@@ -85,6 +85,9 @@ export class BootcampUpdateComponent implements OnInit {
             });
           this.location.back();
         });
+    } else {
+      this.toastrService.error('Eksik Bilgi', '!!!');
     }
   }
+  
 }

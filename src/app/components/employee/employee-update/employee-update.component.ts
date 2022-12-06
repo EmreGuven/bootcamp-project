@@ -47,8 +47,9 @@ export class EmployeeUpdateComponent implements OnInit {
     this.employeeUpdateForm = this.formBuilder.group({
       firstName: [this.employee.firstName, Validators.required],
       lastName: [this.employee.lastName, Validators.required],
-      email: [this.employee.email, Validators.required],
-      password: [this.employee.password, Validators.required],
+      email:new FormControl(this.employee.email, [Validators.required, 
+        Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
+      password:new FormControl(this.employee.password, [Validators.required, Validators.minLength(5)]),
       nationalIdentity: [this.employee.nationalIdentity, Validators.required],
       dateOfBirth: [this.employee.dateOfBirth, Validators.required],
       position: [this.employee.position, Validators.required],
@@ -56,6 +57,7 @@ export class EmployeeUpdateComponent implements OnInit {
   }
 
   updateToEmployee() {
+    if (this.employeeUpdateForm.valid) {
     this.employeeService
       .updateToEmployee(
         this.activatedRoute.snapshot.params['id'],
@@ -68,5 +70,8 @@ export class EmployeeUpdateComponent implements OnInit {
         );
       });
     this.location.back();
+  } else {
+    this.toastrService.error('Eksik Bilgi', '!!!');
+  }
   }
 }

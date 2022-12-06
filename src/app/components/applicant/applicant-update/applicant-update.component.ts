@@ -3,7 +3,7 @@ import { ApplicantService } from './../../../services/applicant.service';
 import { IApplicantGetModel } from './../../../models/response/applicant/applicant-get-model';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -43,14 +43,16 @@ export class ApplicantUpdateComponent implements OnInit {
     this.applicantUpdateForm = this.formBuilder.group({
       firstName: [this.applicant.firstName, Validators.required],
       lastName: [this.applicant.lastName, Validators.required],
-      email: [this.applicant.email, Validators.required],
-      password: [this.applicant.password, Validators.required],
+      email:new FormControl(this.applicant.email, [Validators.required, 
+        Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
+      password:new FormControl(this.applicant.password, [Validators.required, Validators.minLength(5)]),
       nationalIdentity: [this.applicant.nationalIdentity, Validators.required],
       dateOfBirth: [this.applicant.dateOfBirth, Validators.required],
       about: [this.applicant.about, Validators.required],
     });
   }
   updateToApplicant() {
+    if (this.applicantUpdateForm.valid) {
     this.applicantService
       .updateToApplicant(
         this.activatedRoute.snapshot.params['id'],
@@ -63,7 +65,8 @@ export class ApplicantUpdateComponent implements OnInit {
         );
       });
       this.location.back();
+    } else {
+      this.toastrService.error('Eksik Bilgi', '!!!');
+    }
   }
-
- 
 }

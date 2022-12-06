@@ -6,33 +6,64 @@
       <label class="form-label"></label>
       <input type="text" class="form-control" formControlName="firstName">
     </div>
+    <div *ngIf="employeeUpdateForm.get('firstName').hasError('required') && employeeUpdateForm.get('firstName').touched" class="form-text text-muted uyari">
+      Ad zorunludur!
+    </div>
 
     <div class="input-group input-group-outline my-3">
       <label class="form-label"></label>
       <input type="text" class="form-control" formControlName="lastName">
+    </div>
+    <div *ngIf="employeeUpdateForm.get('lastName').hasError('required') && employeeUpdateForm.get('lastName').touched" class="form-text text-muted uyari">
+      Soyad zorunludur!
     </div>
 
     <div class="input-group input-group-outline my-3">
       <label class="form-label"></label>
       <input type="email" class="form-control" formControlName="email">
     </div>
+    <div *ngIf="employeeUpdateForm.get('email').hasError('required') && employeeUpdateForm.get('email').touched" class="form-text text-muted uyari">
+      Email zorunludur!
+    </div>
+    <div *ngIf="employeeUpdateForm.get('email').hasError('pattern') && employeeUpdateForm.get('email').touched" class="form-text text-muted uyari">
+      Email adresi geçersiz!
+    </div>
     
     <div class="input-group input-group-outline my-3">
       <label class="form-label"></label>
       <input type="text" class="form-control" formControlName="password">
     </div>
+    <div *ngIf="employeeUpdateForm.get('password').hasError('required') && employeeUpdateForm.get('password').touched" class="form-text text-muted uyari">
+      Şifre zorunludur!
+    </div>
+    <div *ngIf="employeeUpdateForm.get('password').errors?.['minlength'] && employeeUpdateForm.get('password').touched" class="form-text text-muted uyari">
+      Şifre en az 5 karakterli olmalı!
+    </div>
+
     <div class="input-group input-group-outline my-3">
       <label class="form-label"></label>
       <input type="text" class="form-control" formControlName="nationalIdentity">
     </div>
+    <div *ngIf="employeeUpdateForm.get('nationalIdentity').hasError('required') && employeeUpdateForm.get('nationalIdentity').touched" class="form-text text-muted uyari">
+      TC No zorunludur!
+    </div>
+
     <div class="input-group input-group-outline my-3">
       <label class="form-label"></label>
       <input type="text" class="form-control" formControlName="dateOfBirth">
     </div>
+    <div *ngIf="employeeUpdateForm.get('dateOfBirth').hasError('required') && employeeUpdateForm.get('dateOfBirth').touched" class="form-text text-muted uyari">
+      Doğum Tarihi zorunludur
+    </div>
+
     <div class="input-group input-group-outline my-3">
       <label class="form-label"></label>
       <input type="text" class="form-control" formControlName="position">
     </div>
+    <div *ngIf="employeeUpdateForm.get('position').hasError('required') && employeeUpdateForm.get('position').touched" class="form-text text-muted uyari">
+      Pozisyon zorunludur!
+    </div>
+
 </form>
 <div class="card-footer">
   <button type="button" class="btn btn-success" (click)="updateToEmployee()">Kaydet</button>
