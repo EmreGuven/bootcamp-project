@@ -1,3 +1,4 @@
+import { IApplicationAddModel } from './../../../models/request/application/application-add-model';
 import { IBootcampGetAllModel } from './../../../models/response/bootcamp/bootcamp-getall-model';
 import { BootcampService } from './../../../services/bootcamp.service';
 import { ToastrService } from 'ngx-toastr';
@@ -39,13 +40,25 @@ export class ApplicationAddComponent implements OnInit {
   }
   addToApplication() {
     if (this.applicationAddForm.valid) {
-      let application = Object.assign({}, this.applicationAddForm.value);
+      let application:IApplicationAddModel = Object.assign({}, this.applicationAddForm.value);
+      this.bootcampService
+        .getBootcampById(application.bootcampId)
+        .subscribe((bootcamp) => {
+          application.bootcampName = bootcamp.name;
+
+          this.applicantService
+          .getApplicantById(application.userId)
+          .subscribe((applicant) => {
+            application.applicantName = applicant.firstName+ ' ' + applicant.lastName;
+          
+
       this.applicationService
         .addToApplication(application)
         .subscribe((data) => {
           this.clearForm();
           this.toastrService.success('Application Eklendi', 'Tebrikler (:');
         });
+      })});
     } else {
       this.toastrService.error('Eksik Bilgi', '!!!');
     }
@@ -58,11 +71,13 @@ export class ApplicationAddComponent implements OnInit {
     this.applicantService.getApplicants().subscribe((data) => {
       this.applicants = data;
     });
+    this.createApplicationForm();
   }
 
   getBootcamps() {
     this.bootcampService.getBootcamps().subscribe((data) => {
       this.bootcamps = data;
     });
+    this.createApplicationForm();
   }
 }

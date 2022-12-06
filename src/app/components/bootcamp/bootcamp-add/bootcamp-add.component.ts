@@ -45,10 +45,8 @@ export class BootcampAddComponent implements OnInit {
   }
   addToBootcamp() {
     if (this.bootcampAddForm.valid) {
-      let bootcamp: IBootcampAddModel = Object.assign(
-        {},
-        this.bootcampAddForm.value
-      );
+      let bootcamp: IBootcampAddModel = Object.assign({},this.bootcampAddForm.value);
+      
       this.instructorService
         .getInstructorById(bootcamp.instructerId)
         .subscribe((ins) => {

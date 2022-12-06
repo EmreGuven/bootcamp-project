@@ -9,6 +9,7 @@ import { IApplicantGetAllModel } from 'src/app/models/response/applicant/applica
 import { IBootcampGetAllModel } from 'src/app/models/response/bootcamp/bootcamp-getall-model';
 import { ApplicantService } from 'src/app/services/applicant.service';
 import { BootcampService } from 'src/app/services/bootcamp.service';
+import { IApplicationUpdateModel } from 'src/app/models/request/application/application-update-model';
 
 @Component({
   selector: 'app-application-update',
@@ -55,11 +56,23 @@ export class ApplicationUpdateComponent implements OnInit {
   }
   updateToApplication() {
     if(this.applicationUpdateForm.valid){
+
+      let application: IApplicationUpdateModel = Object.assign({},this.applicationUpdateForm.value);
+      this.bootcampService
+        .getBootcampById(application.bootcampId)
+        .subscribe((bootcamp) => {
+          application.bootcampName = bootcamp.name ;
+          console.log(bootcamp);
+
+          this.applicantService
+        .getApplicantById(application.userId)
+        .subscribe((applicant) => {
+          application.applicantName = applicant.firstName+ ' ' + applicant.lastName;
+          console.log(applicant);
+
     this.applicationService
       .updateToApplication(
-        this.activatedRoute.snapshot.params['id'],
-        this.applicationUpdateForm.value
-      )
+        this.activatedRoute.snapshot.params['id'],application)
       .subscribe(() => {
         this.toastrService.success(
           'Application Bilgileri Güncellendi',
@@ -67,6 +80,7 @@ export class ApplicationUpdateComponent implements OnInit {
         );
       });      
       this.location.back();
+    })});
     }else {
       this.toastrService.error('Eksik Bilgi', '!!!');
     }
@@ -75,12 +89,14 @@ export class ApplicationUpdateComponent implements OnInit {
   getApplicant() {
     this.applicantService.getApplicants().subscribe((data) => {
       this.applicants = data;
+      this.getApplicationById();
     });
   }
 
   getBootcamp() {
     this.bootcampService.getBootcamps().subscribe((data) => {
       this.bootcamps = data;
+      this.getApplicationById();
     });
   }
 }

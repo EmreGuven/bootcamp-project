@@ -56,11 +56,20 @@ export class BlackListUpdateComponent implements OnInit {
 
   updateToBlacklist(){
     if (this.blacklistUpdateForm.valid) {
-    this.blacklistService.updateToBlacklist(this.activatedRoute.snapshot.params["id"],this.blacklistUpdateForm.value)
+
+      let blacklist: IBlacklistUpdateModel = Object.assign({},this.blacklistUpdateForm.value);
+      this.applicantService
+        .getApplicantById(blacklist.applicantId)
+        .subscribe((applicant) => {
+          blacklist.applicantName = applicant.firstName + ' ' + applicant.lastName;
+          console.log(applicant);
+
+    this.blacklistService.updateToBlacklist(this.activatedRoute.snapshot.params["id"],blacklist)
     .subscribe(()=>{
       this.toastrService.success("Kara Liste Bilgileri Güncellendi", "Tebrikler (:")
     });
     this.location.back();
+  });
     } else {
       this.toastrService.error('Eksik Bilgi', '!!!');
     }

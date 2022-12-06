@@ -1,3 +1,5 @@
+import { IBlacklistAddModel } from './../../../models/request/blacklist/blacklist-add-model';
+import { IBlacklistGetAllModel } from './../../../models/response/blacklist/blacklist-getall-model';
 import { BlacklistService } from './../../../services/blacklist.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -27,6 +29,13 @@ export class BlackListAddComponent implements OnInit {
     this.getApplicants();
   }
 
+  getApplicants(){
+    this.applicantService.getApplicants().subscribe((data)=>{
+      this.applicants = data
+    });
+    this.createBlacklistAddForm();
+  }
+
   createBlacklistAddForm() {
     this.blacklistAddForm = this.formBuilder.group({
       applicantId: ['', Validators.required],
@@ -36,12 +45,19 @@ export class BlackListAddComponent implements OnInit {
   }
   addToBlacklist() {
     if (this.blacklistAddForm.valid) {
-      let blacklist = Object.assign({}, this.blacklistAddForm.value);
+      let blacklist:IBlacklistAddModel = Object.assign({}, this.blacklistAddForm.value);
+
+      this.applicantService
+        .getApplicantById(blacklist.applicantId)
+        .subscribe((applicant) => {
+          blacklist.applicantName = applicant.firstName + ' ' + applicant.lastName;
+     
       this.blacklistService.addToBlacklist(blacklist).subscribe((data) => {
         this.clearForm();
         this.toastrService.success('Kara Listeye Eklendi', 'Tebrikler (:');
       });
-    } else {
+    });
+    }else {
       this.toastrService.error('Eksik Bilgi', '!!!');
     }
   }
@@ -49,10 +65,6 @@ export class BlackListAddComponent implements OnInit {
     this.blacklistAddForm.reset();
   }
 
-  getApplicants(){
-    this.applicantService.getApplicants().subscribe((data)=>{
-      this.applicants = data
-    })
-  }
+  
 
 }

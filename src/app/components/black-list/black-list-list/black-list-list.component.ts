@@ -14,7 +14,9 @@ export class BlackListListComponent implements OnInit {
 
   blacklists:IBlacklistGetAllModel[]=[];
   
-  constructor(private blacklistService:BlacklistService, private toastrService:ToastrService ) { }
+  constructor(private blacklistService:BlacklistService,
+     private applicantService:ApplicantService,
+     private toastrService:ToastrService ) { }
 
   ngOnInit(): void {
     this.getBlacklists();
