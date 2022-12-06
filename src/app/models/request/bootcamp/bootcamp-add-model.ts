@@ -4,5 +4,8 @@ export interface IBootcampAddModel{
     name:string;
     dateStart:string;
     dateEnd:string;
+    image:string;
+    description:string;
+    city:string;
     state:number;
 }

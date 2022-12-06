@@ -5,5 +5,8 @@ export interface IBootcampGetModel{
     name:string;
     dateStart:Date;
     dateEnd:Date;
+    description:string;
+    image:string;
+    city:string;
     state:number;
 }

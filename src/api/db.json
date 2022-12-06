@@ -246,6 +246,9 @@
       "name": "FrontEnd",
       "dateStart": "10/10/22",
       "dateEnd": "10/11/22",
+      "description":"string",
+      "image": "../../assets/img/products/product-1-min.jpg",
+      "city":"Ankara",
       "state": 1
     },
     {
@@ -253,6 +256,9 @@
       "name": "Backend",
       "dateStart": "14/11/2022",
       "dateEnd": "12/12/2022",
+      "description":"string",
+      "image": "../../assets/img/products/product-1-min.jpg",
+      "city":"İstanbul",
       "state": "1",
       "id": 2
     },
@@ -261,6 +267,9 @@
       "name": "Solana Practium",
       "dateStart": "02/12/2022",
       "dateEnd": "03/01/2023",
+      "description":"string",
+      "image": "../../assets/img/products/product-1-min.jpg",
+      "city":"İzmir",
       "state": "1",
       "id": 3
     },
@@ -269,6 +278,9 @@
       "name": "Coderspace Machine Learning ",
       "dateStart": "14/11/2022",
       "dateEnd": "12/12/2022",
+      "description":"string",
+      "image": "../../assets/img/products/product-1-min.jpg",
+      "city":"Bursa",
       "state": "1",
       "id": 4
     },
@@ -277,6 +289,9 @@
       "name": "System & Network",
       "dateStart": "02/01/2023",
       "dateEnd": "05/03/2023",
+      "description":"string",
+      "image": "../../assets/img/products/product-1-min.jpg",
+      "city":"Antalya",
       "state": "2",
       "id": 5
     },
@@ -285,6 +300,9 @@
       "name": "Bilgi Teknolojileri Denetimi",
       "dateStart": "15/12/2022",
       "dateEnd": "18/01/2023",
+      "description":"string",
+      "image": "../../assets/img/products/product-1-min.jpg",
+      "city":"Ankara",
       "state": "2",
       "id": 6
     }
