@@ -10,7 +10,7 @@
             {{ applicant.firstName }}
         </option>
       </select>
-      <label for="applicantId" class="form-label">Eğitmen Seçiniz</label>
+      <label for="applicantId" class="form-label">Aday Seçiniz</label>
     </div>
     <div *ngIf="blacklistAddForm.get('applicantId').hasError('required') && blacklistAddForm.get('applicantId').touched" class="form-text text-muted uyari">
       Aday zorunludur!

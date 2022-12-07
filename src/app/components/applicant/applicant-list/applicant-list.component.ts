@@ -18,7 +18,6 @@ export class ApplicantListComponent implements OnInit {
 
   constructor(
     private applicantService: ApplicantService,
-    private toastrService: ToastrService,
     public loginGuard:LoginGuard
   ) {}
 

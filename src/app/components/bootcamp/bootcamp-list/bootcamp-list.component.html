@@ -83,6 +83,12 @@
                       Sil
                     </button>
                   </td>
+                  <td *ngIf="loginGuard.roles == 'ROLE_APPLICANT'">
+                    <button (click)="getBootcampData(bootcamp)" type="button"
+                      class="btn bg-gradient-info mb-0 mt-0 mt-md-n9 mt-lg-0">
+                      Kayıt Ol
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>

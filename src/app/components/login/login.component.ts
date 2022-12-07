@@ -45,18 +45,22 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['admin']);
             localStorage.setItem('token', data[0].token);
             localStorage.setItem('role', data[0].role);
+            localStorage.setItem('id', data[0].id.toString());
           }
+          
 
           if (data[0].role == 'ROLE_INSTRUCTOR') {
             this.router.navigate(['instructor']);
             localStorage.setItem('token', data[0].token);
             localStorage.setItem('role', data[0].role);
+            localStorage.setItem('id', data[0].id.toString());
           }
 
           if (data[0].role == 'ROLE_APPLICANT') {
             this.router.navigate(['applicant']);
             localStorage.setItem('token', data[0].token);
             localStorage.setItem('role', data[0].role);
+            localStorage.setItem('id', data[0].id.toString());
           }
         } else {
           this.toastrService.error('Giriş başarısız', '!!!');

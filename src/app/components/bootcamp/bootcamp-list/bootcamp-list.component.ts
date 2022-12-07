@@ -1,3 +1,5 @@
+import { ApplicationService } from 'src/app/services/application.service';
+import { ApplicantService } from 'src/app/services/applicant.service';
 import { LoginGuard } from './../../../guards/login.guard';
 import { InstructorService } from './../../../services/instructor.service';
 import { ActivatedRoute } from '@angular/router';
@@ -14,13 +16,13 @@ import Swal from 'sweetalert2';
 })
 export class BootcampListComponent implements OnInit {
   bootcamps: IBootcampGetAllModel[] = [];
-
+  bootcampSaveData: any;
   constructor(
     private bootcampService: BootcampService,
     private toastrService: ToastrService,
-    private activatedRoute: ActivatedRoute,
     public instructorService: InstructorService,
-    public loginGuard:LoginGuard
+    public loginGuard: LoginGuard,
+    private applicationService: ApplicationService
   ) {}
 
   ngOnInit(): void {
@@ -70,5 +72,29 @@ export class BootcampListComponent implements OnInit {
           );
         }
       });
+  }
+  getBootcampData(data: any) {
+    this.bootcampSaveData = data;
+    this.addToApplication();
+  }
+
+  addToApplication() {
+    let applicationData = Object.assign({});
+
+    applicationData.id = this.bootcampSaveData.id;
+    applicationData.state = this.bootcampSaveData.state;
+    applicationData.applicantId = localStorage.getItem('id');
+    applicationData.bootcampName = this.bootcampSaveData.name;
+
+    if (applicationData.state == 1) {
+      this.applicationService
+        .addToApplication(applicationData)
+        .subscribe(() => {
+          console.log('data');
+          this.toastrService.success('Tebrikler', 'Kayıt Başarılı');
+        });
+    } else {
+      this.toastrService.warning('Bu kurs aktif değil');
+    }
   }
 }

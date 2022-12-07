@@ -187,12 +187,20 @@
   ],
   "application": [
     {
-      "userId": "2",
-      "bootcampId": "2",
+      "id": 3,
       "state": "1",
-      "bootcampName": "Backend",
-      "applicantName": "İlknur Yıldırım",
-      "id": 2
+      "applicantId": "3"
+    },
+    {
+      "id": 2,
+      "state": "1",
+      "applicantId": "3"
+    },
+    {
+      "id": 4,
+      "state": "1",
+      "applicantId": "3",
+      "bootcampName": "Coderspace Machine Learning "
     }
   ],
   "blackList": [
