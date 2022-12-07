@@ -45,7 +45,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let instructor of instructors">
-                  <td>
+                  <td style="height: 60px;">
                     <div class="d-flex px-2">
                       <div class="my-auto">
                         <h6 class="mb-0 text-xs">{{ instructor.firstName }}</h6>
@@ -86,7 +86,7 @@
                       </div>
                     </div>
                   </td>
-                  <td>
+                  <td *ngIf="loginGuard.roles == 'ROLE_EMPLOYEE'">
                     <button
                       routerLink="update/{{ instructor.id }}"
                       class="btn bg-gradient-info mb-0 mt-0 mt-md-n9 mt-lg-0"
@@ -94,7 +94,7 @@
                       Güncelle
                     </button>
                   </td>
-                  <td>
+                  <td *ngIf="loginGuard.roles == 'ROLE_EMPLOYEE'">
                     <button
                       (click)="deleteToInstructor(instructor.id)"
                       type="button"

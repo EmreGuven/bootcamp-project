@@ -125,18 +125,6 @@
       "id": 5,
       "role": "ROLE_EMPLOYEE",
       "image": "../../assets/img/products/product-1-min.jpg"
-    },
-    {
-      "firstName": "Büşra",
-      "lastName": "Aydın",
-      "email": "aydın@gmail.com",
-      "password": "96324532",
-      "nationalIdentity": "2175634586",
-      "dateOfBirth": "1994-09-15",
-      "position": "Tekniker",
-      "id": 6,
-      "role": "ROLE_EMPLOYEE",
-      "image": "../../assets/img/products/product-1-min.jpg"
     }
   ],
   "instructor": [

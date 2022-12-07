@@ -4,6 +4,7 @@ import { Component,OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import { InstructorService } from 'src/app/services/instructor.service';
 import Swal from 'sweetalert2';
+import { LoginGuard } from 'src/app/guards/login.guard';
 
 @Component({
   selector: 'app-instructor-list',
@@ -20,7 +21,8 @@ export class InstructorListComponent implements OnInit {
   dataSource:any
 
   constructor(private instructorService:InstructorService,
-    private toastrService:ToastrService) { }
+    private toastrService:ToastrService,
+    public loginGuard:LoginGuard) { }
 
   ngOnInit(): void {
     this.getInstructors();

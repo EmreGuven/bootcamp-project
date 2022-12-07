@@ -1,4 +1,3 @@
-import { CanActivate } from '@angular/router';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 import { ApplicationListComponent } from './components/application/application-list/application-list.component';
 import { EmployeeUpdateComponent } from './components/employee/employee-update/employee-update.component';

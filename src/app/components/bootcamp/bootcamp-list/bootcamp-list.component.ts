@@ -1,3 +1,4 @@
+import { LoginGuard } from './../../../guards/login.guard';
 import { InstructorService } from './../../../services/instructor.service';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -18,7 +19,8 @@ export class BootcampListComponent implements OnInit {
     private bootcampService: BootcampService,
     private toastrService: ToastrService,
     private activatedRoute: ActivatedRoute,
-    public instructorService: InstructorService
+    public instructorService: InstructorService,
+    public loginGuard:LoginGuard
   ) {}
 
   ngOnInit(): void {

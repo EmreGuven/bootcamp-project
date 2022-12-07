@@ -39,7 +39,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let applicant of applicants">
-                  <td>
+                  <td style="height: 60px;">
                     <div class="d-flex px-2">
                       <div class="my-auto">
                         <h6 class="mb-0 text-xs">{{ applicant.firstName }}</h6>
@@ -97,13 +97,13 @@
                       </div>
                     </div>
                   </td>
-                  <td>
+                  <td *ngIf="loginGuard.roles == 'ROLE_EMPLOYEE'">
                     <button routerLink="update/{{ applicant.id }}"
                       class="btn bg-gradient-info mb-0 mt-0 mt-md-n9 mt-lg-0">
                       Güncelle
                     </button>
                   </td>
-                  <td>
+                  <td *ngIf="loginGuard.roles == 'ROLE_EMPLOYEE'">
                     <button
                       (click)="deleteToApplicant(applicant.id)"
                       type="button"

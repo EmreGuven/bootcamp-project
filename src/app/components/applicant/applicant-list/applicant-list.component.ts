@@ -1,10 +1,10 @@
-import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { IApplicantGetAllModel } from './../../../models/response/applicant/applicant-getall-model';
 import { ApplicantService } from './../../../services/applicant.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SwalComponent } from '@sweetalert2/ngx-sweetalert2';
 import Swal from 'sweetalert2';
+import { LoginGuard } from 'src/app/guards/login.guard';
 
 @Component({
   selector: 'app-applicant-list',
@@ -18,7 +18,8 @@ export class ApplicantListComponent implements OnInit {
 
   constructor(
     private applicantService: ApplicantService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    public loginGuard:LoginGuard
   ) {}
 
   applicants: IApplicantGetAllModel[] = [];
