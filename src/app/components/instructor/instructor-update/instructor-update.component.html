@@ -2,24 +2,24 @@
   <div class="card-header"><h5 class="title" style="text-align: center;">Eğitmen Güncelle</h5></div>
   <form [formGroup]="instructorUpdateForm" *ngIf="instructorUpdateForm">
 
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label"></label>
+    <div class="input-group input-group-static mb-4">
+      <label>Ad:</label>
       <input type="text" class="form-control" formControlName="firstName">
     </div>
     <div *ngIf="instructorUpdateForm.get('firstName').hasError('required') && instructorUpdateForm.get('firstName').touched" class="form-text text-muted uyari">
       Ad zorunludur!
     </div>
 
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label"></label>
+    <div class="input-group input-group-static mb-4">
+      <label>Soyad:</label>
       <input type="text" class="form-control" formControlName="lastName">
     </div>
     <div *ngIf="instructorUpdateForm.get('lastName').hasError('required') && instructorUpdateForm.get('lastName').touched" class="form-text text-muted uyari">
       Soyad zorunludur!
     </div>
 
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label"></label>
+    <div class="input-group input-group-static mb-4">
+      <label>Email:</label>
       <input type="email" class="form-control" formControlName="email">
     </div>
     <div *ngIf="instructorUpdateForm.get('email').hasError('required') && instructorUpdateForm.get('email').touched" class="form-text text-muted uyari">
@@ -29,8 +29,8 @@
       Email adresi geçersiz!
     </div>
     
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label"></label>
+    <div class="input-group input-group-static mb-4">
+      <label>Şifre:</label>
       <input type="text" class="form-control" formControlName="password">
     </div>
     <div *ngIf="instructorUpdateForm.get('password').hasError('required') && instructorUpdateForm.get('password').touched" class="form-text text-muted uyari">
@@ -40,12 +40,12 @@
       Şifre en az 5 karakterli olmalı!
     </div>
 
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label"></label>
+    <div class="input-group input-group-static mb-4">
+      <label>Firma:</label>
       <input type="text" class="form-control" formControlName="companyName">
     </div>
     <div *ngIf="instructorUpdateForm.get('companyName').hasError('required') && instructorUpdateForm.get('nationalIdentity').touched" class="form-text text-muted uyari">
-      Firma Adı zorunludur!
+      Firma zorunludur!
     </div>
 
 </form>

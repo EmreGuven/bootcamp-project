@@ -70,8 +70,8 @@ export class EmployeeUpdateComponent implements OnInit {
         );
       });
     this.location.back();
-  } else {
-    this.toastrService.error('Eksik Bilgi', '!!!');
-  }
+    } else {
+      this.toastrService.error('Eksik Bilgi', '!!!');
+    }
   }
 }

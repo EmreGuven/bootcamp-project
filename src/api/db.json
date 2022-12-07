@@ -6,7 +6,7 @@
       "email": "emre@hotmail.com",
       "password": "12345",
       "nationalIdentity": "39834578547",
-      "dateOfBirth": "13/10/1998",
+      "dateOfBirth": "1998-10-10",
       "about": "Sivas Üniversitesi Bilgisayar Mühendisliği",
       "id": 1,
       "role": "ROLE_APPLICANT"
@@ -17,7 +17,7 @@
       "email": "ilknur@gmail.com",
       "password": "478521",
       "nationalIdentity": "1456327852",
-      "dateOfBirth": "12/06/1999",
+      "dateOfBirth": "1996-01-21",
       "about": "Selçuk Üniversitesi Bilgisayar Mühendisliği",
       "id": 2,
       "role": "ROLE_APPLICANT"
@@ -28,7 +28,7 @@
       "email": "sevda@gmail.com",
       "password": "412369",
       "nationalIdentity": "1245789632",
-      "dateOfBirth": "14/12/1998",
+      "dateOfBirth": "1998-12-05",
       "about": "Gazi Üniversitesi Bilgisayar Mühendisliği",
       "id": 3,
       "role": "ROLE_APPLICANT"
@@ -39,7 +39,7 @@
       "email": "burak@gmail.com",
       "password": "412369",
       "nationalIdentity": "1063897552",
-      "dateOfBirth": "17/03/2001",
+      "dateOfBirth": "1990-02-02",
       "about": "Hitit Üniversitesi Bilgisayar Programcılığı",
       "id": 4,
       "role": "ROLE_APPLICANT"
@@ -50,7 +50,7 @@
       "email": "haluk@gmail.com",
       "password": "456321",
       "nationalIdentity": "1075951535",
-      "dateOfBirth": "16/07/2000",
+      "dateOfBirth": "1990-05-15",
       "about": "Erzurum Üniversitesi YBS",
       "id": 6,
       "role": "ROLE_APPLICANT"
@@ -61,7 +61,7 @@
       "email": "mert@gmail.com",
       "password": "742596",
       "nationalIdentity": "2054865645",
-      "dateOfBirth": "12/17/1998",
+      "dateOfBirth": "1998-08-10",
       "about": "Kırıkkale Üniversitesi İşletme",
       "id": 5,
       "role": "ROLE_APPLICANT"
@@ -74,11 +74,9 @@
       "email": "aliakman@hotmail.com",
       "password": "2312323",
       "nationalIdentity": "39832511547",
-      "dateOfBirth": "18/10/1975",
+      "dateOfBirth": "1975-01-15",
       "position": "Müdür Yardımcısı",
-      "id": 2,
-      "role": "ROLE_EMPLOYEE",
-      "image":"../../assets/img/products/product-1-min.jpg"
+      "id": 2
     },
     {
       "firstName": "Hasvelian",
@@ -86,11 +84,11 @@
       "email": "kiran@hotmail.com",
       "password": "55444445",
       "nationalIdentity": "39832111547",
-      "dateOfBirth": "10/08/1985",
+      "dateOfBirth": "1985-08-10",
       "position": "temizlikçi",
       "id": 1,
       "role": "ROLE_EMPLOYEE",
-      "image":"../../assets/img/products/product-1-min.jpg"
+      "image": "../../assets/img/products/product-1-min.jpg"
     },
     {
       "firstName": "Enes Bin Malik",
@@ -98,11 +96,11 @@
       "email": "enesköksal@gmail.com",
       "password": "25524565",
       "nationalIdentity": "24568534672",
-      "dateOfBirth": "12/05/1977",
+      "dateOfBirth": "1977-12-12",
       "position": "Uzman",
       "id": 3,
       "role": "ROLE_EMPLOYEE",
-      "image":"../../assets/img/products/product-1-min.jpg"
+      "image": "../../assets/img/products/product-1-min.jpg"
     },
     {
       "firstName": "Esra Pakdemird",
@@ -110,11 +108,11 @@
       "email": "esratascı@gmail.com",
       "password": "852147",
       "nationalIdentity": "7596127596",
-      "dateOfBirth": "06/05/1980",
+      "dateOfBirth": "1980-07-12",
       "position": "Tekniker",
       "id": 4,
       "role": "ROLE_EMPLOYEE",
-      "image":"../../assets/img/products/product-1-min.jpg"
+      "image": "../../assets/img/products/product-1-min.jpg"
     },
     {
       "firstName": "Gamze ",
@@ -122,11 +120,11 @@
       "email": "gamze@gmail.com",
       "password": "75963145",
       "nationalIdentity": "1265743698",
-      "dateOfBirth": "25/03/1995",
+      "dateOfBirth": "1995-03-03",
       "position": "Mühendis",
       "id": 5,
       "role": "ROLE_EMPLOYEE",
-      "image":"../../assets/img/products/product-1-min.jpg"
+      "image": "../../assets/img/products/product-1-min.jpg"
     },
     {
       "firstName": "Büşra",
@@ -134,11 +132,11 @@
       "email": "aydın@gmail.com",
       "password": "96324532",
       "nationalIdentity": "2175634586",
-      "dateOfBirth": "03/09/1994",
+      "dateOfBirth": "1994-09-15",
       "position": "Tekniker",
       "id": 6,
       "role": "ROLE_EMPLOYEE",
-      "image":"../../assets/img/products/product-1-min.jpg"
+      "image": "../../assets/img/products/product-1-min.jpg"
     }
   ],
   "instructor": [
@@ -147,6 +145,8 @@
       "lastName": "Demiroğ",
       "email": "engin@hotmail.com",
       "password": "434523",
+      "nationalIdentity": "1525963214",
+      "dateOfBirth": "1993-11-10",
       "companyName": "kodlama.io",
       "id": 1,
       "role": "ROLE_INSTRUCTOR"
@@ -156,6 +156,8 @@
       "lastName": "Karaca",
       "email": "arda@gmail.com",
       "password": "45368",
+      "nationalIdentity": "1545963214",
+      "dateOfBirth": "1993-12-25",
       "companyName": "Udemy",
       "id": 2,
       "role": "ROLE_INSTRUCTOR"
@@ -166,7 +168,7 @@
       "email": "karaman@gmail.com",
       "password": "147852",
       "nationalIdentity": "3245963214",
-      "dateOfBirth": "30/12/1993",
+      "dateOfBirth": "1993-09-14",
       "companyName": "Gelecek Yazılım",
       "id": 3,
       "role": "ROLE_INSTRUCTOR"
@@ -177,7 +179,7 @@
       "email": "merve@gmail.com",
       "password": "746312",
       "nationalIdentity": "36925814775",
-      "dateOfBirth": "15/12/1990",
+      "dateOfBirth": "1990-01-01",
       "companyName": "Baykar",
       "id": 4,
       "role": "ROLE_INSTRUCTOR"
@@ -188,7 +190,7 @@
       "email": "selim@gmail.com",
       "password": "412369",
       "nationalIdentity": "1056821475",
-      "dateOfBirth": "20/04/1995",
+      "dateOfBirth": "1995-05-06",
       "companyName": "Aselsan",
       "id": 5,
       "role": "ROLE_INSTRUCTOR"
@@ -199,7 +201,7 @@
       "email": "Kubra@gmail.com",
       "password": "147852",
       "nationalIdentity": "5296741236",
-      "dateOfBirth": "13/09/1996",
+      "dateOfBirth": "1996-08-18",
       "companyName": "Havelsan",
       "id": 6,
       "role": "ROLE_INSTRUCTOR"
@@ -218,21 +220,21 @@
   "blackList": [
     {
       "applicantId": "5",
-      "date": "14/04/21",
+      "date": "2021-05-05",
       "reason": "Eksik Evrak",
       "applicantName": "Mert  Subaşı",
       "id": 1
     },
     {
       "applicantId": "3",
-      "date": "14/11/22",
+      "date": "2021-06-18",
       "reason": "Çalışıyor",
       "applicantName": "Sevda Şimşek",
       "id": 2
     },
     {
       "applicantId": "4",
-      "date": "14/11/2022",
+      "date": "2022-11-11",
       "reason": "Askerde",
       "applicantName": "Burak Ergin",
       "id": 3
@@ -250,65 +252,65 @@
       "id": 1,
       "instructerId": 1,
       "name": "FrontEnd",
-      "dateStart": "10/10/22",
-      "dateEnd": "10/11/22",
-      "description":"string",
+      "dateStart": "2022-01-01",
+      "dateEnd": "2022-02-01",
+      "description": "string",
       "image": "../../assets/img/products/product-1-min.jpg",
-      "city":"Ankara",
+      "city": "Ankara",
       "state": 1
     },
     {
       "instructerId": "1",
       "name": "Backend",
-      "dateStart": "14/11/2022",
-      "dateEnd": "12/12/2022",
-      "description":"string",
+      "dateStart": "2022-02-10",
+      "dateEnd": "2022-02-30",
+      "description": "string",
       "image": "../../assets/img/products/product-1-min.jpg",
-      "city":"İstanbul",
+      "city": "İstanbul",
       "state": "1",
       "id": 2
     },
     {
       "instructerId": "5",
       "name": "Solana Practium",
-      "dateStart": "02/12/2022",
-      "dateEnd": "03/01/2023",
-      "description":"string",
+      "dateStart": "2021-05-15",
+      "dateEnd": "2021-06-10",
+      "description": "string",
       "image": "../../assets/img/products/product-1-min.jpg",
-      "city":"İzmir",
+      "city": "İzmir",
       "state": "1",
       "id": 3
     },
     {
       "instructerId": "3",
       "name": "Coderspace Machine Learning ",
-      "dateStart": "14/11/2022",
-      "dateEnd": "12/12/2022",
-      "description":"string",
+      "dateStart": "2021-07-17",
+      "dateEnd": "2022-08-17",
+      "description": "string",
       "image": "../../assets/img/products/product-1-min.jpg",
-      "city":"Bursa",
+      "city": "Bursa",
       "state": "1",
       "id": 4
     },
     {
       "instructerId": "4",
       "name": "System & Network",
-      "dateStart": "02/01/2023",
-      "dateEnd": "05/03/2023",
-      "description":"string",
+      "dateStart": "2022-06-16",
+      "dateEnd": "2022-07-16",
+      "description": "string",
       "image": "../../assets/img/products/product-1-min.jpg",
-      "city":"Antalya",
+      "city": "Antalya",
       "state": "2",
       "id": 5
     },
     {
       "instructerId": "2",
       "name": "Bilgi Teknolojileri Denetimi",
-      "dateStart": "15/12/2022",
-      "dateEnd": "18/01/2023",
-      "description":"string",
+      "dateStart": "2022-01-11",
+      "dateEnd": "2022-02-11",
+      "description": "string",
       "image": "../../assets/img/products/product-1-min.jpg",
-      "city":"Ankara",
+      "city": "Ankara",
       "state": "2",
       "id": 6
     }

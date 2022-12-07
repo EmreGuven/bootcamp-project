@@ -1,9 +1,9 @@
 <div class="container" style="margin:auto; width:800px;">
 <div class="card-header"><h5 class="title" style="text-align: center;">Başvuru Güncelle</h5></div>
   <form [formGroup]="applicationUpdateForm" *ngIf="applicationUpdateForm">
-
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label"></label>
+      
+    <label>Aday:</label>
+    <div class="input-group input-group-static mb-4">
       <select id="userId" formControlName="userId" class="form-select rounded-0">
         <option [value]="null" disabled hidden>Aday Seçiniz</option>
         <option *ngFor="let applicant of applicants" [value]="applicant.id">
@@ -15,8 +15,8 @@
       Aday zorunludur!
     </div>
 
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label"></label>
+    <label>Bootcamp:</label>
+    <div class="input-group input-group-static mb-4">
       <select id="bootcampId" formControlName="bootcampId" class="form-select rounded-0">
         <option [value]="null" disabled hidden>Bootcamp Seçiniz</option>
         <option *ngFor="let bootcamp of bootcamps" [value]="bootcamp.id">
@@ -28,8 +28,8 @@
       Bootcamp zorunludur!
     </div>
 
-    <div class="input-group input-group-outline my-3">
-    <label class="form-label"></label>
+    <div class="input-group input-group-static mb-4">
+    <label>Durum:</label>
     <input type="text" class="form-control" formControlName="state">
     </div>
     <div *ngIf="applicationUpdateForm.get('state').hasError('required') && applicationUpdateForm.get('state').touched" class="form-text text-muted uyari">

@@ -2,16 +2,16 @@
 <div class="card-header"><h5 class="title" style="text-align: center;">Bootcamp Güncelle</h5></div>
   <form [formGroup]="bootcampUpdateForm" *ngIf="bootcampUpdateForm">
 
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label"></label>
+    <div class="input-group input-group-static mb-4">
+      <label>Bootcamp:</label>
       <input type="text" class="form-control" formControlName="name">
     </div>
     <div *ngIf="bootcampUpdateForm.get('name').hasError('required') && bootcampUpdateForm.get('name').touched" class="form-text text-muted uyari">
       Bootcamp zorunludur!
     </div>
-  
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label"></label>
+
+    <label>Eğitmen:</label>
+    <div class="input-group input-group-static mb-4">
       <select id="instructerId" formControlName="instructerId" class="form-select rounded-0">
         <option
           *ngFor="let instructor of instructors" [value]="instructor.id"> {{ instructor.firstName }} {{ instructor.lastName }}
@@ -22,24 +22,24 @@
       Eğitmen zorunludur!
     </div>
 
-    <div class="input-group input-group-outline my-3">
-      <label></label>
+    <div class="input-group input-group-static mb-4">
+      <label>Başlangıç Tarihi:</label>
       <input type="date" class="form-control" formControlName="dateStart">
     </div>
     <div *ngIf="bootcampUpdateForm.get('dateStart').hasError('required') && bootcampUpdateForm.get('dateStart').touched" class="form-text text-muted uyari">
       Başlangıç Tarihi zorunludur!
     </div>
 
-    <div class="input-group input-group-outline my-3">
-    <label></label>
+    <div class="input-group input-group-static mb-4">
+    <label>Bitiş Tarihi:</label>
     <input type="date" class="form-control" formControlName="dateEnd">
     </div>
     <div *ngIf="bootcampUpdateForm.get('dateEnd').hasError('required') && bootcampUpdateForm.get('dateEnd').touched" class="form-text text-muted uyari">
       Bitiş Tarihi zorunludur!
     </div>
 
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label">Durum</label>
+    <div class="input-group input-group-static mb-4">
+      <label>Durum:</label>
       <input type="text" class="form-control" formControlName="state">
     </div>
     <div *ngIf="bootcampUpdateForm.get('state').hasError('required') && bootcampUpdateForm.get('state').touched" class="form-text text-muted uyari">
