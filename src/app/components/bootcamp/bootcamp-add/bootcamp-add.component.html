@@ -1,7 +1,8 @@
 <div class="container-fluid" style="margin: auto; width:800px;">
 <div class="card-header"><h5 class="title" style="text-align: center;">Bootcamp Ekle</h5></div>
 <form [formGroup]="bootcampAddForm">
-
+  <div class="row">
+    <div class="col-md-6">
   <div class="input-group input-group-outline my-3">
     <label class="form-label">Bootcamp Adı</label>
     <input type="text" class="form-control" formControlName="name">
@@ -9,7 +10,9 @@
   <div *ngIf="bootcampAddForm.get('name').hasError('required') && bootcampAddForm.get('name').touched" class="form-text text-muted uyari">
     Bootcamp zorunludur!
   </div>
+</div>
 
+<div class="col-md-6">
   <div class="input-group input-group-outline my-3">
     <label class="form-label"></label>
     <select id="instructerId" formControlName="instructerId" class="form-select rounded-0">
@@ -22,7 +25,9 @@
   <div *ngIf="bootcampAddForm.get('instructerId').hasError('required') && bootcampAddForm.get('instructerId').touched" class="form-text text-muted uyari">
     Eğitmen zorunludur!
   </div>
+</div>
 
+<div class="col-md-6">
   <div class="input-group input-group-static my-3">
     <label>Başlangıç Tarihi</label>
     <input type="date" class="form-control" formControlName="dateStart">
@@ -30,7 +35,9 @@
   <div *ngIf="bootcampAddForm.get('dateStart').hasError('required') && bootcampAddForm.get('dateStart').touched" class="form-text text-muted uyari">
     Başlangıç Tarihi zorunludur!
   </div>
+</div>
 
+<div class="col-md-6">
   <div class="input-group input-group-static my-3">
     <label>Bitiş Tarihi</label>
     <input type="date" class="form-control" formControlName="dateEnd">
@@ -38,7 +45,9 @@
   <div *ngIf="bootcampAddForm.get('dateEnd').hasError('required') && bootcampAddForm.get('dateEnd').touched" class="form-text text-muted uyari">
     Bitiş Tarihi zorunludur!
   </div>
+</div>
 
+<div class="col-md-6">
   <div class="input-group input-group-outline my-3">
     <label class="form-label">Durum</label>
     <input type="text" class="form-control" formControlName="state">
@@ -46,7 +55,9 @@
   <div *ngIf="bootcampAddForm.get('state').hasError('required') && bootcampAddForm.get('state').touched" class="form-text text-muted uyari">
     Durum zorunludur!
   </div>
+</div>
 
+</div>
 </form>
 <div class="card-footer">
 <button type="button" class="btn btn-success" (click)="addToBootcamp()">Ekle</button>

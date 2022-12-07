@@ -1,7 +1,8 @@
  <div class="container" style="margin: auto; width:800px;">
  <div class="card-header"><h5 class="title" style="text-align: center;">Kara Liste Güncelle</h5></div>
   <form [formGroup]="blacklistUpdateForm" *ngIf="blacklistUpdateForm">
-    
+    <div class="row">
+      <div class="col-md-6">
     <label>Aday:</label>
     <div class="input-group input-group-static mb-4">
       <select id="applicantId" formControlName="applicantId" class="form-select rounded-0">
@@ -14,7 +15,9 @@
      <div *ngIf="blacklistUpdateForm.get('applicantId').hasError('required') && blacklistUpdateForm.get('applicantId').touched" class="form-text text-muted uyari">
       Aday zorunludur!
     </div>
+  </div>
 
+  <div class="col-md-6">
     <div class="input-group input-group-static mb-4">
       <label>Tarih:</label>
       <input type="date" class="form-control" formControlName="date">
@@ -22,7 +25,9 @@
     <div *ngIf="blacklistUpdateForm.get('date').hasError('required') && blacklistUpdateForm.get('date').touched" class="form-text text-muted uyari">
       Tarih zorunludur!
     </div>
+  </div>
 
+  <div class="col-md-6">
     <div class="input-group input-group-static mb-4">
       <label>Açıklama:</label>
       <input type="email" class="form-control" formControlName="reason">
@@ -30,7 +35,9 @@
     <div *ngIf="blacklistUpdateForm.get('reason').hasError('required') && blacklistUpdateForm.get('reason').touched" class="form-text text-muted uyari">
       Açıklama zorunludur!
     </div>
+  </div>
 
+  </div>
 </form>
 <div class="card-footer">
   <button type="button" class="btn btn-success" (click)="updateToBlacklist()">Kaydet</button>

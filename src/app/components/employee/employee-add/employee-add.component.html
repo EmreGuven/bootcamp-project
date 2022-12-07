@@ -1,7 +1,8 @@
   <div class="container-fluid" style="margin:auto; width:800px;">
   <div class="card-header"><h5 class="title" style="text-align: center;">Çalışan Ekle</h5></div>
   <form [formGroup]="employeeAddForm">
-
+    <div class="row">
+      <div class="col-md-6">
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Adı</label>
       <input type="text" class="form-control" formControlName="firstName">
@@ -9,7 +10,9 @@
     <div *ngIf="employeeAddForm.get('firstName').hasError('required') && employeeAddForm.get('firstName').touched" class="form-text text-muted uyari">
       Ad zorunludur!
     </div>
+  </div>
 
+    <div class="col-md-6">
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Soyad</label>
       <input type="text" class="form-control" formControlName="lastName">
@@ -17,7 +20,9 @@
     <div *ngIf="employeeAddForm.get('lastName').hasError('required') && employeeAddForm.get('lastName').touched" class="form-text text-muted uyari">
       Soyad zorunludur!
     </div>
+  </div>
 
+    <div class="col-md-6">
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Email</label>
       <input type="email" class="form-control" formControlName="email">
@@ -28,7 +33,9 @@
     <div *ngIf="employeeAddForm.get('email').hasError('pattern') && employeeAddForm.get('email').touched" class="form-text text-muted uyari">
       Email adresi geçersiz!
     </div>
+  </div>
 
+    <div class="col-md-6">
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Şifre</label>
       <input type="text" class="form-control" formControlName="password">
@@ -39,7 +46,9 @@
     <div *ngIf="employeeAddForm.get('password').errors?.['minlength'] && employeeAddForm.get('password').touched" class="form-text text-muted uyari">
       Şifre en az 5 karakterli olmalı!
     </div>
+  </div>
     
+  <div class="col-md-6">
     <div class="input-group input-group-outline my-3">
       <label class="form-label">TC No</label>
       <input type="text" class="form-control" formControlName="nationalIdentity">
@@ -47,7 +56,9 @@
     <div *ngIf="employeeAddForm.get('nationalIdentity').hasError('required') && employeeAddForm.get('nationalIdentity').touched" class="form-text text-muted uyari">
       TC No zorunludur!
     </div>
+  </div>
 
+  <div class="col-md-6">
     <div class="input-group input-group-static my-3">
       <label>Doğum Tarihi</label>
       <input type="date" class="form-control" formControlName="dateOfBirth">
@@ -55,7 +66,9 @@
     <div *ngIf="employeeAddForm.get('dateOfBirth').hasError('required') && employeeAddForm.get('dateOfBirth').touched" class="form-text text-muted uyari">
       Doğum Tarihi zorunludur
     </div>
+  </div>
 
+  <div class="col-md-6">
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Pozisyon</label>
       <input type="text" class="form-control" formControlName="position">
@@ -63,7 +76,9 @@
     <div *ngIf="employeeAddForm.get('position').hasError('required') && employeeAddForm.get('position').touched" class="form-text text-muted uyari">
       Pozisyon zorunludur!
     </div>
-
+  </div>
+  
+  </div>
 </form>
 <div class="card-footer">
   <button type="button" class="btn btn-success" (click)="addToEmployee()">Ekle</button>

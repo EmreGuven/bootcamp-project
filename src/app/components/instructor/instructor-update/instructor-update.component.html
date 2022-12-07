@@ -1,7 +1,8 @@
   <div class="container" style="margin: auto; width:800px;">
   <div class="card-header"><h5 class="title" style="text-align: center;">Eğitmen Güncelle</h5></div>
   <form [formGroup]="instructorUpdateForm" *ngIf="instructorUpdateForm">
-
+    <div class="row">
+      <div class="col-md-6">
     <div class="input-group input-group-static mb-4">
       <label>Ad:</label>
       <input type="text" class="form-control" formControlName="firstName">
@@ -9,7 +10,9 @@
     <div *ngIf="instructorUpdateForm.get('firstName').hasError('required') && instructorUpdateForm.get('firstName').touched" class="form-text text-muted uyari">
       Ad zorunludur!
     </div>
+  </div>
 
+  <div class="col-md-6">
     <div class="input-group input-group-static mb-4">
       <label>Soyad:</label>
       <input type="text" class="form-control" formControlName="lastName">
@@ -17,7 +20,9 @@
     <div *ngIf="instructorUpdateForm.get('lastName').hasError('required') && instructorUpdateForm.get('lastName').touched" class="form-text text-muted uyari">
       Soyad zorunludur!
     </div>
+  </div>
 
+  <div class="col-md-6">
     <div class="input-group input-group-static mb-4">
       <label>Email:</label>
       <input type="email" class="form-control" formControlName="email">
@@ -28,7 +33,9 @@
     <div *ngIf="instructorUpdateForm.get('email').hasError('pattern') && instructorUpdateForm.get('email').touched" class="form-text text-muted uyari">
       Email adresi geçersiz!
     </div>
+  </div>
     
+  <div class="col-md-6">
     <div class="input-group input-group-static mb-4">
       <label>Şifre:</label>
       <input type="text" class="form-control" formControlName="password">
@@ -39,7 +46,9 @@
     <div *ngIf="instructorUpdateForm.get('password').errors?.['minlength'] && instructorUpdateForm.get('password').touched" class="form-text text-muted uyari">
       Şifre en az 5 karakterli olmalı!
     </div>
+  </div>
 
+  <div class="col-md-6">
     <div class="input-group input-group-static mb-4">
       <label>Firma:</label>
       <input type="text" class="form-control" formControlName="companyName">
@@ -47,7 +56,9 @@
     <div *ngIf="instructorUpdateForm.get('companyName').hasError('required') && instructorUpdateForm.get('nationalIdentity').touched" class="form-text text-muted uyari">
       Firma zorunludur!
     </div>
+  </div>
 
+  </div>
 </form>
 <div class="card-footer">
   <button type="button" class="btn btn-success" (click)="updateToInstructor()">Kaydet</button>
