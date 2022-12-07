@@ -69,62 +69,52 @@
   ],
   "employee": [
     {
-      "firstName": "Ali",
-      "lastName": "Akman",
-      "email": "aliakman@hotmail.com",
-      "password": "2312323",
-      "nationalIdentity": "39832511547",
-      "dateOfBirth": "1975-01-15",
-      "position": "Müdür Yardımcısı",
-      "id": 2
-    },
-    {
-      "firstName": "Hasvelian",
-      "lastName": "Kıran",
-      "email": "kiran@hotmail.com",
+      "firstName": "Enes",
+      "lastName": "KÖKSAL",
+      "email": "enesbinmalikköksal@gmail.com",
       "password": "55444445",
       "nationalIdentity": "39832111547",
       "dateOfBirth": "1985-08-10",
-      "position": "temizlikçi",
+      "position": "Çalışma ve Sosyal Güvenlik Eğitim Uzmanı",
       "id": 1,
       "role": "ROLE_EMPLOYEE",
-      "image": "../../assets/img/products/product-1-min.jpg"
+      "image": "../assets/img/images/enes.jpeg"
     },
     {
-      "firstName": "Enes Bin Malik",
-      "lastName": "Köksal",
-      "email": "enesköksal@gmail.com",
+      "firstName": "Esra",
+      "lastName": "TAŞÇI",
+      "email": "esrapekdemir@gmail.com",
       "password": "25524565",
       "nationalIdentity": "24568534672",
       "dateOfBirth": "1977-12-12",
-      "position": "Uzman",
+      "position": "Çalışma ve Sosyal Güvenlik Eğitim Uzmanı",
       "id": 3,
       "role": "ROLE_EMPLOYEE",
-      "image": "../../assets/img/products/product-1-min.jpg"
+      "image": "../assets/img/images/no.svg"
     },
     {
-      "firstName": "Esra Pakdemird",
-      "lastName": "Taşcı",
-      "email": "esratascı@gmail.com",
+      "firstName": "Serhat",
+      "lastName": "TAŞÇI",
+      "email": "serhattascı@gmail.com",
       "password": "852147",
       "nationalIdentity": "7596127596",
       "dateOfBirth": "1980-07-12",
-      "position": "Tekniker",
+      "position": "Çalışma ve Sosyal Güvenlik Eğitim Uzmanı",
       "id": 4,
       "role": "ROLE_EMPLOYEE",
-      "image": "../../assets/img/products/product-1-min.jpg"
+      "image": "../assets/img/images/serhat.jpeg"
     },
     {
-      "firstName": "Gamze ",
-      "lastName": "Karaman",
-      "email": "gamze@gmail.com",
+      "firstName": "İsmail",
+      "lastName": "Karakaya",
+      "email": "ismailkarakaya@gmail.com",
       "password": "75963145",
       "nationalIdentity": "1265743698",
       "dateOfBirth": "1995-03-03",
-      "position": "Mühendis",
+      "position": "Çalışma ve Sosyal Güvenlik Eğitim Uzmanı",
       "id": 5,
       "role": "ROLE_EMPLOYEE",
-      "image": "../../assets/img/products/product-1-min.jpg"
+      "image": "../assets/img/images/ismail.jpeg"
     }
   ],
   "instructor": [

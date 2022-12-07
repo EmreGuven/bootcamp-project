@@ -2,51 +2,82 @@
   <div
     class="page-header min-height-300 border-radius-xl mt-4"
     style="
-      background-image: url('https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=80');
+      background-image: url('../../../assets/img/casgem.jpg');
     "
   >
-    <span class="mask bg-gradient-primary opacity-6"></span>
+    <span class="mask bg-gradient-casgem opacity-6"></span>
   </div>
   <div class="card card-body mx-3 mx-md-4 mt-n6">
     <div class="row gx-4 mb-2">
-      <div class="col-auto">
-        <div class="avatar avatar-xl position-relative">
-          <img
-            src="../../assets/img/images/kenanyavuz.jpeg"
-            alt="profile_image"
-            class="w-100 border-radius-lg shadow-sm"
-          />
+      <div class="col-6">
+        <div class="col-auto">
+          <div class="avatar avatar-xxl position-relative">
+            <img
+              src="../../assets/img/images/vedatbilgin.jpg"
+              alt="profile_image"
+              class="w-100 border-radius-lg shadow-sm"
+            />
+          </div>
+        </div>
+        <div class="col-auto my-auto">
+          <div class="h-100">
+            <h5 class="mb-1">Vedat BİLGİN</h5>
+            <p class="mb-0 font-weight-normal text-sm">
+              Türkiye Cumhuriyeti Çalışma ve Sosyal Güvenlik Bakanı
+            </p>
+          </div>
         </div>
       </div>
-      <div class="col-auto my-auto">
-        <div class="h-100">
-          <h5 class="mb-1">Kenan Yavuz</h5>
-          <p class="mb-0 font-weight-normal text-sm">ÇASGEM BAŞKANI</p>
+      <div class="col-6">
+        <div class="col-auto">
+          <div class="avatar avatar-xxl position-relative">
+            <img
+              src="../../assets/img/images/kenanyavuz.jpeg"
+              alt="profile_image"
+              class="w-100 border-radius-lg shadow-sm"
+            />
+          </div>
+        </div>
+        <div class="col-auto my-auto">
+          <div class="h-100">
+            <h5 class="mb-1">Kenan YAVUZ</h5>
+            <p class="mb-0 font-weight-normal text-sm">Çalışma ve Sosyal Güvenlik Eğitim Araştırma Merkezi Başkan V.</p>
+          </div>
         </div>
       </div>
     </div>
     <div class="row">
+      <hr class="border" />
       <div class="row">
         <div class="col-12">
-          <div class="card overflow-scroll card-plain">
+          <div class="card card-plain">
             <div class="card-body d-flex ps-0">
-              <div class="col-lg-1 col-md-2 col-sm-3 col-4 text-center"  *ngFor="let employee of employees">
+              <div
+                class="col-lg-1 col-md-2 col-sm-3 col-4 text-center"
+                *ngFor="let employee of employees"
+              >
                 <a
                   href="javascript:;"
-                  class="avatar avatar-lg rounded-circle border border-primary"
+                  class="avatar avatar-xl rounded-circle border border-primary"
                 >
                   <img
                     alt="Image placeholder"
                     class="p-1"
-                    src="{{employee.image}}"
+                    src="{{ employee.image }}"
                   />
                 </a>
-                <p class="mb-0 text-sm">{{employee.firstName}}</p>
+                <h5 class="mb-0 text-sm">
+                  {{ employee.firstName }} {{ employee.lastName }}
+                </h5>
+                <p class="mb-0 text-sm">
+                  {{ employee.position }}
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <hr class="border" />
       <div class="row mt-4">
         <div class="col-12 col-lg-8">
           <div class="card card-plain">
