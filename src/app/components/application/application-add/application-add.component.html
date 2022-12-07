@@ -1,8 +1,7 @@
-  <div class="container-fluid" style="margin:auto; width:800px;">
+  <div class="container-fluid" style="margin:auto; width:500px;">
   <div class="card-header"><h5 class="title" style="text-align: center;">Başvuru</h5></div>
   <form [formGroup]="applicationAddForm">
-    <div class="row">
-      <div class="col-md-6">
+  
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Aday</label>
       <select id="userId" formControlName="userId" class="form-select rounded-0">
@@ -15,9 +14,9 @@
     <div *ngIf="applicationAddForm.get('userId').hasError('required') && applicationAddForm.get('userId').touched" class="form-text text-muted uyari">
       Aday zorunludur!
     </div>
-  </div>
+  
 
-  <div class="col-md-6">
+ 
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Bootcamp</label>
       <select id="bootcampId" formControlName="bootcampId" class="form-select rounded-0">
@@ -30,9 +29,9 @@
     <div *ngIf="applicationAddForm.get('bootcampId').hasError('required') && applicationAddForm.get('bootcampId').touched" class="form-text text-muted uyari">
       Bootcamp zorunludur!
     </div>
-  </div>
+ 
 
-  <div class="col-md-6">
+ 
     <div class="input-group input-group-outline my-3">
     <label class="form-label">Durum</label>
     <input type="text" class="form-control" formControlName="state">
@@ -40,9 +39,9 @@
     <div *ngIf="applicationAddForm.get('state').hasError('required') && applicationAddForm.get('state').touched" class="form-text text-muted uyari">
       Durum zorunludur!
     </div>
-  </div>
+ 
     
-  </div>
+
 </form>
 <div class="card-footer">
   <button type="button" class="btn btn-success" (click)="addToApplication()">Ekle</button>
