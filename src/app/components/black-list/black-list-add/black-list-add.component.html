@@ -1,10 +1,9 @@
-  <div class="container-fluid" style="margin: auto; width:800px;">
+  <div class="container-fluid" style="margin: auto; width:500px;">
   <div class="card-header"><h5 class="title" style="text-align: center;">Kara Liste Ekle</h5></div>
   <form [formGroup]="blacklistAddForm">
-    <div class="row">
-      <div class="col-md-6">
+   
     <div class="input-group input-group-outline my-3">
-      <label class="form-label"></label>
+      <label class="form-label">Aday Seçiniz</label>
       <select id="applicantId" formControlName="applicantId" class="form-select rounded-0">
         <option [value]="null" disabled  aria-hidden="true">Aday Seçiniz</option>
         <option *ngFor="let applicant of applicants" [value]="applicant.id">
@@ -15,9 +14,9 @@
     <div *ngIf="blacklistAddForm.get('applicantId').hasError('required') && blacklistAddForm.get('applicantId').touched" class="form-text text-muted uyari">
       Aday zorunludur!
     </div>
-  </div>
+  
 
-  <div class="col-md-6">
+ 
     <div class="input-group input-group-static my-3">
       <label>Tarih</label>
       <input type="date" class="form-control" formControlName="date">
@@ -25,9 +24,9 @@
     <div *ngIf="blacklistAddForm.get('date').hasError('required') && blacklistAddForm.get('date').touched" class="form-text text-muted uyari">
       Tarih zorunludur!
     </div>
-  </div>
+  
     
-  <div class="col-md-6">
+  
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Açıklama</label>
       <input type="text" class="form-control" formControlName="reason">
@@ -35,9 +34,9 @@
     <div *ngIf="blacklistAddForm.get('reason').hasError('required') && blacklistAddForm.get('reason').touched" class="form-text text-muted uyari">
       Açıklama zorunludur!
     </div>
-  </div>
+ 
 
-  </div>
+ 
 </form>
 <div class="card-footer">
   <button type="button" class="btn btn-success" (click)="addToBlacklist()">Ekle</button>

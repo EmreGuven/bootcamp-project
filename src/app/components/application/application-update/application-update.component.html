@@ -1,8 +1,7 @@
-<div class="container" style="margin:auto; width:800px;">
+<div class="container" style="margin:auto; width:500px;">
 <div class="card-header"><h5 class="title" style="text-align: center;">Başvuru Güncelle</h5></div>
   <form [formGroup]="applicationUpdateForm" *ngIf="applicationUpdateForm">
-    <div class="row">
-      <div class="col-md-6">  
+ 
     <label>Aday:</label>
     <div class="input-group input-group-static mb-4">
       <select id="userId" formControlName="userId" class="form-select rounded-0">
@@ -15,9 +14,9 @@
     <div *ngIf="applicationUpdateForm.get('userId').hasError('required') && applicationUpdateForm.get('userId').touched" class="form-text text-muted uyari">
       Aday zorunludur!
     </div>
-  </div>
+ 
 
-  <div class="col-md-6">
+ 
     <label>Bootcamp:</label>
     <div class="input-group input-group-static mb-4">
       <select id="bootcampId" formControlName="bootcampId" class="form-select rounded-0">
@@ -30,9 +29,9 @@
     <div *ngIf="applicationUpdateForm.get('bootcampId').hasError('required') && applicationUpdateForm.get('bootcampId').touched" class="form-text text-muted uyari">
       Bootcamp zorunludur!
     </div>
-  </div>
+  
 
-  <div class="col-md-6">
+ 
     <div class="input-group input-group-static mb-4">
     <label>Durum:</label>
     <input type="text" class="form-control" formControlName="state">
@@ -40,9 +39,9 @@
     <div *ngIf="applicationUpdateForm.get('state').hasError('required') && applicationUpdateForm.get('state').touched" class="form-text text-muted uyari">
       Durum zorunludur!
     </div>
-  </div>
+ 
 
-  </div>
+  
 </form>
 <div class="card-footer">
   <button type="button" class="btn btn-success" (click)="updateToApplication()">Kaydet</button>

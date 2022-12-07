@@ -14,7 +14,7 @@
 
 <div class="col-md-6">
   <div class="input-group input-group-outline my-3">
-    <label class="form-label"></label>
+    <label class="form-label">Eğitmen Seçiniz</label>
     <select id="instructerId" formControlName="instructerId" class="form-select rounded-0">
       <option [value]="null" disabled hidden>Eğitmen Seçiniz</option>
       <option value="number" *ngFor="let instructor of instructors" [value]="instructor.id">
