@@ -98,6 +98,7 @@ export class BootcampListComponent implements OnInit {
               this.applicationService
         .addToApplication(applicationData)
         .subscribe(() => {
+          
               Swal.fire('Saved!', '', 'success')
             });
             } else if (result.isDenied) {

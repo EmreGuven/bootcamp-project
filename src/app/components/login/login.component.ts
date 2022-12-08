@@ -1,9 +1,11 @@
+import { LoginUser } from './../../store/actions/profile-actions';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { ILoginUser } from 'src/app/models/auth/user-login-model';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +20,8 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private store : Store
   ) {}
 
   ngOnInit(): void {
@@ -45,7 +48,7 @@ export class LoginComponent implements OnInit {
           stateData.id = data[0].id.toString();
           stateData.role = data[0].role;
           stateData.token = data[0].token;
-          console.log(stateData);
+          this.store.dispatch(new LoginUser(stateData))
           
 
           if (data[0].role == 'ROLE_EMPLOYEE') {
