@@ -10,18 +10,17 @@ import { IApplicantGetAllModel } from 'src/app/models/response/applicant/applica
 @Component({
   selector: 'app-black-list-add',
   templateUrl: './black-list-add.component.html',
-  styleUrls: ['./black-list-add.component.css']
+  styleUrls: ['./black-list-add.component.css'],
 })
 export class BlackListAddComponent implements OnInit {
-
   blacklistAddForm: FormGroup;
-  applicants:IApplicantGetAllModel[];
-  
+  applicants: IApplicantGetAllModel[];
+
   constructor(
     private formBuilder: FormBuilder,
     private blacklistService: BlacklistService,
     private toastrService: ToastrService,
-    private applicantService:ApplicantService
+    private applicantService: ApplicantService
   ) {}
 
   ngOnInit(): void {
@@ -29,9 +28,9 @@ export class BlackListAddComponent implements OnInit {
     this.getApplicants();
   }
 
-  getApplicants(){
-    this.applicantService.getApplicants().subscribe((data)=>{
-      this.applicants = data
+  getApplicants() {
+    this.applicantService.getApplicants().subscribe((data) => {
+      this.applicants = data;
     });
     this.createBlacklistAddForm();
   }
@@ -45,26 +44,27 @@ export class BlackListAddComponent implements OnInit {
   }
   addToBlacklist() {
     if (this.blacklistAddForm.valid) {
-      let blacklist:IBlacklistAddModel = Object.assign({}, this.blacklistAddForm.value);
-
+      let blacklist: IBlacklistAddModel = Object.assign(
+        {},
+        this.blacklistAddForm.value
+      );
       this.applicantService
         .getApplicantById(blacklist.applicantId)
         .subscribe((applicant) => {
-          blacklist.applicantName = applicant.firstName + ' ' + applicant.lastName;
-     
-      this.blacklistService.addToBlacklist(blacklist).subscribe((data) => {
-        this.clearForm();
-        this.toastrService.success('Kara Listeye Eklendi', 'Tebrikler (:');
-      });
-    });
-    }else {
+          blacklist.applicantName =
+            applicant.firstName + ' ' + applicant.lastName;
+
+          this.blacklistService.addToBlacklist(blacklist).subscribe(() => {
+            this.clearForm();
+            this.toastrService.success('Kara Listeye Eklendi', 'Tebrikler (:');
+          });
+          this.applicantService.updateToState(applicant.id, 2).subscribe();
+        });
+    } else {
       this.toastrService.error('Eksik Bilgi', '!!!');
     }
   }
   clearForm() {
     this.blacklistAddForm.reset();
   }
-
-  
-
 }

@@ -7,4 +7,5 @@ export interface IApplicantGetAllModel{
     nationalIdentity:string;
     dateOfBirth:Date;
     about:string;
+    state:number;
 }

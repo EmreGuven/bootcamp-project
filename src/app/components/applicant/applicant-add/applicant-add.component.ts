@@ -31,6 +31,7 @@ export class ApplicantAddComponent implements OnInit {
       nationalIdentity:new FormControl('', [Validators.required]),
       dateOfBirth: ['', Validators.required],
       about: ['', Validators.required],
+      state:['1', Validators.required]
     });
   }
 

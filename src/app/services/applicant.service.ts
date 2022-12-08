@@ -33,4 +33,8 @@ export class ApplicantService {
   deleteToApplicant(id: number) {
     return this.httpClient.delete(this.apiUrl + '/' + id);
   }
+
+  updateToState(id: number, state: number) {
+    return this.httpClient.patch(this.apiUrl + '/' + id, { state: state });
+  }
 }

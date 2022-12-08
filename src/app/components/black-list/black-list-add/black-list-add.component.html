@@ -1,39 +1,65 @@
-<a routerLink="/admin/blacklists" class="btn btn-sm mb-0 me-1 bg-gradient-dark">Geri</a>
+<a routerLink="/admin/blacklists" class="btn btn-sm mb-0 me-1 bg-gradient-dark"
+  >Geri</a
+>
 
-<div class="container-fluid" style="margin: auto; width:500px;">
-  <div class="card-header"><h5 class="title" style="text-align: center;">Kara Liste Ekle</h5></div>
+<div class="container-fluid" style="margin: auto; width: 500px">
+  <div class="card-header">
+    <h5 class="title" style="text-align: center">Kara Liste Ekle</h5>
+  </div>
   <form [formGroup]="blacklistAddForm">
-   
     <div class="form-floating mb-3 mt-3">
-      <select id="applicantId" formControlName="applicantId" class="form-select rounded-0">
+      <label for="applicantId" class="form-label">Aday Seçiniz</label>
+      <select
+        id="applicantId"
+        formControlName="applicantId"
+        class="form-select rounded-0"
+      >
         <option *ngFor="let applicant of applicants" [value]="applicant.id">
-            {{ applicant.firstName }}
+          {{ applicant.firstName }} {{ applicant.lastName }}
         </option>
       </select>
-      <label for="applicantId" class="form-label">Aday Seçiniz</label>
     </div>
-    <div *ngIf="blacklistAddForm.get('applicantId').hasError('required') && blacklistAddForm.get('applicantId').touched" class="form-text text-muted uyari">
+    <div
+      *ngIf="
+        blacklistAddForm.get('applicantId').hasError('required') &&
+        blacklistAddForm.get('applicantId').touched
+      "
+      class="form-text text-muted uyari"
+    >
       Aday zorunludur!
     </div>
- 
+
     <div class="input-group input-group-static my-3">
       <label>Tarih</label>
-      <input type="date" class="form-control" formControlName="date">
+      <input type="date" class="form-control" formControlName="date" />
     </div>
-    <div *ngIf="blacklistAddForm.get('date').hasError('required') && blacklistAddForm.get('date').touched" class="form-text text-muted uyari">
+    <div
+      *ngIf="
+        blacklistAddForm.get('date').hasError('required') &&
+        blacklistAddForm.get('date').touched
+      "
+      class="form-text text-muted uyari"
+    >
       Tarih zorunludur!
     </div>
-  
+
     <div class="input-group input-group-outline my-3">
       <label class="form-label">Açıklama</label>
-      <input type="text" class="form-control" formControlName="reason">
+      <input type="text" class="form-control" formControlName="reason" />
     </div>
-    <div *ngIf="blacklistAddForm.get('reason').hasError('required') && blacklistAddForm.get('reason').touched" class="form-text text-muted uyari">
+    <div
+      *ngIf="
+        blacklistAddForm.get('reason').hasError('required') &&
+        blacklistAddForm.get('reason').touched
+      "
+      class="form-text text-muted uyari"
+    >
       Açıklama zorunludur!
     </div>
- 
-</form>
-<div class="card-footer">
-  <button type="button" class="btn btn-success" (click)="addToBlacklist()">Ekle</button>
-</div>
+  </form>
+  <div class="card-footer">
+    <button type="button" class="btn btn-success" (click)="addToBlacklist()">
+      Ekle
+    </button>
+  </div>
 </div>

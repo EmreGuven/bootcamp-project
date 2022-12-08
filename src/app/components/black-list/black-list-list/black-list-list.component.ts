@@ -9,15 +9,15 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-black-list-list',
   templateUrl: './black-list-list.component.html',
-  styleUrls: ['./black-list-list.component.css']
+  styleUrls: ['./black-list-list.component.css'],
 })
 export class BlackListListComponent implements OnInit {
+  blacklists: IBlacklistGetAllModel[] = [];
 
-  blacklists:IBlacklistGetAllModel[]=[];
-  
-  constructor(private blacklistService:BlacklistService,
-     private applicantService:ApplicantService,
-     private toastrService:ToastrService ) { }
+  constructor(
+    private blacklistService: BlacklistService,
+    private applicantService: ApplicantService
+  ) {}
 
   ngOnInit(): void {
     this.getBlacklists();
@@ -29,7 +29,7 @@ export class BlackListListComponent implements OnInit {
     });
   }
 
-  deleteToBlacklist(id: number) {
+  deleteToBlacklist(id: number, applicantId:number) {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn bg-gradient-info active ms-3',
@@ -50,6 +50,7 @@ export class BlackListListComponent implements OnInit {
       })
       .then((result) => {
         if (result.isConfirmed) {
+          this.applicantService.updateToState(applicantId, 1).subscribe();
           this.blacklistService.deleteToBlacklist(id).subscribe(() => {
             swalWithBootstrapButtons.fire(
               'Silindi!',
@@ -69,6 +70,4 @@ export class BlackListListComponent implements OnInit {
         }
       });
   }
-
-  
 }

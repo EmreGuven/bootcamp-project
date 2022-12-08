@@ -1,88 +1,167 @@
-<a routerLink="/admin/applicants" class="btn btn-sm mb-0 me-1 bg-gradient-dark">Geri</a>
+<a routerLink="/admin/applicants" class="btn btn-sm mb-0 me-1 bg-gradient-dark"
+  >Geri</a
+>
 
-<div class="container-fluid" style="margin:auto; width:800px;">
-  <div class="card-header"><h5 class="title" style="text-align: center;" >Aday Ekle</h5></div>
+<div class="container-fluid" style="margin: auto; width: 800px">
+  <div class="card-header">
+    <h5 class="title" style="text-align: center">Aday Ekle</h5>
+  </div>
   <form [formGroup]="applicantAddForm">
     <div class="row">
       <div class="col-md-6">
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label">Adı</label>
-      <input type="text" class="form-control" formControlName="firstName">
-    </div>
-    <div *ngIf="applicantAddForm.get('firstName').hasError('required') && applicantAddForm.get('firstName').touched" class="form-text text-muted uyari">
-      Ad zorunludur!
-    </div>
-  </div>
+        <div class="input-group input-group-outline my-3">
+          <label class="form-label">Adı</label>
+          <input type="text" class="form-control" formControlName="firstName" />
+        </div>
+        <div
+          *ngIf="
+            applicantAddForm.get('firstName').hasError('required') &&
+            applicantAddForm.get('firstName').touched
+          "
+          class="form-text text-muted uyari"
+        >
+          Ad zorunludur!
+        </div>
+      </div>
 
-  <div class="col-md-6">
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label">Soyad</label>
-      <input type="text" class="form-control" formControlName="lastName">
-    </div>
-    <div *ngIf="applicantAddForm.get('lastName').hasError('required') && applicantAddForm.get('lastName').touched" class="form-text text-muted uyari">
-      Soyad zorunludur!
-    </div>
-  </div>
+      <div class="col-md-6">
+        <div class="input-group input-group-outline my-3">
+          <label class="form-label">Soyad</label>
+          <input type="text" class="form-control" formControlName="lastName" />
+        </div>
+        <div
+          *ngIf="
+            applicantAddForm.get('lastName').hasError('required') &&
+            applicantAddForm.get('lastName').touched
+          "
+          class="form-text text-muted uyari"
+        >
+          Soyad zorunludur!
+        </div>
+      </div>
 
-  <div class="col-md-6">
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label">Email</label>
-      <input type="email" class="form-control" formControlName="email">
-    </div>
-    <div *ngIf="applicantAddForm.get('email').hasError('required') && applicantAddForm.get('email').touched" class="form-text text-muted uyari">
-      Email zorunludur!
-    </div>
-    <div *ngIf="applicantAddForm.get('email').hasError('pattern') && applicantAddForm.get('email').touched" class="form-text text-muted uyari">
-      Email adresi geçersiz!
-    </div>
-  </div>
-    
-  <div class="col-md-6">
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label">Şifre</label>
-      <input type="text" class="form-control" formControlName="password">
-    </div>
-    <div *ngIf="applicantAddForm.get('password').hasError('required') && applicantAddForm.get('password').touched" class="form-text text-muted uyari">
-      Şifre zorunludur!
-    </div>
-    <div *ngIf="applicantAddForm.get('password').errors?.['minlength'] && applicantAddForm.get('password').touched" class="form-text text-muted uyari">
-      Şifre en az 5 karakterli olmalı!
-    </div>
-  </div>
+      <div class="col-md-6">
+        <div class="input-group input-group-outline my-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" formControlName="email" />
+        </div>
+        <div
+          *ngIf="
+            applicantAddForm.get('email').hasError('required') &&
+            applicantAddForm.get('email').touched
+          "
+          class="form-text text-muted uyari"
+        >
+          Email zorunludur!
+        </div>
+        <div
+          *ngIf="
+            applicantAddForm.get('email').hasError('pattern') &&
+            applicantAddForm.get('email').touched
+          "
+          class="form-text text-muted uyari"
+        >
+          Email adresi geçersiz!
+        </div>
+      </div>
 
-  <div class="col-md-6">
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label">TC No</label>
-      <input type="text" class="form-control" formControlName="nationalIdentity">
-    </div>
-    <div *ngIf="applicantAddForm.get('nationalIdentity').hasError('required') && applicantAddForm.get('nationalIdentity').touched" class="form-text text-muted uyari">
-      TC No zorunludur!
-    </div>
-  </div>
+      <div class="col-md-6">
+        <div class="input-group input-group-outline my-3">
+          <label class="form-label">Şifre</label>
+          <input type="text" class="form-control" formControlName="password" />
+        </div>
+        <div
+          *ngIf="
+            applicantAddForm.get('password').hasError('required') &&
+            applicantAddForm.get('password').touched
+          "
+          class="form-text text-muted uyari"
+        >
+          Şifre zorunludur!
+        </div>
+        <div
+          *ngIf="applicantAddForm.get('password').errors?.['minlength'] && applicantAddForm.get('password').touched"
+          class="form-text text-muted uyari"
+        >
+          Şifre en az 5 karakterli olmalı!
+        </div>
+      </div>
 
-  <div class="col-md-6">
-    <div class="input-group input-group-static my-3">
-      <label>Doğum Tarihi</label>
-      <input type="date" class="form-control" formControlName="dateOfBirth">
-    </div>
-    <div *ngIf="applicantAddForm.get('dateOfBirth').hasError('required') && applicantAddForm.get('dateOfBirth').touched" class="form-text text-muted uyari">
-      Doğum Tarihi zorunludur!
-    </div>
-  </div>
+      <div class="col-md-6">
+        <div class="input-group input-group-outline my-3">
+          <label class="form-label">TC No</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="nationalIdentity"
+          />
+        </div>
+        <div
+          *ngIf="
+            applicantAddForm.get('nationalIdentity').hasError('required') &&
+            applicantAddForm.get('nationalIdentity').touched
+          "
+          class="form-text text-muted uyari"
+        >
+          TC No zorunludur!
+        </div>
+      </div>
 
-  <div class="col-md-6">
-    <div class="input-group input-group-outline my-3">
-      <label class="form-label">Hakkında</label>
-      <input type="text" class="form-control" formControlName="about">
-    </div>
-    <div *ngIf="applicantAddForm.get('about').hasError('required') && applicantAddForm.get('about').touched" class="form-text text-muted uyari">
-      Hakkında alanı zorunludur!
-    </div>
-  </div>
+      <div class="col-md-6">
+        <div class="input-group input-group-static my-3">
+          <label>Doğum Tarihi</label>
+          <input
+            type="date"
+            class="form-control"
+            formControlName="dateOfBirth"
+          />
+        </div>
+        <div
+          *ngIf="
+            applicantAddForm.get('dateOfBirth').hasError('required') &&
+            applicantAddForm.get('dateOfBirth').touched
+          "
+          class="form-text text-muted uyari"
+        >
+          Doğum Tarihi zorunludur!
+        </div>
+      </div>
 
+      <div class="col-md-6">
+        <div class="input-group input-group-outline my-3">
+          <label class="form-label">Hakkında</label>
+          <input type="text" class="form-control" formControlName="about" />
+        </div>
+        <div
+          *ngIf="
+            applicantAddForm.get('about').hasError('required') &&
+            applicantAddForm.get('about').touched
+          "
+          class="form-text text-muted uyari"
+        >
+          Hakkında alanı zorunludur!
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group input-group-outline my-3">
+          <label class="form-label">State</label>
+          <input type="text" class="form-control" formControlName="state" />
+        </div>
+        <div
+          *ngIf="
+            applicantAddForm.get('state').hasError('required') &&
+            applicantAddForm.get('state').touched
+          "
+          class="form-text text-muted uyari"
+        >
+          Hakkında alanı zorunludur!
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="card-footer">
+    <button type="button" class="btn btn-success" (click)="addToApplicant()">
+      Ekle
+    </button>
   </div>
-</form>
-<div class="card-footer">
-  <button type="button" class="btn btn-success" (click)="addToApplicant()">Ekle</button>
-</div>
 </div>
