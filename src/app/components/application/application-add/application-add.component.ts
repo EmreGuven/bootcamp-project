@@ -40,25 +40,32 @@ export class ApplicationAddComponent implements OnInit {
   }
   addToApplication() {
     if (this.applicationAddForm.valid) {
-      let application:IApplicationAddModel = Object.assign({}, this.applicationAddForm.value);
+      let application: IApplicationAddModel = Object.assign(
+        {},
+        this.applicationAddForm.value
+      );
       this.bootcampService
         .getBootcampById(application.bootcampId)
         .subscribe((bootcamp) => {
           application.bootcampName = bootcamp.name;
 
           this.applicantService
-          .getApplicantById(application.userId)
-          .subscribe((applicant) => {
-            application.applicantName = applicant.firstName+ ' ' + applicant.lastName;
-          
+            .getApplicantById(application.userId)
+            .subscribe((applicant) => {
+              application.applicantName =
+                applicant.firstName + ' ' + applicant.lastName;
 
-      this.applicationService
-        .addToApplication(application)
-        .subscribe((data) => {
-          this.clearForm();
-          this.toastrService.success('Application Eklendi', 'Tebrikler (:');
+              this.applicationService
+                .addToApplication(application)
+                .subscribe((data) => {
+                  this.clearForm();
+                  this.toastrService.success(
+                    'Application Eklendi',
+                    'Tebrikler (:'
+                  );
+                });
+            });
         });
-      })});
     } else {
       this.toastrService.error('Eksik Bilgi', '!!!');
     }

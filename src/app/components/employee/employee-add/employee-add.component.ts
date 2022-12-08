@@ -1,7 +1,12 @@
 import { ToastrService } from 'ngx-toastr';
 import { IEmployeeAddModel } from './../../../models/request/employee/employee-add-model';
 import { EmployeeService } from './../../../services/employee.service';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -26,10 +31,15 @@ export class EmployeeAddComponent implements OnInit {
     this.employeeAddForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      email:new FormControl('', [Validators.required, 
-        Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
-      password:new FormControl('', [Validators.required, Validators.minLength(5)]),
-     nationalIdentity: ['', Validators.required],
+      email: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+      ]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(5),
+      ]),
+      nationalIdentity: ['', Validators.required],
       dateOfBirth: ['', Validators.required],
       position: ['', Validators.required],
     });

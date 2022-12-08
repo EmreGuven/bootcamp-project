@@ -9,7 +9,8 @@
       "dateOfBirth": "1998-10-10",
       "about": "Sivas Üniversitesi Bilgisayar Mühendisliği",
       "id": 1,
-      "role": "ROLE_APPLICANT"
+      "role": "ROLE_APPLICANT",
+      "state": 1
     },
     {
       "firstName": "İlknur",
@@ -53,7 +54,8 @@
       "dateOfBirth": "1990-05-15",
       "about": "Erzurum Üniversitesi YBS",
       "id": 6,
-      "role": "ROLE_APPLICANT"
+      "role": "ROLE_APPLICANT",
+      "state": 1
     },
     {
       "firstName": "Mert ",
@@ -187,44 +189,28 @@
   ],
   "application": [
     {
-      "userId": "5",
-      "bootcampId": "6",
-      "state": "1",
-      "bootcampName": "Bilgi Teknolojileri Denetimi",
-      "applicantName": "Mert  Subaşı",
-      "id": 3
-    },
-    {
-      "userId": "2",
-      "bootcampId": "2",
-      "state": "1",
-      "bootcampName": "Backend",
-      "applicantName": "İlknur Yıldırım",
-      "id": 2
-    },
-    {
-      "userId": "6",
-      "bootcampId": "2",
-      "state": "1",
-      "bootcampName": "Backend",
-      "applicantName": "Haluk Gül",
-      "id": 4
-    },
-    {
-      "userId": "3",
-      "bootcampId": "2",
+      "id": 1,
       "state": 1,
-      "bootcampName": "Backend",
-      "applicantName": "Sevda Şimşek",
-      "id": 1
+      "applicantId": "3",
+      "bootcampName": "FrontEnd"
     },
     {
-      "userId": "4",
-      "bootcampId": "3",
-      "state": "2",
-      "bootcampName": "Solana Practium",
-      "applicantName": "Burak Ergin",
-      "id": 5
+      "id": 2,
+      "state": "1",
+      "applicantId": "3",
+      "bootcampName": "Backend"
+    },
+    {
+      "id": 4,
+      "state": "1",
+      "applicantId": "3",
+      "bootcampName": "Coderspace Machine Learning "
+    },
+    {
+      "id": 3,
+      "state": "1",
+      "applicantId": "3",
+      "bootcampName": "React"
     }
   ],
   "blackList": [

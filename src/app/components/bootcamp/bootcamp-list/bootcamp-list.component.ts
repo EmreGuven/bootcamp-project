@@ -86,12 +86,20 @@ export class BootcampListComponent implements OnInit {
 
     if (applicationData.state == 1) {
       
+      
           Swal.fire({
-            title: 'Do you want to save the changes?',
+            customClass: {
+              confirmButton: 'btn bg-gradient-info active ms-3',
+              cancelButton: 'btn bg-gradient-primary active ms-3',
+              denyButton: 'btn bg-gradient-secondary ms-3'
+            },
+            buttonsStyling: false,
+            title: 'Kayıt olmak istediğinize emin misiniz ?',
             showDenyButton: true,
             showCancelButton: true,
-            confirmButtonText: 'Save',
-            denyButtonText: `Don't save`,
+            cancelButtonText:'iptal',
+            confirmButtonText: 'evet',
+            denyButtonText: `Vazgeç`,
           }).then((result) => {
             
             if (result.isConfirmed) {
@@ -99,10 +107,10 @@ export class BootcampListComponent implements OnInit {
         .addToApplication(applicationData)
         .subscribe(() => {
           
-              Swal.fire('Saved!', '', 'success')
+              Swal.fire('Kayıt başarılı !', '', 'success')
             });
             } else if (result.isDenied) {
-              Swal.fire('Changes are not saved', '', 'info')
+              Swal.fire('Değişiklikler kaydedilmedi', '', 'info')
             }
           })
         

@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private toastrService: ToastrService,
-    private store : Store
+    private store: Store
   ) {}
 
   ngOnInit(): void {
@@ -44,12 +44,13 @@ export class LoginComponent implements OnInit {
             'Tebrikler (:'
           );
 
-          let stateData:any = Object.assign({});
+          let stateData: any = Object.assign({});
           stateData.id = data[0].id.toString();
           stateData.role = data[0].role;
           stateData.token = data[0].token;
-          this.store.dispatch(new LoginUser(stateData))
-          
+          stateData.firstName = data[0].firstName;
+          stateData.lastName = data[0].lastName;
+          this.store.dispatch(new LoginUser(stateData));
 
           if (data[0].role == 'ROLE_EMPLOYEE') {
             this.router.navigate(['admin']);
@@ -57,7 +58,6 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('role', data[0].role);
             localStorage.setItem('id', data[0].id.toString());
           }
-          
 
           if (data[0].role == 'ROLE_INSTRUCTOR') {
             this.router.navigate(['instructor']);
