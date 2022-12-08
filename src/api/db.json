@@ -187,16 +187,56 @@
   ],
   "application": [
     {
+<<<<<<< HEAD
       "id": 1,
       "state": 1,
       "applicantId": "3",
       "bootcampName": "FrontEnd"
+=======
+      "userId": "5",
+      "bootcampId": "6",
+      "state": "1",
+      "bootcampName": "Bilgi Teknolojileri Denetimi",
+      "applicantName": "Mert  Subaşı",
+      "id": 3
+>>>>>>> 44516b01e19a8dd293775d658d2e4adb4a18de96
     },
     {
-      "id": 2,
+      "userId": "2",
+      "bootcampId": "2",
       "state": "1",
+<<<<<<< HEAD
       "applicantId": "3",
       "bootcampName": "Backend"
+=======
+      "bootcampName": "Backend",
+      "applicantName": "İlknur Yıldırım",
+      "id": 2
+    },
+    {
+      "userId": "6",
+      "bootcampId": "2",
+      "state": "1",
+      "bootcampName": "Backend",
+      "applicantName": "Haluk Gül",
+      "id": 4
+    },
+    {
+      "userId": "3",
+      "bootcampId": "2",
+      "state": 1,
+      "bootcampName": "Backend",
+      "applicantName": "Sevda Şimşek",
+      "id": 1
+    },
+    {
+      "userId": "4",
+      "bootcampId": "3",
+      "state": "2",
+      "bootcampName": "Solana Practium",
+      "applicantName": "Burak Ergin",
+      "id": 5
+>>>>>>> 44516b01e19a8dd293775d658d2e4adb4a18de96
     }
   ],
   "blackList": [
