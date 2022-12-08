@@ -1,8 +1,6 @@
 import { ApplicationService } from 'src/app/services/application.service';
-import { ApplicantService } from 'src/app/services/applicant.service';
 import { LoginGuard } from './../../../guards/login.guard';
 import { InstructorService } from './../../../services/instructor.service';
-import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BootcampService } from './../../../services/bootcamp.service';
 import { IBootcampGetAllModel } from './../../../models/response/bootcamp/bootcamp-getall-model';
@@ -87,12 +85,26 @@ export class BootcampListComponent implements OnInit {
     applicationData.bootcampName = this.bootcampSaveData.name;
 
     if (applicationData.state == 1) {
-      this.applicationService
+      
+          Swal.fire({
+            title: 'Do you want to save the changes?',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Save',
+            denyButtonText: `Don't save`,
+          }).then((result) => {
+            
+            if (result.isConfirmed) {
+              this.applicationService
         .addToApplication(applicationData)
         .subscribe(() => {
-          console.log('data');
-          this.toastrService.success('Tebrikler', 'Kayıt Başarılı');
-        });
+              Swal.fire('Saved!', '', 'success')
+            });
+            } else if (result.isDenied) {
+              Swal.fire('Changes are not saved', '', 'info')
+            }
+          })
+        
     } else {
       this.toastrService.warning('Bu kurs aktif değil');
     }

@@ -41,6 +41,13 @@ export class LoginComponent implements OnInit {
             'Tebrikler (:'
           );
 
+          let stateData:any = Object.assign({});
+          stateData.id = data[0].id.toString();
+          stateData.role = data[0].role;
+          stateData.token = data[0].token;
+          console.log(stateData);
+          
+
           if (data[0].role == 'ROLE_EMPLOYEE') {
             this.router.navigate(['admin']);
             localStorage.setItem('token', data[0].token);

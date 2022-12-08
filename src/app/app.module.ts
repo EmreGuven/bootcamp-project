@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,6 +39,7 @@ import { SettingsComponent } from './layouts/settings/settings.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { profileReducer } from './store/reducers/profile-reducer';
 
 @NgModule({
   declarations: [
@@ -79,6 +81,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
+    StoreModule.forRoot({profileReducer}),
     SweetAlert2Module.forRoot(),
     BrowserAnimationsModule,
     ToastrModule.forRoot(

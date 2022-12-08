@@ -187,20 +187,16 @@
   ],
   "application": [
     {
-      "id": 3,
-      "state": "1",
-      "applicantId": "3"
+      "id": 1,
+      "state": 1,
+      "applicantId": "3",
+      "bootcampName": "FrontEnd"
     },
     {
       "id": 2,
       "state": "1",
-      "applicantId": "3"
-    },
-    {
-      "id": 4,
-      "state": "1",
       "applicantId": "3",
-      "bootcampName": "Coderspace Machine Learning "
+      "bootcampName": "Backend"
     }
   ],
   "blackList": [
