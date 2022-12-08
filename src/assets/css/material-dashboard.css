@@ -22772,9 +22772,6 @@ label,
 .footer .footer-logo {
   max-width: 2rem;
 }
-.bg-gradient-casgem {
-  background-image: linear-gradient(195deg, #1e5fd4 0%, #1e5fd4 100%);
-}
 .bg-gradient-primary {
   background-image: linear-gradient(195deg, #ec407a 0%, #d81b60 100%);
 }
