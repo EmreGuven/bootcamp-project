@@ -57,6 +57,7 @@ export class BootcampUpdateComponent implements OnInit {
       dateStart: [this.bootcamp.dateStart, Validators.required],
       dateEnd: [this.bootcamp.dateEnd, Validators.required],
       state: [this.bootcamp.state, Validators.required],
+      image: [this.bootcamp.image, Validators.required],
     });
   }
 

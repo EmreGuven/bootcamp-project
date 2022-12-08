@@ -187,28 +187,17 @@
   ],
   "application": [
     {
-<<<<<<< HEAD
-      "id": 1,
-      "state": 1,
-      "applicantId": "3",
-      "bootcampName": "FrontEnd"
-=======
       "userId": "5",
       "bootcampId": "6",
       "state": "1",
       "bootcampName": "Bilgi Teknolojileri Denetimi",
       "applicantName": "Mert  Subaşı",
       "id": 3
->>>>>>> 44516b01e19a8dd293775d658d2e4adb4a18de96
     },
     {
       "userId": "2",
       "bootcampId": "2",
       "state": "1",
-<<<<<<< HEAD
-      "applicantId": "3",
-      "bootcampName": "Backend"
-=======
       "bootcampName": "Backend",
       "applicantName": "İlknur Yıldırım",
       "id": 2
@@ -236,7 +225,6 @@
       "bootcampName": "Solana Practium",
       "applicantName": "Burak Ergin",
       "id": 5
->>>>>>> 44516b01e19a8dd293775d658d2e4adb4a18de96
     }
   ],
   "blackList": [
@@ -275,6 +263,7 @@
       "name": "FrontEnd",
       "dateStart": "2022-01-01",
       "dateEnd": "2022-02-01",
+      "image": "../assets/img/bootcamp/front-end.png",
       "state": 1,
       "instructorName": "Engin Demiroğ",
       "id": 1
@@ -284,16 +273,18 @@
       "name": "Backend",
       "dateStart": "2022-02-10",
       "dateEnd": "2022-02-30",
+      "image": "../assets/img/bootcamp/Back-end.jpg",
       "state": "1",
       "instructorName": "Engin Demiroğ",
       "id": 2
     },
     {
       "instructerId": "5",
-      "name": "Solana Practium",
+      "name": "React",
       "dateStart": "2021-05-15",
       "dateEnd": "2021-06-10",
       "state": "1",
+      "image": "../assets/img/bootcamp/react.png",
       "instructorName": "Selim Güngör",
       "id": 3
     },
@@ -302,24 +293,27 @@
       "name": "Coderspace Machine Learning ",
       "dateStart": "2021-07-17",
       "dateEnd": "2022-08-17",
+      "image": "../assets/img/bootcamp/coderspace.jpg",
       "state": "1",
       "instructorName": "Seher Karaman",
       "id": 4
     },
     {
       "instructerId": "4",
-      "name": "System & Network",
-      "dateStart": "2022-06-16",
-      "dateEnd": "2022-07-16",
+      "name": "Java-Spring",
+      "dateStart": "2023-06-11",
+      "dateEnd": "2023-07-04",
       "state": "2",
+      "image": "../assets/img/bootcamp/java-spring.png",
       "instructorName": "Merve Kara",
       "id": 5
     },
     {
       "instructerId": "2",
-      "name": "Bilgi Teknolojileri Denetimi",
+      "name": ".Net-Core",
       "dateStart": "2022-01-11",
       "dateEnd": "2022-02-11",
+      "image": "../assets/img/bootcamp/Net-Core.png",
       "state": "2",
       "instructorName": "Arda Karaca",
       "id": 6

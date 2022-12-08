@@ -58,6 +58,16 @@
       </div>
     </div>
 
+    <div class="col-md-6">
+      <div class="input-group input-group-outline my-3">
+        <label class="form-label">Resim URL</label>
+        <input type="text" class="form-control" formControlName="image">
+      </div>
+      <div *ngIf="bootcampAddForm.get('image').hasError('required') && bootcampAddForm.get('image').touched" class="form-text text-muted uyari">
+        URL zorunludur!
+      </div>
+    </div>
+
 </div>
 </form>
 <div class="card-footer">

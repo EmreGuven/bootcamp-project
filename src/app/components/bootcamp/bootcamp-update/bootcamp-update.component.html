@@ -57,6 +57,16 @@
       Durum zorunludur!
     </div>
   </div>
+
+  <div class="col-md-6">
+    <div class="input-group input-group-static mb-4">
+      <label>Resim URL:</label>
+      <input type="text" class="form-control" formControlName="image">
+    </div>
+    <div *ngIf="bootcampUpdateForm.get('image').hasError('required') && bootcampUpdateForm.get('image').touched" class="form-text text-muted uyari">
+      URL zorunludur!
+    </div>
+  </div>
   
   </div>
 </form>
