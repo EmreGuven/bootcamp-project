@@ -58,8 +58,8 @@ const routes: Routes = [
     { path: 'blacklists/update/:id', component: BlackListUpdateComponent },
 
     { path: 'applications', component: ApplicationListComponent },
-    { path: 'applications/add', component: ApplicationAddComponent },
-    { path: 'applications/update/:id', component: ApplicationUpdateComponent },
+    /* { path: 'applications/add', component: ApplicationAddComponent }, */
+    /* { path: 'applications/update/:id', component: ApplicationUpdateComponent }, */
   ],
   canActivate:[LoginGuard],
   data:{role:'ROLE_EMPLOYEE'}

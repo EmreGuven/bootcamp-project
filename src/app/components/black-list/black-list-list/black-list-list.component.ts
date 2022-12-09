@@ -60,7 +60,7 @@ export class BlackListListComponent implements OnInit {
           }),
             setTimeout(() => {
               window.location.reload();
-            }, 3000);
+            }, 1500);
         } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire(
             'İptal edildi',

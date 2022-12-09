@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ApplicantService } from 'src/app/services/applicant.service';
 import { IApplicantGetAllModel } from 'src/app/models/response/applicant/applicant-getall-model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-black-list-add',
@@ -55,8 +56,14 @@ export class BlackListAddComponent implements OnInit {
             applicant.firstName + ' ' + applicant.lastName;
 
           this.blacklistService.addToBlacklist(blacklist).subscribe(() => {
+            Swal.fire({
+              icon: 'success',
+              title: blacklist.applicantName + ' Kara Listeye Eklendi',
+              showConfirmButton: false,
+              timer: 2000
+            })
             this.clearForm();
-            this.toastrService.success('Kara Listeye Eklendi', 'Tebrikler (:');
+            
           });
           this.applicantService.updateToState(applicant.id, 2).subscribe();
         });

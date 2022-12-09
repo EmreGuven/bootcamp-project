@@ -1,3 +1,4 @@
+import { ApplicantService } from 'src/app/services/applicant.service';
 import { ApplicationService } from 'src/app/services/application.service';
 import { LoginGuard } from './../../../guards/login.guard';
 import { InstructorService } from './../../../services/instructor.service';
@@ -20,7 +21,8 @@ export class BootcampListComponent implements OnInit {
     private toastrService: ToastrService,
     public instructorService: InstructorService,
     public loginGuard: LoginGuard,
-    private applicationService: ApplicationService
+    private applicationService: ApplicationService,
+    private applicantSerice:ApplicantService
   ) {}
 
   ngOnInit(): void {
@@ -83,6 +85,10 @@ export class BootcampListComponent implements OnInit {
     applicationData.state = this.bootcampSaveData.state;
     applicationData.applicantId = localStorage.getItem('id');
     applicationData.bootcampName = this.bootcampSaveData.name;
+    
+    this.applicantSerice.getApplicantById(applicationData.applicantId).subscribe(data=>{
+      applicationData.applicantName = data.firstName + " " + data.lastName
+    })
 
     if (applicationData.state == 1) {
       

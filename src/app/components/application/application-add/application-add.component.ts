@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ApplicationService } from 'src/app/services/application.service';
 import { IApplicantGetAllModel } from 'src/app/models/response/applicant/applicant-getall-model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-application-add',
@@ -58,11 +59,13 @@ export class ApplicationAddComponent implements OnInit {
               this.applicationService
                 .addToApplication(application)
                 .subscribe((data) => {
+                  Swal.fire({
+                    icon: 'success',
+                    title:'Aday Eklendi',
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
                   this.clearForm();
-                  this.toastrService.success(
-                    'Application Eklendi',
-                    'Tebrikler (:'
-                  );
                 });
             });
         });

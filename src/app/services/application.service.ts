@@ -23,7 +23,6 @@ export class ApplicationService {
   }
   
   addToApplication(application: IApplicationAddModel) {
-    console.log(application);
     
     return this.httpClient.post(this.apiUrl, application);
   }
