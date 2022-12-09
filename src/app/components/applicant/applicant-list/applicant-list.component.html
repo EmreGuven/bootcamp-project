@@ -12,34 +12,52 @@
             <table class="table align-items-center mb-0">
               <thead>
                 <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                  >
                     Ad
                   </th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
                     Soyad
                   </th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
                     Email
                   </th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
                     Şifre
                   </th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
                     Tc No
                   </th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
                     Doğum Tarihi
                   </th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
                     Hakkında
                   </th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">State</th>
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
+                    Durumu
+                  </th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let applicant of applicants">
-                  <td style="height: 60px;">
+                  <td style="height: 60px">
                     <div class="d-flex px-2">
                       <div class="my-auto">
                         <h6 class="mb-0 text-xs">{{ applicant.firstName }}</h6>
@@ -100,13 +118,27 @@
                   <td>
                     <div class="d-flex px-2">
                       <div class="my-auto">
-                        <h6 class="mb-0 text-xs">{{ applicant.state }}</h6>
+                        <h6 class="mb-0 text-xs">
+                          <span
+                            *ngIf="applicant.state == 1"
+                            class="badge badge-sm bg-gradient-success"
+                            >Online</span
+                          >
+                          <span
+                            *ngIf="applicant.state == 2; else offline"
+                            class="badge badge-sm bg-gradient-secondary"
+                            >Offline</span
+                          >
+                          <ng-template #offline></ng-template>
+                        </h6>
                       </div>
                     </div>
                   </td>
                   <td *ngIf="loginGuard.roles == 'ROLE_EMPLOYEE'">
-                    <button routerLink="update/{{ applicant.id }}"
-                      class="btn bg-gradient-info mb-0 mt-0 mt-md-n9 mt-lg-0">
+                    <button
+                      routerLink="update/{{ applicant.id }}"
+                      class="btn bg-gradient-info mb-0 mt-0 mt-md-n9 mt-lg-0"
+                    >
                       Güncelle
                     </button>
                   </td>

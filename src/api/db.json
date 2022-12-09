@@ -21,7 +21,8 @@
       "dateOfBirth": "1996-01-21",
       "about": "Selçuk Üniversitesi Bilgisayar Mühendisliği",
       "id": 2,
-      "role": "ROLE_APPLICANT"
+      "role": "ROLE_APPLICANT",
+      "state": 2
     },
     {
       "firstName": "Sevda",
@@ -32,7 +33,8 @@
       "dateOfBirth": "1998-12-05",
       "about": "Gazi Üniversitesi Bilgisayar Mühendisliği",
       "id": 3,
-      "role": "ROLE_APPLICANT"
+      "role": "ROLE_APPLICANT",
+      "state": 1
     },
     {
       "firstName": "Burak",
@@ -43,7 +45,8 @@
       "dateOfBirth": "1990-02-02",
       "about": "Hitit Üniversitesi Bilgisayar Programcılığı",
       "id": 4,
-      "role": "ROLE_APPLICANT"
+      "role": "ROLE_APPLICANT",
+      "state": 1
     },
     {
       "firstName": "Haluk",
@@ -55,7 +58,7 @@
       "about": "Erzurum Üniversitesi YBS",
       "id": 6,
       "role": "ROLE_APPLICANT",
-      "state": 1
+      "state": 2
     },
     {
       "firstName": "Mert ",
@@ -66,7 +69,8 @@
       "dateOfBirth": "1998-08-10",
       "about": "Kırıkkale Üniversitesi İşletme",
       "id": 5,
-      "role": "ROLE_APPLICANT"
+      "role": "ROLE_APPLICANT",
+      "state": 1
     }
   ],
   "employee": [
@@ -215,32 +219,18 @@
   ],
   "blackList": [
     {
-      "applicantId": "5",
-      "date": "2021-05-05",
-      "reason": "Eksik Evrak",
-      "applicantName": "Mert  Subaşı",
+      "applicantId": "6",
+      "date": "2022-12-08",
+      "reason": ":)",
+      "applicantName": "Haluk Gül",
       "id": 1
     },
     {
-      "applicantId": "3",
-      "date": "2021-06-18",
-      "reason": "Çalışıyor",
-      "applicantName": "Sevda Şimşek",
+      "applicantId": "2",
+      "date": "2022-12-08",
+      "reason": "asdas",
+      "applicantName": "İlknur Yıldırım",
       "id": 2
-    },
-    {
-      "applicantId": "4",
-      "date": "2022-11-11",
-      "reason": "Askerde",
-      "applicantName": "Burak Ergin",
-      "id": 3
-    },
-    {
-      "applicantId": "3",
-      "date": "2022-12-06",
-      "reason": "yeni mezun",
-      "applicantName": "Sevda Şimşek",
-      "id": 5
     }
   ],
   "bootcamp": [
