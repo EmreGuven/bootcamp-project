@@ -1,4 +1,4 @@
-import { ApplicantService } from 'src/app/services/applicant.service';
+import { UserService } from './../../../services/user.service';
 import { ApplicationService } from 'src/app/services/application.service';
 import { LoginGuard } from './../../../guards/login.guard';
 import { InstructorService } from './../../../services/instructor.service';
@@ -22,7 +22,7 @@ export class BootcampListComponent implements OnInit {
     public instructorService: InstructorService,
     public loginGuard: LoginGuard,
     private applicationService: ApplicationService,
-    private applicantSerice:ApplicantService
+    private userService:UserService
   ) {}
 
   ngOnInit(): void {
@@ -83,16 +83,14 @@ export class BootcampListComponent implements OnInit {
 
     applicationData.id = this.bootcampSaveData.id;
     applicationData.state = this.bootcampSaveData.state;
-    applicationData.applicantId = localStorage.getItem('id');
+    applicationData.userId = localStorage.getItem('id');
     applicationData.bootcampName = this.bootcampSaveData.name;
     
-    this.applicantSerice.getApplicantById(applicationData.applicantId).subscribe(data=>{
+    this.userService.getUserById(applicationData.userId).subscribe(data=>{
       applicationData.applicantName = data.firstName + " " + data.lastName
     })
 
     if (applicationData.state == 1) {
-      
-      
           Swal.fire({
             customClass: {
               confirmButton: 'btn bg-gradient-info active ms-3',

@@ -25,6 +25,7 @@
     "@popperjs/core": "^2.11.6",
     "@sweetalert2/ngx-sweetalert2": "^12.0.2",
     "bootstrap": "^5.2.0",
+    "bootstrap-select": "^1.13.18",
     "jquery": "^3.6.1",
     "jquery-cli": "^0.0.0",
     "ngx-toastr": "^15.2.1",

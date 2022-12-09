@@ -10,7 +10,7 @@
       "about": "Sivas Üniversitesi Bilgisayar Mühendisliği",
       "id": 1,
       "role": "ROLE_APPLICANT",
-      "state": 1
+      "state": 2
     },
     {
       "firstName": "İlknur",
@@ -34,7 +34,7 @@
       "about": "Gazi Üniversitesi Bilgisayar Mühendisliği",
       "id": 3,
       "role": "ROLE_APPLICANT",
-      "state": 1
+      "state": 2
     },
     {
       "firstName": "Burak",
@@ -46,7 +46,7 @@
       "about": "Hitit Üniversitesi Bilgisayar Programcılığı",
       "id": 4,
       "role": "ROLE_APPLICANT",
-      "state": 1
+      "state": 2
     },
     {
       "firstName": "Haluk",
@@ -70,7 +70,7 @@
       "about": "Kırıkkale Üniversitesi İşletme",
       "id": 5,
       "role": "ROLE_APPLICANT",
-      "state": 1
+      "state": 2
     }
   ],
   "employee": [
@@ -195,42 +195,46 @@
     {
       "id": 1,
       "state": 1,
-      "applicantId": "3",
-      "bootcampName": "FrontEnd"
+      "userId": "3",
+      "bootcampName": "FrontEnd",
+      "applicantName": "Haluk Gül"
     },
     {
       "id": 2,
       "state": "1",
-      "applicantId": "3",
-      "bootcampName": "Backend"
+      "userId": "3",
+      "bootcampName": "Backend",
+      "applicantName": "Haluk Gül"
     },
     {
-      "id": 4,
+      "id": 5,
       "state": "1",
-      "applicantId": "3",
-      "bootcampName": "Coderspace Machine Learning "
-    },
-    {
-      "id": 3,
-      "state": "1",
-      "applicantId": "3",
-      "bootcampName": "React"
+      "userId": "3",
+      "bootcampName": "Java-Spring",
+      "applicantName": "Haluk Gül"
     }
   ],
   "blackList": [
     {
-      "applicantId": "6",
-      "date": "2022-12-08",
-      "reason": ":)",
-      "applicantName": "Haluk Gül",
+      "applicantId": "1",
+      "date": "0001-11-11",
+      "reason": "1",
+      "applicantName": "Emre Güven",
       "id": 1
     },
     {
       "applicantId": "2",
-      "date": "2022-12-08",
-      "reason": "asdas",
+      "date": "0001-11-11",
+      "reason": "1",
       "applicantName": "İlknur Yıldırım",
       "id": 2
+    },
+    {
+      "applicantId": "2",
+      "date": "0001-11-11",
+      "reason": "1",
+      "applicantName": "İlknur Yıldırım",
+      "id": 3
     }
   ],
   "bootcamp": [
@@ -279,7 +283,7 @@
       "name": "Java-Spring",
       "dateStart": "2023-06-11",
       "dateEnd": "2023-07-04",
-      "state": "2",
+      "state": "1",
       "image": "../assets/img/bootcamp/java-spring.png",
       "instructorName": "Merve Kara",
       "id": 5

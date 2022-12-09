@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ApplicantService } from 'src/app/services/applicant.service';
 import { IApplicantGetAllModel } from 'src/app/models/response/applicant/applicant-getall-model';
 import Swal from 'sweetalert2';
+import { style } from '@angular/animations';
 
 @Component({
   selector: 'app-black-list-add',
@@ -16,7 +17,7 @@ import Swal from 'sweetalert2';
 export class BlackListAddComponent implements OnInit {
   blacklistAddForm: FormGroup;
   applicants: IApplicantGetAllModel[];
-
+  blackLists: IBlacklistGetAllModel[] = [];
   constructor(
     private formBuilder: FormBuilder,
     private blacklistService: BlacklistService,
@@ -27,6 +28,7 @@ export class BlackListAddComponent implements OnInit {
   ngOnInit(): void {
     this.createBlacklistAddForm();
     this.getApplicants();
+    this.getBlackList();
   }
 
   getApplicants() {
@@ -34,6 +36,11 @@ export class BlackListAddComponent implements OnInit {
       this.applicants = data;
     });
     this.createBlacklistAddForm();
+  }
+  getBlackList() {
+    this.blacklistService.getBlacklists().subscribe((data) => {
+      this.blackLists = data;
+    });
   }
 
   createBlacklistAddForm() {
@@ -49,23 +56,38 @@ export class BlackListAddComponent implements OnInit {
         {},
         this.blacklistAddForm.value
       );
+
       this.applicantService
         .getApplicantById(blacklist.applicantId)
         .subscribe((applicant) => {
           blacklist.applicantName =
             applicant.firstName + ' ' + applicant.lastName;
 
-          this.blacklistService.addToBlacklist(blacklist).subscribe(() => {
-            Swal.fire({
-              icon: 'success',
-              title: blacklist.applicantName + ' Kara Listeye Eklendi',
-              showConfirmButton: false,
-              timer: 2000
-            })
+          let flag = true;
+          for (let black of this.blackLists) {
+            if (blacklist.applicantId == black.id) {
+              flag = false;
+            }
+          }
+          if (flag) {
+            this.blacklistService.addToBlacklist(blacklist).subscribe(() => {
+              Swal.fire({
+                icon: 'success',
+                title:
+                  '<h5>' +
+                  blacklist.applicantName +
+                  ' Kara Listeye Eklendi' +
+                  '</h5>',
+                showConfirmButton: false,
+                timer: 2000,
+              });
+              this.applicantService.updateToState(applicant.id, 2).subscribe();
+              this.clearForm();
+            });
+          } else {
+            Swal.fire({ title: '<h5>' + 'Aday zaten Kara Listede' + '</h5>' });
             this.clearForm();
-            
-          });
-          this.applicantService.updateToState(applicant.id, 2).subscribe();
+          }
         });
     } else {
       this.toastrService.error('Eksik Bilgi', '!!!');
