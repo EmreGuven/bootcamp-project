@@ -12,19 +12,29 @@
             <table class="table align-items-center mb-0">
               <thead>
                 <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                  >
                     Bootcamp Adı
                   </th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
                     Eğitmen Adı
                   </th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
                     Başlama Tarihi
                   </th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
                     Bitiş Tarihi
                   </th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
                     Durumu
                   </th>
                   <th></th>
@@ -33,7 +43,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let bootcamp of bootcamps">
-                  <td style="height: 60px;">
+                  <td style="height: 60px">
                     <div class="d-flex px-2">
                       <div class="my-auto">
                         <h6 class="mb-0 text-xs">{{ bootcamp.name }}</h6>
@@ -44,7 +54,9 @@
                   <td>
                     <div class="d-flex px-2">
                       <div class="my-auto">
-                        <h6 class="mb-0 text-xs">{{ bootcamp.instructorName }}</h6>
+                        <h6 class="mb-0 text-xs">
+                          {{ bootcamp.instructorName }}
+                        </h6>
                       </div>
                     </div>
                   </td>
@@ -67,25 +79,45 @@
                   <td>
                     <div class="d-flex px-2">
                       <div class="my-auto">
-                        <h6 class="mb-0 text-xs">{{ bootcamp.state }}</h6>
+                        <h6 class="mb-0 text-xs">
+                          <span
+                            *ngIf="bootcamp.state == 1"
+                            class="badge badge-sm bg-gradient-success"
+                            >Online</span
+                          >
+                          <span
+                            *ngIf="bootcamp.state == 2; else offline"
+                            class="badge badge-sm bg-gradient-secondary"
+                            >Offline</span
+                          >
+                          <ng-template #offline></ng-template>
+                        </h6>
                       </div>
                     </div>
                   </td>
                   <td *ngIf="loginGuard.roles == 'ROLE_EMPLOYEE'">
-                    <button routerLink="update/{{ bootcamp.id }}"
-                      class="btn bg-gradient-info mb-0 mt-0 mt-md-n9 mt-lg-0">
+                    <button
+                      routerLink="update/{{ bootcamp.id }}"
+                      class="btn bg-gradient-info mb-0 mt-0 mt-md-n9 mt-lg-0"
+                    >
                       Güncelle
                     </button>
                   </td>
                   <td *ngIf="loginGuard.roles == 'ROLE_EMPLOYEE'">
-                    <button (click)="deleteToBootcamp(bootcamp.id)" type="button"
-                      class="btn bg-gradient-primary mb-0 mt-0 mt-md-n9 mt-lg-0">
+                    <button
+                      (click)="deleteToBootcamp(bootcamp.id)"
+                      type="button"
+                      class="btn bg-gradient-primary mb-0 mt-0 mt-md-n9 mt-lg-0"
+                    >
                       Sil
                     </button>
                   </td>
                   <td *ngIf="loginGuard.roles == 'ROLE_APPLICANT'">
-                    <button (click)="getBootcampData(bootcamp)" type="button"
-                      class="btn bg-gradient-info mb-0 mt-0 mt-md-n9 mt-lg-0">
+                    <button
+                      (click)="getBootcampData(bootcamp)"
+                      type="button"
+                      class="btn bg-gradient-info mb-0 mt-0 mt-md-n9 mt-lg-0"
+                    >
                       Kayıt Ol
                     </button>
                   </td>
