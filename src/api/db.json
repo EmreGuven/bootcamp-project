@@ -243,7 +243,7 @@
       "name": "FrontEnd",
       "dateStart": "2022-01-01",
       "dateEnd": "2022-02-01",
-      "image": "../assets/img/bootcamp/front-end.png",
+      "image": "../assets/img/bootcamp/front-end.jpeg",
       "state": 1,
       "instructorName": "Engin Demiroğ",
       "id": 1
@@ -253,7 +253,7 @@
       "name": "Backend",
       "dateStart": "2022-02-10",
       "dateEnd": "2022-02-30",
-      "image": "../assets/img/bootcamp/Back-end.jpg",
+      "image": "../assets/img/bootcamp/back-end.jpeg",
       "state": "1",
       "instructorName": "Engin Demiroğ",
       "id": 2
@@ -264,7 +264,7 @@
       "dateStart": "2021-05-15",
       "dateEnd": "2021-06-10",
       "state": "1",
-      "image": "../assets/img/bootcamp/React1.png",
+      "image": "../assets/img/bootcamp/react.jpeg",
       "instructorName": "Selim Güngör",
       "id": 3
     },
@@ -273,7 +273,7 @@
       "name": "Coderspace Machine Learning ",
       "dateStart": "2021-07-17",
       "dateEnd": "2022-08-17",
-      "image": "../assets/img/bootcamp/coderspace.jpg",
+      "image": "../assets/img/bootcamp/coderspace.jpeg",
       "state": "1",
       "instructorName": "Seher Karaman",
       "id": 4
@@ -284,7 +284,7 @@
       "dateStart": "2023-06-11",
       "dateEnd": "2023-07-04",
       "state": "1",
-      "image": "../assets/img/bootcamp/java-spring.png",
+      "image": "../assets/img/bootcamp/java-spring.jpeg",
       "instructorName": "Merve Kara",
       "id": 5
     },
@@ -293,7 +293,7 @@
       "name": ".Net-Core",
       "dateStart": "2022-01-11",
       "dateEnd": "2022-02-11",
-      "image": "../assets/img/bootcamp/Net-Core.png",
+      "image": "../assets/img/bootcamp/net-core.jpeg",
       "state": "2",
       "instructorName": "Arda Karaca",
       "id": 6
