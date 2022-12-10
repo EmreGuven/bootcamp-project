@@ -217,23 +217,23 @@
   "blackList": [
     {
       "applicantId": "1",
-      "date": "0001-11-11",
-      "reason": "1",
+      "date": "2021-11-11",
+      "reason": "Hastalık",
       "applicantName": "Emre Güven",
       "id": 1
     },
     {
       "applicantId": "2",
-      "date": "0001-11-11",
-      "reason": "1",
+      "date": "2022-01-01",
+      "reason": "Evlilik",
       "applicantName": "İlknur Yıldırım",
       "id": 2
     },
     {
-      "applicantId": "2",
-      "date": "0001-11-11",
-      "reason": "1",
-      "applicantName": "İlknur Yıldırım",
+      "applicantId": "4",
+      "date": "2021-04-02",
+      "reason": "Farklı Bootcamp Tercihi",
+      "applicantName": "Burak Ergin",
       "id": 3
     }
   ],
