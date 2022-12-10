@@ -49,6 +49,7 @@ export class ApplicantUpdateComponent implements OnInit {
       nationalIdentity: [this.applicant.nationalIdentity, Validators.required],
       dateOfBirth: [this.applicant.dateOfBirth, Validators.required],
       about: [this.applicant.about, Validators.required],
+      state: [this.applicant.state, Validators.required],
     });
   }
   updateToApplicant() {

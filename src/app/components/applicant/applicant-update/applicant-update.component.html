@@ -80,6 +80,16 @@
     </div>
   </div>
 
+  <div class="col-md-6">
+    <div class="input-group input-group-static mb-4">
+      <label>Durumu:</label>
+      <input type="text" class="form-control" formControlName="state">
+    </div>
+    <div *ngIf="applicantUpdateForm.get('state').hasError('required') && applicantUpdateForm.get('state').touched" class="form-text text-muted uyari">
+      Durumu alanı zorunludur!
+    </div>
+  </div>
+
   </div>
 </form>
 <div class="card-footer">
