@@ -7,6 +7,8 @@ import { InstructorService } from 'src/app/services/instructor.service';
 import { BootcampService } from './../../services/bootcamp.service';
 import { IBootcampGetAllModel } from './../../models/response/bootcamp/bootcamp-getall-model';
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from 'src/app/services/employee.service';
+import { IEmployeeGetAllModel } from 'src/app/models/response/employee/employee-getall-model';
 
 @Component({
   selector: 'app-home',
@@ -18,11 +20,13 @@ export class HomeComponent implements OnInit {
   instructors: IInstructorGetAllModel[] = [];
   applicants: IApplicantGetAllModel[] = [];
   applications: IApplicationGetAllModel[] = [];
+  employees: IEmployeeGetAllModel[] = [];
   constructor(
     private bootcampService: BootcampService,
     private instructorService: InstructorService,
     private applicantService: ApplicantService,
-    private applicationService: ApplicationService
+    private applicationService: ApplicationService,
+    private employeeService: EmployeeService,
   ) {}
 
   ngOnInit(): void {
@@ -30,6 +34,13 @@ export class HomeComponent implements OnInit {
     this.getInstructors();
     this.getApplicants();
     this.getApplications();
+    this.getEmployees();
+  }
+
+  getEmployees() {
+    this.employeeService.getEmployees().subscribe((data) => {
+      this.employees = data;
+    });
   }
 
   getBootcamps() {
