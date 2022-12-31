@@ -36,9 +36,11 @@ export class RegisterComponent implements OnInit {
   addUser() {
     if (this.userAddForm.valid) {
       let userModel = Object.assign({}, this.userAddForm.value);
+      userModel.token = "casvBsddlwtttçAAsDDAAa"
+      userModel.role  = "ROLE_APPLICANT"
       this.registerService.addUsers(userModel).subscribe((data) => {
         this.toastrService.success('Kullanıcı Oluşturuldu', 'Tebrikler (:');
-        this.router.navigate(['admin']);
+        this.router.navigate(['applicant']);
       });
     } else {
       this.toastrService.error('Eksik bilgi !!!', 'Lütfen tekrar deneyiniz');

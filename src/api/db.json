@@ -87,16 +87,14 @@
       "image": "../assets/img/images/enes.jpeg"
     },
     {
-      "firstName": "Esra",
+      "firstName": "Esraa",
       "lastName": "TAŞÇI",
       "email": "esrapekdemir@gmail.com",
       "password": "25524565",
       "nationalIdentity": "24568534672",
       "dateOfBirth": "1977-12-12",
       "position": "Çalışma ve Sosyal Güvenlik Eğitim Uzmanı",
-      "id": 3,
-      "role": "ROLE_EMPLOYEE",
-      "image": "../assets/img/images/no.svg"
+      "id": 3
     },
     {
       "firstName": "Serhat",
@@ -109,18 +107,6 @@
       "id": 4,
       "role": "ROLE_EMPLOYEE",
       "image": "../assets/img/images/serhat.jpeg"
-    },
-    {
-      "firstName": "İsmail",
-      "lastName": "Karakaya",
-      "email": "ismailkarakaya@gmail.com",
-      "password": "75963145",
-      "nationalIdentity": "1265743698",
-      "dateOfBirth": "1995-03-03",
-      "position": "Çalışma ve Sosyal Güvenlik Eğitim Uzmanı",
-      "id": 5,
-      "role": "ROLE_EMPLOYEE",
-      "image": "../assets/img/images/ismail.jpeg"
     }
   ],
   "instructor": [
@@ -235,6 +221,27 @@
       "reason": "Farklı Bootcamp Tercihi",
       "applicantName": "Burak Ergin",
       "id": 3
+    },
+    {
+      "applicantId": "6",
+      "date": "2022-12-15",
+      "reason": "askwer",
+      "applicantName": "Haluk Gül",
+      "id": 4
+    },
+    {
+      "applicantId": "6",
+      "date": "2022-12-15",
+      "reason": "asdasdasd",
+      "applicantName": "Haluk Gül",
+      "id": 5
+    },
+    {
+      "applicantId": "6",
+      "date": "2022-12-15",
+      "reason": "dfadf",
+      "applicantName": "Haluk Gül",
+      "id": 6
     }
   ],
   "bootcamp": [
@@ -269,16 +276,6 @@
       "id": 3
     },
     {
-      "instructerId": "3",
-      "name": "Coderspace Machine Learning ",
-      "dateStart": "2021-07-17",
-      "dateEnd": "2022-08-17",
-      "image": "../assets/img/bootcamp/coderspacea.jpg",
-      "state": "1",
-      "instructorName": "Seher Karaman",
-      "id": 4
-    },
-    {
       "instructerId": "4",
       "name": "Java-Spring",
       "dateStart": "2023-06-11",
@@ -293,8 +290,8 @@
       "name": ".Net-Core",
       "dateStart": "2022-01-11",
       "dateEnd": "2022-02-11",
+      "state": "1",
       "image": "../assets/img/bootcamp/Net-Corea.png",
-      "state": "2",
       "instructorName": "Arda Karaca",
       "id": 6
     }
