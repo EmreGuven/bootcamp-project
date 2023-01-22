@@ -1,10 +1,10 @@
-bootcamp-project
+#Bootcamp-Project
 
-Proje Hakkında
+#Proje Hakkında
 
 Senaryo: x isimli firma bootcamp eğitimleri düzenlemektedir. Bunun üzerine bizden yöneticilerin, eğitmenlerin ve bootcamplere başvurabilen adayların olduğu aynı zamanda yöneticilerin tüm verileri güncelleyebilmesi, silebilmesi ve yeni veri ekleyebilmesi istemiştir. Eğitmenlerin kendi bootcamplerini yönetebileceği, adayların ise bootcamplere başvurabileceği özel bir sayfa ve başvurularını yönetebileceği sayfa olacaktır.
 
-Kullanılan Teknolojiler
+#Kullanılan Teknolojiler
 
 Angular14 - NgRx - RxJs - TypeScript - JavaScript - HTML5 - CSS3 - Bootstrap5
 
