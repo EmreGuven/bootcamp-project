@@ -49,18 +49,6 @@
       "state": 2
     },
     {
-      "firstName": "Haluk",
-      "lastName": "Gül",
-      "email": "haluk@gmail.com",
-      "password": "456321",
-      "nationalIdentity": "1075951535",
-      "dateOfBirth": "1990-05-15",
-      "about": "Erzurum Üniversitesi YBS",
-      "id": 6,
-      "role": "ROLE_APPLICANT",
-      "state": 2
-    },
-    {
       "firstName": "Mert ",
       "lastName": "Subaşı",
       "email": "mert@gmail.com",
@@ -68,9 +56,8 @@
       "nationalIdentity": "2054865645",
       "dateOfBirth": "1998-08-10",
       "about": "Kırıkkale Üniversitesi İşletme",
-      "id": 5,
-      "role": "ROLE_APPLICANT",
-      "state": 2
+      "state": "1",
+      "id": 5
     }
   ],
   "employee": [
@@ -202,13 +189,6 @@
   ],
   "blackList": [
     {
-      "applicantId": "1",
-      "date": "2021-11-11",
-      "reason": "Hastalık",
-      "applicantName": "Emre Güven",
-      "id": 1
-    },
-    {
       "applicantId": "2",
       "date": "2022-01-01",
       "reason": "Evlilik",
@@ -242,6 +222,13 @@
       "reason": "dfadf",
       "applicantName": "Haluk Gül",
       "id": 6
+    },
+    {
+      "applicantId": "1",
+      "date": "2023-01-24",
+      "reason": "11",
+      "applicantName": "Emre Güven",
+      "id": 7
     }
   ],
   "bootcamp": [
