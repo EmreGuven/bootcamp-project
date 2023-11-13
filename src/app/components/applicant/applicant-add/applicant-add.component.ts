@@ -39,6 +39,8 @@ export class ApplicantAddComponent implements OnInit {
     if (this.applicantAddForm.valid) {
       let applicant = Object.assign({}, this.applicantAddForm.value);
       this.applicantService.addToApplicant(applicant).subscribe((data) => {
+        console.log(data);
+        
         this.clearForm();
         this.toastrService.success('Aday Eklendi', 'Tebrikler (:');
       });

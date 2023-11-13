@@ -94,6 +94,36 @@
       "id": 4,
       "role": "ROLE_EMPLOYEE",
       "image": "../assets/img/images/serhat.jpeg"
+    },
+    {
+      "firstName": "asasd",
+      "lastName": "asdasd",
+      "email": "a@g.com",
+      "password": "asdasda1231ads",
+      "nationalIdentity": "2134123412341234",
+      "dateOfBirth": "1997-06-04",
+      "position": "amele",
+      "id": 5
+    },
+    {
+      "firstName": "emre",
+      "lastName": "güvenm",
+      "email": "e@hotmail.com",
+      "password": "123456789",
+      "nationalIdentity": "38294058376",
+      "dateOfBirth": "2023-09-17",
+      "position": "1",
+      "id": 6
+    },
+    {
+      "firstName": "emre",
+      "lastName": "guven",
+      "email": "e@eee.com",
+      "password": "12345",
+      "nationalIdentity": "12344",
+      "dateOfBirth": "2023-09-08",
+      "position": "1",
+      "id": 7
     }
   ],
   "instructor": [
@@ -178,13 +208,6 @@
       "userId": "3",
       "bootcampName": "Backend",
       "applicantName": "Haluk Gül"
-    },
-    {
-      "id": 5,
-      "state": "1",
-      "userId": "3",
-      "bootcampName": "Java-Spring",
-      "applicantName": "Haluk Gül"
     }
   ],
   "blackList": [
@@ -210,38 +233,14 @@
       "id": 4
     },
     {
-      "applicantId": "6",
-      "date": "2022-12-15",
-      "reason": "asdasdasd",
-      "applicantName": "Haluk Gül",
-      "id": 5
-    },
-    {
-      "applicantId": "6",
-      "date": "2022-12-15",
-      "reason": "dfadf",
-      "applicantName": "Haluk Gül",
-      "id": 6
-    },
-    {
       "applicantId": "1",
-      "date": "2023-01-24",
-      "reason": "11",
+      "date": "2023-09-17",
+      "reason": "zz",
       "applicantName": "Emre Güven",
-      "id": 7
+      "id": 5
     }
   ],
   "bootcamp": [
-    {
-      "instructerId": 1,
-      "name": "FrontEnd",
-      "dateStart": "2022-01-01",
-      "dateEnd": "2022-02-01",
-      "image": "../assets/img/bootcamp/front-enda.png",
-      "state": 1,
-      "instructorName": "Engin Demiroğ",
-      "id": 1
-    },
     {
       "instructerId": "1",
       "name": "Backend",
